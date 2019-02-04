@@ -1,28 +1,38 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { Component, useState } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import styled from 'styled-components';
+import './global.css';
+import { Home, About, Work, Contact, Blog } from './pages';
+import { Navbar } from './components';
+import { useNavbarState } from './containers';
 
-class App extends Component {
+class App extends Component <any, any> {
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.tsx</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
+      <AppWrap>
+        <Router>
+          <React.Fragment>
+            <Navbar />
+            <Switch>
+              <Route path="/" exact component={ Home } />
+              <Route path="/about/" component={ About } />
+              <Route path="/work/" component={ Work } />
+              <Route path="/work/:tag" component={ Work } />
+              <Route path="/contact/" component={ Contact } />
+              <Route path="/blog/" component={ Blog } />
+            </Switch>
+          </React.Fragment>
+        </Router>
+      </AppWrap>
     );
   }
 }
 
 export default App;
+
+const AppWrap = styled.div`
+  display: flex;
+  flex-direction: column;
+  padding-top: ${ 50 }px;
+  flex: 1;
+`;
