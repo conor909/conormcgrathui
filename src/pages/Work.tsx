@@ -1,9 +1,11 @@
 import React from 'react';
 import { withRouter } from 'react-router';
-import { GridDisplay } from '../components';
+import { GridDisplay, Page } from '../components';
 
 export default withRouter(
   (props) => (
-    <GridDisplay tag={ props.match.params.tag } />
+    <Page style={{ paddingTop: '50px' }}>
+      <GridDisplay category={ props.match.params.category } />
+    </Page>
   )
 );

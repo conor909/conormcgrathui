@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default (props:any) => (
-  <Page id='page'>
+  <Page id='page' style={ props.style }>
     { props.children }
   </Page>
 )

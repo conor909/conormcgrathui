@@ -18,7 +18,7 @@ export default class extends React.Component<IProps, any> {
   render() {
     const { imageStatus } = this.state;
     return (
-      <div onClick={ () => this.props.onClickedItem(this.props.item) }>
+      <section onClick={ () => this.props.onClickedItem(this.props.item) }>
         <img
           src={ this.props.item.feature }
           onLoad={ this.handleImageLoaded }
@@ -33,7 +33,7 @@ export default class extends React.Component<IProps, any> {
           imageStatus === 'loading' && 
             <LoadingImage />
         }
-      </div>
+      </section>
     )
   }
 }
@@ -51,7 +51,7 @@ export interface IGridItem {
   feature: string;
   images: Array<string>;
   url: null | string;
-  type: Array<string>;
+  categories: Array<string>;
 }
 
 interface IProps {

@@ -32,7 +32,7 @@ export default () => ([
     feature: advisian,
     images: [ advisian2, advisian ],
     url: 'http://www.advisian.com',
-		type: ['development', 'javascript']
+		categories: ['development', 'javascript']
   },
   {
     id: 1,
@@ -47,7 +47,7 @@ export default () => ([
     feature: kilaBusinessCards,
     images: [ kilaBusinessCards ],
     url: '',
-		type: ['design']
+		categories: ['design']
   },
   {
     id: 2,
@@ -62,7 +62,7 @@ export default () => ([
     feature: markland,
     images: [ markland ],
     url: 'http://marklandasia.com/',
-		type: ['design', 'development']
+		categories: ['design', 'development']
   },
   {
     id: 3,
@@ -77,7 +77,7 @@ export default () => ([
     feature: peterBlake,
     images: [ peterBlake ],
     url: '',
-		type: ['design']
+		categories: ['design']
   },
   {
     id: 4,
@@ -92,7 +92,7 @@ export default () => ([
     feature: liveLounge,
     images: [ liveLounge ],
     url: '',
-		type: ['design']
+		categories: ['design']
   },
   {
     id: 5,
@@ -107,7 +107,7 @@ export default () => ([
     feature: meGirl,
     images: [ meGirl ],
     url: '',
-		type: ['design', 'development', 'mobile']
+		categories: ['design', 'development', 'mobile']
   },
   {
     id: 6,
@@ -122,7 +122,7 @@ export default () => ([
     feature: theWellnessNomad,
     images: [ theWellnessNomad ],
     url: 'http://thewellnessnomad.com/',
-		type: ['design', 'development']
+		categories: ['design', 'development']
   },
   {
     id: 7,
@@ -137,6 +137,6 @@ export default () => ([
     feature: cube19,
     images: [ cube19_dashboard, cube19_leaderboard, cube19_configure_chart, cube19_4, cube19_1, cube19_3, cube19_2 ],
     url: 'http://www.cube19.com',
-		type: ['design', 'development', 'javascript']
+		categories: ['design', 'development', 'javascript']
   }
 ]);

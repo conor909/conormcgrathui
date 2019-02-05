@@ -1,55 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { withRouter } from 'react-router';
 import { Container, Row, Col } from 'react-grid-system';
 import GridItem, { IGridItem } from './GridItem';
 import GridItemDisplay from './GridItemDisplay';
-import getWork from '../../data/work'
+import getWork from '../../data/work';
 
-export default withRouter(
-  class GridDisplay extends React.Component <any, any> {
+export default withRouter((props:any) => {
     
-    state = {
-      displayItem: null
-    }
-    
-    handleClickedItem = (item:IGridItem) => {
-      this.setState({ displayItem: item });
-    }
-    
-    render() {
-      const { displayItem } = this.state;
-      return (
-        <React.Fragment>
-        <Container fluid style={{ width: '100%', padding: 0, margin: 0, overflow: displayItem ? 'no-scroll' : 'auto' }}>
-          <Row>
-            <Col>
-              <Row nogutter>
-                {
-                  getWork().map((item) => {
+  const [ selectedItem, setItem ] = useState<IGridItem | null>(null);
+  
+  useEffect(() => { setItem(null) }, [ props.category ]);
+
+  return (
+    <>
+      <Container fluid style={ styles.container }>
+        <Row>
+          <Col>
+            <Row nogutter>
+              {
+                getWork()
+                  .filter(item => (props.category === 'all' || item.categories.some(cat => cat === props.category)))
+                  .map((item:IGridItem) => {
                     return (
                       <Col
-                        key={ item.id }
+                        key={ Math.random() }
                         md={ 4 }
-                        onClick={ () => this.props.history.push('/work/' )}>
+                        onClick={ () => props.history.push(`/work/${ props.category }` )}>
                           <GridItem
                             item={ item }
-                            onClickedItem={ this.handleClickedItem } />
+                            onClickedItem={ () => setItem(item) } />
                       </Col>
                     )
                   })
-                }
-              </Row>
-              </Col>
-          </Row>
-        </Container>
-        {
-          this.state.displayItem &&
-            <GridItemDisplay
-              onClose={ () => this.setState({ displayItem: null }) }
-              item={ this.state.displayItem } />
-        }
-        </React.Fragment>
-      )
-    }
+              }
+            </Row>
+          </Col>
+        </Row>
+      </Container>
+      {
+        selectedItem &&
+          <GridItemDisplay
+            onClose={ () => setItem(null) }
+            item={ selectedItem } />
+      }
+    </>
+  )
+})
+
+const styles = {
+  container: {
+    width: '100%',
+    padding: 0,
+    margin: 0
   }
-);
+}
