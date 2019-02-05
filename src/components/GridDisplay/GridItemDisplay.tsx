@@ -14,16 +14,20 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
     <Wrapper navbarHeight={ navbarHeight * 2 }>
       <Container fluid>
         <Row>
-          <span style={{ textAlign: 'right', display: 'block' }} onClick={ props.onClose }>
-            X
-          </span>
-        </Row>
-        <Row>
           <Col lg={ 4 } md={ 4 } sm={ 12 } xs={ 12 }>
-            <h1>{ props.item.title }</h1>
-            <p>{ props.item.desc }</p>
+            <Row>
+              <h1>{ props.item.title }</h1>
+            </Row>
+            <Row>
+              <p>{ props.item.desc }</p>
+            </Row>
+            <Row>
+              <h2 onClick={ props.onClose }>
+                ←	back
+              </h2>
+            </Row>
           </Col>
-          <Col lg={ 8 } md={ 8 } sm={ 12 } xs={ 12 }>
+          <Col lg={ 8 } md={ 8 } sm={ 12 } xs={ 12 } style={{ padding: 'rem' }}>
             <img src={ props.item.feature } style={{ width: '100%', height: 'auto' }} />
           </Col>
         </Row>

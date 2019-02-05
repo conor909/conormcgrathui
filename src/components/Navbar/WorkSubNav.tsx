@@ -6,16 +6,22 @@ import { Wrapper } from '../Navbar';
 export default (props:any) => {
   return (
     <SubNavWrapper>
-      <Container fluid style={{ width: '100%' }}>
-        <Row>
-          <Col onClick={ () => props.history.push('/work/development' )}>
-            development
+      <Container fluid style={{ width: '100%', padding: 0 }}>
+        <Row justify='end'>
+          <Col
+            lg={ 2 } sm={ 4 } xs={ 4 }
+            onClick={ () => props.history.push('/work/development' )}>
+              development
           </Col>
-          <Col onClick={ () => props.history.push('/work/design' )}>
-            design
+          <Col
+            lg={ 2 } sm={ 4 } xs={ 4 }
+            onClick={ () => props.history.push('/work/design' )}>
+              design
           </Col>
-          <Col onClick={ () => props.history.push('/work/javascript' )}>
-            javascript
+          <Col
+            lg={ 2 } sm={ 4 } xs={ 4 }
+            onClick={ () => props.history.push('/work/javascript' )}>
+              javascript
           </Col>
         </Row>
       </Container>

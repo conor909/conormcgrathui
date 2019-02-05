@@ -14,28 +14,26 @@ export default withRouter((props:any) => {
   return (
     <>
       <Container fluid style={ styles.container }>
-        <Row>
-          <Col>
-            <Row nogutter>
-              {
-                getWork()
-                  .filter(item => (props.category === 'all' || item.categories.some(cat => cat === props.category)))
-                  .map((item:IGridItem) => {
-                    return (
-                      <Col
-                        key={ Math.random() }
-                        md={ 4 }
-                        onClick={ () => props.history.push(`/work/${ props.category }` )}>
-                          <GridItem
-                            item={ item }
-                            onClickedItem={ () => setItem(item) } />
-                      </Col>
-                    )
-                  })
-              }
-            </Row>
-          </Col>
-        </Row>
+        <Col>
+          <Row>
+            {
+              getWork()
+                .filter(item => (props.category === 'all' || item.categories.some(cat => cat === props.category)))
+                .map((item:IGridItem) => {
+                  return (
+                    <Col
+                      key={ Math.random() }
+                      lg={ 4 } md={ 6 } sm={ 12 } xs={ 12 }
+                      onClick={ () => props.history.push(`/work/${ props.category }` )}>
+                        <GridItem
+                          item={ item }
+                          onClickedItem={ () => setItem(item) } />
+                    </Col>
+                  )
+                })
+            }
+          </Row>
+        </Col>
       </Container>
       {
         selectedItem &&
