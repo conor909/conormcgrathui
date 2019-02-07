@@ -8,4 +8,4 @@ export default withRouter(
       <GridDisplay category={ props.match.params.category } />
     </Page>
   )
-);
+)

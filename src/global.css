@@ -31,5 +31,10 @@ body {
 }
 
 a {
-  color: red
+  color: #03a5df;
+}
+
+article figure img {
+  width: 100%;
+  height: auto;
 }

@@ -1,8 +1,10 @@
 {
   "name": "conormcgrathui",
   "version": "0.1.0",
+  "proxy": "http://localhost:5000/",
   "private": true,
   "dependencies": {
+    "@sendgrid/mail": "^6.3.1",
     "@types/jest": "23.3.13",
     "@types/node": "10.12.21",
     "@types/react": "16.7.22",
@@ -10,8 +12,11 @@
     "@types/react-router": "^4.4.3",
     "@types/react-router-dom": "^4.3.1",
     "@types/styled-components": "^4.1.6",
-    "react": "react@next",
-    "react-dom": "react-dom@next",
+    "axios": "^0.18.0",
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4",
+    "react": "16.8.0",
+    "react-dom": "16.8.0",
     "react-grid-system": "^4.4.2",
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
@@ -20,10 +25,14 @@
     "typescript": "3.3.1"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "node server.js",
+    "start-client-app": "react-scripts start",
+    "start-dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn start-client-app\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "nodemon server.js",
+    "heroku-postbuild": "npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -33,5 +42,8 @@
     "not dead",
     "not ie <= 11",
     "not op_mini all"
-  ]
+  ],
+  "devDependencies": {
+    "concurrently": "^4.1.0"
+  }
 }
