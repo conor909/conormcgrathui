@@ -38,3 +38,8 @@ article figure img {
   width: 100%;
   height: auto;
 }
+
+.tech-logo {
+  width: 100%;
+  padding: 10px;
+}

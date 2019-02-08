@@ -5,6 +5,8 @@ import jsLogo from '../data/images/tech-logos/js.svg';
 import reactLogo from '../data/images/tech-logos/react.svg';
 import reduxLogo from '../data/images/tech-logos/redux.svg';
 import nodeLogo from '../data/images/tech-logos/node.svg';
+import aiLogo from '../data/images/tech-logos/ai.svg';
+import psLogo from '../data/images/tech-logos/ps.svg';
 
 export default (props:any) => (
   <Page>
@@ -21,25 +23,31 @@ export default (props:any) => (
           </Row>
         </Col>
         <Col lg={ 9 } md={ 8 } sm={ 12 } xs={ 12 }>
-          <Row justify='between' align='center' nogutter={ true }>
-            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
-              <img src={ jsLogo } style={{ maxWidth: '100%' }} />
-            </Col>
-            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
-              <img src={ reactLogo } style={{ maxWidth: '100%' }} />
-            </Col>
-            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
-              <img src={ reduxLogo } style={{ maxWidth: '100%' }} />
-            </Col>
-            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
-              <img src={ nodeLogo } style={{ maxWidth: '100%' }} />
-            </Col>
-          </Row>
           <Row justify='center' nogutter={ true }>
             <Col>
               <h1>Hi, I'm Conor McGrath</h1>
               <h3>I'm a contract UI developer with a focus in React and React Native.</h3>
               <h4>My expertise is in web and mobile app development, UI / UX design, data visualisation, web animations, wireframing and prototyping.</h4>
+            </Col>
+          </Row>
+          <Row justify='between' align='center' nogutter={ true }>
+            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
+              <img src={ jsLogo } className='tech-logo' />
+            </Col>
+            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
+              <img src={ reactLogo } className='tech-logo' />
+            </Col>
+            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
+              <img src={ reduxLogo } className='tech-logo' />
+            </Col>
+            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
+              <img src={ nodeLogo } className='tech-logo' />
+            </Col>
+            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
+              <img src={ aiLogo } className='tech-logo' />
+            </Col>
+            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
+              <img src={ psLogo } className='tech-logo' />
             </Col>
           </Row>
           <Row>
