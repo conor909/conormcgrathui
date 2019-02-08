@@ -22,6 +22,7 @@ export default (props:IButton) => {
 };
 
 export const Button = styled.button<{ disabled:boolean }>`
+  width: 100%;
   padding: 1rem;
   background: #03a5df;
   opacity: ${ p => p.disabled ? .2 : 1 };
@@ -41,5 +42,6 @@ interface IButton  {
   type:string;
   label:string;
   onClick?:() => void;
-  disabled?:boolean
+  disabled?:boolean;
+  style?:object;
 }

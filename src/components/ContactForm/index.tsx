@@ -94,12 +94,13 @@ export default (props:any) => {
                   onBlur={ handleBlur }
                   error={ errors.message ? errors.message : null }
                 />
-                <div style={{ paddingTop: '1rem' }}>
+                <div style={{ paddingTop: '1rem', width: '100%' }}>
                   <FormElements.Button
+                    style={{ width: '100%' }}
                     type='submit'
                     onClick={ handleSubmit }
                     label='Send'
-                    disabled={ emailStatus === 'sent' ? true : false }
+                    disabled={ isSubmitting || emailStatus === 'sent' ? true : false }
                   />
                 </div>
               </Row>
