@@ -1,12 +1,18 @@
 import React from 'react';
-import { InputWrapper, InputLabel, IInput } from './Input';
+import { InputWrapper, Validation, InputLabel, IInput } from './Input';
 
 export default (props:IInput) => {
+  const { id, label, error, value, onChange } = props;
   return (
     <>
-      <InputLabel>{ props.label }</InputLabel>
-      <InputWrapper>
-        <textarea rows={ 10 } value={ props.value } onChange={ (e) => props.onChange(e.target.value) } />
+      <InputLabel>
+      { label }
+      {
+        error && <Validation>{ error }</Validation>
+      }
+      </InputLabel>
+      <InputWrapper error={ error }>
+        <textarea id={ id } rows={ 10 } value={ value } onChange={ onChange } />
       </InputWrapper>
     </>
   )

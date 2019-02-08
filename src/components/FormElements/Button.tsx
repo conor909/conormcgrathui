@@ -2,9 +2,19 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default (props:IButton) => {
+  
+  function onClick() {
+    if (!props.disabled && props.onClick) {
+      props.onClick()
+    } else {
+      return;
+    }
+  }
+  
   return (
     <Button
-      onClick={ () => !props.disabled && props.onClick() }
+      type={ props.type }
+      onClick={ onClick }
       disabled={ props.disabled || false }>
         { props.label }
     </Button>
@@ -28,7 +38,8 @@ export const Button = styled.button<{ disabled:boolean }>`
 `;
 
 interface IButton  {
+  type:string;
   label:string;
-  onClick:() => void;
+  onClick?:() => void;
   disabled?:boolean
 }

@@ -2,24 +2,31 @@ import React from 'react';
 import styled from 'styled-components';
 
 export default (props:IInput) => {
+  const { type, id, label, error, value, onChange } = props;
   return (
     <>
-      <InputLabel>{ props.label }</InputLabel>
-      <InputWrapper>
-        <input value={ props.value } onChange={ (e) => props.onChange(e.target.value) } />
+      <InputLabel>
+      { label }
+      {
+        error && <Validation>{ error }</Validation>
+      }
+      </InputLabel>
+      <InputWrapper error={ error }>
+        <input id={ id } type={ type } value={ value } onChange={ onChange } />
       </InputWrapper>
     </>
   )
 }
 
-export const InputWrapper = styled.div`
+export const InputWrapper = styled.div<{ error: string | null}>`
+  display: inline-flex;
   width: 100%;
   padding: 0;
   margin: 0;
     & >
       input,
       textarea {
-        border: 1px solid #e1e1e1;
+        border: 1px solid ${ p => p.error ? '#820000' : '#e1e1e1' };
         padding: 0 10px;
         margin: 0;
         width: 100%;
@@ -32,13 +39,23 @@ export const InputWrapper = styled.div`
 `;
 
 export const InputLabel = styled.label`
+  display: inline-block;
   width: 100%;
   padding-top: 1rem;
   padding-bottom: .5rem;
 `;
 
+export const Validation = styled.span`
+  float: right;
+  color: #820000;
+`;
+
 export interface IInput {
-  value:string,
-  onChange:(value:string) => void;
-  label:string
+  type?:string;
+  id:string;
+  value:string;
+  onChange:any;
+  onBlur:any;
+  label:string;
+  error: string | null;
 }
