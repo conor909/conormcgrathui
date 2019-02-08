@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Container, Row, Col } from 'react-grid-system';
 import { Page } from '../components';
+import loading from '../data/images/loading.svg';
 
 export default () => {
   
@@ -29,7 +30,7 @@ export default () => {
       {
         mediumData
           ? <BlogContent key={ Math.random() } articles={ articles } feed={ mediumData.feed }/>
-          : null
+          : <img src={ loading } />
       }
     </Page>
   )

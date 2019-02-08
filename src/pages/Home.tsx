@@ -1,8 +1,8 @@
 import React from 'react';
-import { Page } from '../components';
+import { Page, TechLogosRow } from '../components';
 
 export default () => (
   <Page>
-    home
+    <TechLogosRow />
   </Page>
 );

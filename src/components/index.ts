@@ -3,6 +3,7 @@ import Page from './Page';
 import GridDisplay from './GridDisplay';
 import LoadingImage from './LoadingImage';
 import ContactForm from './ContactForm';
+import TechLogosRow from './TechLogosRow';
 import * as FormElements from './FormElements';
 
 export {
@@ -11,5 +12,6 @@ export {
   Page,
   LoadingImage,
   FormElements,
-  ContactForm
+  ContactForm,
+  TechLogosRow
 }

@@ -7,8 +7,8 @@ export default (props:IInput) => {
     <>
       <InputLabel>
       { label }
-      {
-        error && <Validation>{ error }</Validation>
+      { error &&
+        <Validation>{ error }</Validation>
       }
       </InputLabel>
       <InputWrapper error={ error }>
@@ -18,7 +18,7 @@ export default (props:IInput) => {
   )
 }
 
-export const InputWrapper = styled.div<{ error: string | null}>`
+export const InputWrapper = styled.div<{ error: string | null }>`
   display: inline-flex;
   width: 100%;
   padding: 0;
@@ -39,13 +39,13 @@ export const InputWrapper = styled.div<{ error: string | null}>`
 `;
 
 export const InputLabel = styled.label`
-  display: inline-block;
+  display: block;
   width: 100%;
   padding-top: 1rem;
   padding-bottom: .5rem;
 `;
 
-export const Validation = styled.span`
+export const Validation = styled.div`
   float: right;
   color: #820000;
 `;
