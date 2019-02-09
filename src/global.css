@@ -43,3 +43,12 @@ article figure img {
   display: flex;
   flex-grow: 1;
 }
+
+ul {
+  list-style-type: none;
+}
+
+.blog-nav li {
+  font-size: .7rem;
+  padding: 1rem 0;
+}

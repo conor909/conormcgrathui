@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Container, Row, Col } from 'react-grid-system';
+import { Hidden, Container, Row, Col } from 'react-grid-system';
 import { Page } from '../components';
 import loading from '../data/images/loading.svg';
 
@@ -48,32 +48,48 @@ interface IArticle {
 }
 
 const BlogContent = (props:{ articles:Array<IArticle> | null, feed:any }) => {
+
+  const categoryArrays = props.articles &&
+    props.articles.map((a:IArticle) => (a.categories.map(c => c)))
+    .map((array:Array<string>) => array.map(i => i))
+  
+  console.log(categoryArrays)
   
   return(
     <Container>
       <Row nogutter={ true }>
-        <Col lg={ 3 } md={ 4 } sm={ 12 } xs={ 12 }>
-          <Row nogutter={ true } justify='center'>
-            <img src={ props.feed.image } style={{ borderRadius: '50%' }} />
-          </Row>
-          <Row nogutter={ true } justify='center'>
-            <span style={{ fontSize: '0.8rem', textAlign: 'center', paddingTop: '1rem' }}>
-              Conor McGrath <br />on <a href='https://medium.com/@conor909' target='_blank'>Medium</a>
-            </span>
-          </Row>
-        </Col>
+        <Hidden xs sm>
+          <Col lg={ 3 } md={ 4 } sm={ 12 } xs={ 12 }>
+            <Row nogutter={ true } justify='center'>
+              <img src={ props.feed.image } style={{ borderRadius: '50%' }} />
+            </Row>
+            <Row nogutter={ true } justify='center'>
+              <span style={{ fontSize: '0.8rem', textAlign: 'center', paddingTop: '1rem' }}>
+                Conor McGrath <br />on <a href='https://medium.com/@conor909' target='_blank'>Medium</a>
+              </span>
+            </Row>
+            {
+              props.articles && props.articles.length > 0 &&
+              <Row>
+                <ul>
+                  {/*
+                    uniqueCategories.map(cat => (<li>{ cat }</li>))
+                  */}
+                </ul>
+              </Row>
+            }
+          </Col>
+        </Hidden>
         <Col lg={ 9 } md={ 8 } sm={ 12 } xs={ 12 }>
           <Row nogutter={ true }>
               {
                 !!props.articles &&
                   props.articles.map((article:any) => (
-                    <article role="article" style={{ padding: '1rem 0 2rem', borderBottom: '1px solid #e5e4e5' }}>
+                    <article role="article" style={{ margin: '0 0 2rem', borderBottom: '1px solid #afafaf' }} id={ article.title }>
                       <Row nogutter={ true }>
-                        <Col lg={ 10 } md={ 11 } sm={ 11 } xs={ 10 }>
-                          <h3>{ article.title }</h3>
-                        </Col>
-                        <Col lg={ 2 } md={ 1 } sm={ 1 } xs={ 2 }>
-                          <time>{ new Date(article.pubDate).toLocaleDateString() }</time>
+                        <Col>
+                          <small style={{ color: 'darkgrey', float: 'right' }}><time>{ new Date(article.pubDate).toLocaleDateString() }</time></small>
+                          <h3 style={{ margin: 0 }}>{ article.title }</h3>
                         </Col>
                         <div key={ Math.random() } dangerouslySetInnerHTML={{ __html: article ? article.content : '' }} />
                       </Row>

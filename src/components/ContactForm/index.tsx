@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import debounce from 'lodash.debounce';
+//import debounce from 'lodash.debounce';
 import { Row } from 'react-grid-system';
 import { FormElements } from '../../components';
 
@@ -57,7 +57,7 @@ export default (props:any) => {
           } = props;
           return(
             <form onSubmit={ handleSubmit }>
-              <Row justify='center' nogutter={ true }>
+              <Row nogutter={ true }>
                 <FormElements.Input
                   id='name'
                   type='text'
