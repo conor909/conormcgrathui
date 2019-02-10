@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
+//import debounce from 'lodash.debounce';
 import { Row } from 'react-grid-system';
 import { FormElements } from '../../components';
 
@@ -30,15 +31,13 @@ export default (props:any) => {
     <Formik
       initialValues={{ email: '', name: '', phone: '', message: '' }}
       onSubmit={(values) => {
-        setTimeout(() => {
-          sendEmail(values);
-          setEmailStatus('sending');
-        }, 500);
+        setEmailStatus('sending');
+        sendEmail(values);
       }}
       validationSchema={
         Yup.object().shape({
           name: Yup.string().required('Enter your name'),
-          email: Yup.string().email().required('Enter a valid email'),
+          email: Yup.string().email('Email must be valid').required('Enter your email'),
           phone: Yup.string(),
           message: Yup.string().required('Enter a message')
         })
@@ -58,7 +57,7 @@ export default (props:any) => {
           } = props;
           return(
             <form onSubmit={ handleSubmit }>
-              <Row justify='center' nogutter={ true }>
+              <Row nogutter={ true }>
                 <FormElements.Input
                   id='name'
                   type='text'
@@ -95,12 +94,13 @@ export default (props:any) => {
                   onBlur={ handleBlur }
                   error={ errors.message ? errors.message : null }
                 />
-                <div style={{ paddingTop: '1rem' }}>
+                <div style={{ paddingTop: '1rem', width: '100%' }}>
                   <FormElements.Button
+                    style={{ width: '100%' }}
                     type='submit'
                     onClick={ handleSubmit }
                     label='Send'
-                    disabled={ emailStatus === 'sent' ? true : false }
+                    disabled={ isSubmitting || emailStatus === 'sent' ? true : false }
                   />
                 </div>
               </Row>

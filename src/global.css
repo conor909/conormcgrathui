@@ -38,3 +38,17 @@ article figure img {
   width: 100%;
   height: auto;
 }
+
+.tech-logo {
+  display: flex;
+  flex-grow: 1;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.blog-nav li {
+  font-size: .7rem;
+  padding: 1rem 0;
+}

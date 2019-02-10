@@ -1,10 +1,6 @@
 import React from 'react';
 import { Container, Row, Col } from 'react-grid-system';
-import { Page } from '../components';
-import jsLogo from '../data/images/tech-logos/js.svg';
-import reactLogo from '../data/images/tech-logos/react.svg';
-import reduxLogo from '../data/images/tech-logos/redux.svg';
-import nodeLogo from '../data/images/tech-logos/node.svg';
+import { Page, TechLogosRow } from '../components';
 
 export default (props:any) => (
   <Page>
@@ -21,20 +17,6 @@ export default (props:any) => (
           </Row>
         </Col>
         <Col lg={ 9 } md={ 8 } sm={ 12 } xs={ 12 }>
-          <Row justify='between' align='center' nogutter={ true }>
-            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
-              <img src={ jsLogo } style={{ maxWidth: '100%' }} />
-            </Col>
-            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
-              <img src={ reactLogo } style={{ maxWidth: '100%' }} />
-            </Col>
-            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
-              <img src={ reduxLogo } style={{ maxWidth: '100%' }} />
-            </Col>
-            <Col lg={ 2 } md={ 2 } sm={ 2 } xs={ 2 }>
-              <img src={ nodeLogo } style={{ maxWidth: '100%' }} />
-            </Col>
-          </Row>
           <Row justify='center' nogutter={ true }>
             <Col>
               <h1>Hi, I'm Conor McGrath</h1>
@@ -42,6 +24,7 @@ export default (props:any) => (
               <h4>My expertise is in web and mobile app development, UI / UX design, data visualisation, web animations, wireframing and prototyping.</h4>
             </Col>
           </Row>
+          <TechLogosRow />
           <Row>
             {
               blurbs.map(b => (<BlurbBox title={ b.title } blurb={ b.blurb } />))
@@ -51,7 +34,7 @@ export default (props:any) => (
       </Row>
     </Container>
   </Page>
-);
+)
 
 const BlurbBox = (props:{ title:string, blurb:string }) => (
   <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 } style={{ borderBottom: '1px solid #e5e4e5' }}>

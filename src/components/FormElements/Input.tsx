@@ -6,10 +6,7 @@ export default (props:IInput) => {
   return (
     <>
       <InputLabel>
-      { label }
-      {
-        error && <Validation>{ error }</Validation>
-      }
+        { label } { error && <Validation>{ error }</Validation> }
       </InputLabel>
       <InputWrapper error={ error }>
         <input id={ id } type={ type } value={ value } onChange={ onChange } />
@@ -18,15 +15,15 @@ export default (props:IInput) => {
   )
 }
 
-export const InputWrapper = styled.div<{ error: string | null}>`
-  display: inline-flex;
+export const InputWrapper = styled.div<{ error: string | null }>`
   width: 100%;
   padding: 0;
   margin: 0;
     & >
       input,
       textarea {
-        border: 1px solid ${ p => p.error ? '#820000' : '#e1e1e1' };
+        font-size: .8rem;
+        border: 1px solid #e1e1e1;
         padding: 0 10px;
         margin: 0;
         width: 100%;
@@ -39,14 +36,14 @@ export const InputWrapper = styled.div<{ error: string | null}>`
 `;
 
 export const InputLabel = styled.label`
-  display: inline-block;
   width: 100%;
   padding-top: 1rem;
   padding-bottom: .5rem;
 `;
 
 export const Validation = styled.span`
-  float: right;
+  position: absolute;
+  right: 15px;
   color: #820000;
 `;
 
@@ -57,5 +54,5 @@ export interface IInput {
   onChange:any;
   onBlur:any;
   label:string;
-  error: string | null;
+  error:string | null;
 }

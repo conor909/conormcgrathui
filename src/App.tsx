@@ -16,7 +16,7 @@ export default () => {
         <React.Fragment>
           <Navbar />
           <Switch>
-            <Route path="/" exact component={ Home } />
+            <Route path="/" exact component={ About } />
             <Route path="/about" exact component={ About } />
             <Route path="/work/:category" exact component={ Work } />
             <Route path="/contact" exact component={ Contact } />
