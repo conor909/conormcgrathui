@@ -17,7 +17,9 @@ app.post('/api/test-post', (req, res) => {
 });
 
 app.post('/api/send-email', (req, res) => {
+  
   // https://app.sendgrid.com/
+  
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
     to: 'conor909@gmail.com',
@@ -32,10 +34,10 @@ app.post('/api/send-email', (req, res) => {
 
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
-  app.use(express.static(path.join(__dirname, './public/build')));
+  app.use(express.static(path.join(__dirname, 'public')));
   // Handle React routing, return all requests to React app
   app.get('*', function(req, res) {
-    res.sendFile(path.join(__dirname, './public/build', 'index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
   });
 }
 
