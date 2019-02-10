@@ -1,41 +1,17 @@
 import React from 'react';
-import { LoadingImage } from '../../components';
 
-export default class extends React.Component<IProps, any> {
-  
-  state = {
-    imageStatus: 'loading'
-  }
-  
-  handleImageLoaded = () => {
-    this.setState({ imageStatus: "loaded" });
-  }
-
-  handleImageErrored = () => {
-    this.setState({ imageStatus: "failed to load" });
-  }
-  
-  render() {
-    const { imageStatus } = this.state;
-    return (
-      <section onClick={ () => this.props.onClickedItem(this.props.item) }>
-        <img
-          src={ this.props.item.feature }
-          onLoad={ this.handleImageLoaded }
-          onError={ this.handleImageErrored }
-          style={{
-            width: '100%',
-            height: 'auto',
-            display: imageStatus === 'loading' ? 'none' : 'block',
-            padding: '3rem'
-          }} />
-        {
-          imageStatus === 'loading' && 
-            <LoadingImage />
-        }
-      </section>
-    )
-  }
+export default (props:IProps) => {
+  return(
+    <section onClick={ () => props.onSelectItem(props.item) }>
+      <img
+        src={ props.item.feature }
+        style={{
+          width: '100%',
+          height: 'auto',
+          padding: '2rem'
+        }} />
+    </section>
+  )
 }
 
 export interface IGridItem {
@@ -55,6 +31,6 @@ export interface IGridItem {
 }
 
 interface IProps {
-  onClickedItem(item:IGridItem):void;
+  onSelectItem:(item:IGridItem)=>void;
   item:IGridItem;
 }

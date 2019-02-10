@@ -1,4 +1,5 @@
 import React from 'react';
+import { Motion, spring, presets } from 'react-motion';
 import { withRouter, matchPath } from 'react-router';
 import { Visible, Hidden, Container, Row, Col } from 'react-grid-system';
 import DesktopNav from './DesktopNav';
@@ -7,9 +8,9 @@ import WorkSubNav from './WorkSubNav';
 import styled from 'styled-components';
 
 export default withRouter((props:any):any => {
-  
-  // const x = matchPath(props.location.pathname, { path: '/work/', exact: false, strict: false });
-  // console.log('match: ',x);
+
+  const isShowingWorkRoute = matchPath(props.location.pathname, { path: '/work/:category', exact: false });
+  const subNavTopPosition = isShowingWorkRoute ? 50 : 0;
   
   return(
     <>
@@ -30,10 +31,9 @@ export default withRouter((props:any):any => {
           </Row>
         </Container>
       </Wrapper>
-      {
-        matchPath(props.location.pathname, { path: '/work/:category', exact: false }) &&
-          <WorkSubNav { ...props } />
-      }
+      <Motion defaultStyle={{ top: 0 }} style={{ top: spring(subNavTopPosition, { stiffness: 500, damping: 50 }) }}>
+        { interpolatingStyle => <WorkSubNav style={ interpolatingStyle } { ...props } /> }
+      </Motion>
     </>
   )
 });
@@ -52,7 +52,7 @@ export const Wrapper = styled.nav`
   border-bottom: 1px solid #e1e1e1;
   padding: 0 1rem;
   background: #f6f6f6;
-  z-index: 2
+  z-index: 2;
 `;
 
 const LeftNav = styled.div`

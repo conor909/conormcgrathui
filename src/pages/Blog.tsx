@@ -52,7 +52,6 @@ const BlogContent = (props:{ articles:Array<IArticle> | null, feed:any }) => {
   const categoryArrays = props.articles &&
     props.articles.map((a:IArticle) => (a.categories.map(c => c)))
     .map((array:Array<string>) => array.map(i => i))
-  
   console.log(categoryArrays)
   
   return(
@@ -88,7 +87,8 @@ const BlogContent = (props:{ articles:Array<IArticle> | null, feed:any }) => {
                     <article role="article" style={{ margin: '0 0 2rem', borderBottom: '1px solid #afafaf' }} id={ article.title }>
                       <Row nogutter={ true }>
                         <Col>
-                          <small style={{ color: 'darkgrey', float: 'right' }}><time>{ new Date(article.pubDate).toLocaleDateString() }</time></small>
+                          <small style={{ color: '#727272', float: 'right' }}>
+                          <time>{ new Date(article.pubDate).toLocaleDateString() }</time></small>
                           <h3 style={{ margin: 0 }}>{ article.title }</h3>
                         </Col>
                         <div key={ Math.random() } dangerouslySetInnerHTML={{ __html: article ? article.content : '' }} />

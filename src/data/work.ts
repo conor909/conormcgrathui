@@ -20,7 +20,7 @@ import advisian2 from './images/feat_worleys2.jpg';
 
 export default () => ([
 	{
-    id: 7,
+    id: 8,
     ref: 'advisian',
     route: 'advisian',
     title: 'Advisian Digital',

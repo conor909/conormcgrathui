@@ -5,7 +5,7 @@ import { Wrapper } from '../Navbar';
 
 export default (props:any) => {
   return (
-    <SubNavWrapper>
+    <SubNavWrapper topPosition={ props.style.top }>
       <Container fluid style={{ width: '100%', padding: 0 }}>
         <Row justify='end'>
           <Col
@@ -30,5 +30,6 @@ export default (props:any) => {
 }
 
 const SubNavWrapper = styled(props => <Wrapper { ...props } />)`
-  top: 50px !important;
+  z-index: 1 !important;
+  top: ${ p => p.topPosition }px !important;
 `;
