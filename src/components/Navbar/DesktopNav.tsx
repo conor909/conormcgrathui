@@ -5,12 +5,14 @@ export default (props:any) => {
   return (
     <Col>
       <Row>
-        <Col onClick={ () => props.history.push('/about' )}>
-          about
-        </Col>
-        <Col onClick={ () => props.history.push('/clients' )}>
-          clients
-        </Col>
+        {/*
+          <Col onClick={ () => props.history.push('/clients' )}>
+            clients
+          </Col>
+          <Col onClick={ () => props.history.push('/about' )}>
+            about
+          </Col>
+        */}
         <Col onClick={ () => props.history.push('/work/all' )}>
           work
         </Col>
