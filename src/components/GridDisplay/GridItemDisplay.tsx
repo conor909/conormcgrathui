@@ -31,11 +31,15 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
                       <h1 style={{ ...interpolatingStyles[0], width: '100%' }}>
                         { props.item.title }
                       </h1>
-                      <p style={{ ...interpolatingStyles[1], width: '100%' }}>
-                        { props.item.desc }
-                      </p>
+                      {
+                        props.item.desc.map(paragraph => 
+                          <p key={ Math.random() } style={{ ...interpolatingStyles[1], width: '100%' }}>
+                            { paragraph }
+                          </p>
+                        )
+                      }
                       <h2
-                        style={{ ...interpolatingStyles[2], width: '100%' }}
+                        style={{ ...interpolatingStyles[2], width: '100%', background: 'grey', padding: '5px', color: 'white' }}
                         onClick={ props.onClose }>
                         ←	back
                       </h2>

@@ -52,7 +52,7 @@ const BlogContent = (props:{ articles:Array<IArticle> | null, feed:any }) => {
   const categoryArrays = props.articles &&
     props.articles.map((a:IArticle) => (a.categories.map(c => c)))
     .map((array:Array<string>) => array.map(i => i))
-  console.log(categoryArrays)
+  // console.log(categoryArrays)
   
   return(
     <Container>

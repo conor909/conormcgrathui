@@ -5,6 +5,7 @@
   "private": true,
   "dependencies": {
     "@sendgrid/mail": "^6.3.1",
+    "@types/gsap": "^1.20.1",
     "@types/jest": "23.3.13",
     "@types/lodash.debounce": "^4.0.4",
     "@types/node": "10.12.21",
@@ -19,6 +20,7 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.4",
     "formik": "^1.4.3",
+    "gsap": "^2.0.2",
     "lodash.debounce": "^4.0.8",
     "react": "16.8.0",
     "react-dom": "16.8.0",

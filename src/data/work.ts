@@ -101,7 +101,7 @@ export default () => ([
     title: 'Style Me Girl',
     client: 'Frenzoo, Hong Kong',
     skills: ['UI', 'UX', 'Illustration', 'Web Design', 'Web Development'],
-    desc: ["I designed the game mechanics as well as the UI & UX and illustrated all icons for Frenzoo’s first mobile game, which gained them noticeable presence in the gaming industry.", "It received over 1 million downloads and became the No.1 RPG on the Apple App Store in the U.S., No.1 app on the worldwide Amazon market and now has over 2 million downloads worldwide."],
+    desc: ["I designed the branding and game mechanics, as well as the UI & UX and graphics for Frenzoo’s first mobile game.", "It gained them noticeable presence in the gaming industry and received over 1 million downloads and became the No.1 RPG on the Apple App Store in the U.S., No.1 app on the worldwide Amazon market and now has over 2 million downloads worldwide."],
     color: '#750047',
     fontColor: '#fff',
     feature: meGirl,
