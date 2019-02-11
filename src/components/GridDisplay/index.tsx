@@ -64,7 +64,6 @@ const GridItem = React.memo(
     const itemRef = useRef(null);
     
     useEffect(() => {
-      console.log(props.location)
       TweenLite.to(itemRef.current, .5, { opacity: 1, paddingBottom: 0 }).delay( props.index / 10 );
     }, [ props.location ]);
     

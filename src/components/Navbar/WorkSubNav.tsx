@@ -1,8 +1,10 @@
 import React, { useEffect, useRef } from 'react';
+import { matchPath } from 'react-router-dom';
 import { Container, Row, Col } from 'react-grid-system';
 import { TimelineLite, Power4 } from "gsap";
 import styled from 'styled-components';
 import { Wrapper } from '../Navbar';
+import { NavItem } from './index';
 
 function SubNav (props:any) {
 
@@ -23,7 +25,6 @@ function SubNav (props:any) {
   }, [ props.isOpen ]);
 
   function clickNav(route:string) {
-    console.log(route, props.location.pathname)
     if (route === props.location.pathname) {
       return;
     }
@@ -39,18 +40,24 @@ function SubNav (props:any) {
           <Row justify='end'>
             <Col
               lg={ 2 } sm={ 4 } xs={ 4 }
-              onClick={ () => clickNav('/work/development' )}>
-                development
+              onClick={ () => clickNav('/work/development')}>
+                <NavItem active={ props.location.pathname ===  '/work/development' }>
+                  development
+                </NavItem>
             </Col>
             <Col
               lg={ 2 } sm={ 4 } xs={ 4 }
-              onClick={ () => clickNav('/work/design' )}>
-                design
+              onClick={ () => clickNav('/work/design')}>
+                <NavItem active={ props.location.pathname ===  '/work/design' }>
+                  design
+                </NavItem>
             </Col>
             <Col
               lg={ 2 } sm={ 4 } xs={ 4 }
-              onClick={ () => clickNav('/work/javascript' )}>
-                javascript
+              onClick={ () => clickNav('/work/javascript')}>
+                <NavItem active={ props.location.pathname ===  '/work/javascript' }>
+                  javascript
+                </NavItem>
             </Col>
           </Row>
         </Container>

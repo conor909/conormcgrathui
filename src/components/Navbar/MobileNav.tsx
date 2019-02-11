@@ -34,19 +34,19 @@ export default (props:any) => {
           </Row>
         */}
         <Row onClick={ () => clickNav('/work/all' )}>
-          <NavItem>
+          <MobileNavItem>
             work
-          </NavItem>
+          </MobileNavItem>
         </Row>
         <Row onClick={ () => clickNav('/contact' )}>
-          <NavItem>
+          <MobileNavItem>
             contact
-          </NavItem>
+          </MobileNavItem>
         </Row>
         <Row onClick={ () => clickNav('/blog' )}>
-          <NavItem>
+          <MobileNavItem>
             blog
-          </NavItem>
+          </MobileNavItem>
         </Row>
       </Col>
     </Wrapper>
@@ -67,7 +67,7 @@ const Wrapper = styled.nav<{ width:number }>`
   overflow-y: scroll;
 `;
 
-const NavItem = styled.div`
+const MobileNavItem = styled.div`
   cursor: pointer;
   font-size: 2rem;
   padding: 1rem;

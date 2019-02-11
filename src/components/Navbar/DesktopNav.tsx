@@ -1,6 +1,7 @@
 import React from 'react';
+import { matchPath } from 'react-router-dom';
 import { Row, Col } from 'react-grid-system';
-import styled from 'styled-components';
+import { NavItem } from './index';
 
 export default (props:any) => {
 
@@ -14,11 +15,11 @@ export default (props:any) => {
     }
   }
 
-  console.log(props.match)
+  console.log('MATCH: ',matchPath(props.location.pathname, { path: '/work/:type' }))
 
   return (
     <Col>
-      <Row>
+      <Row align='end' justify='between'>
         {/*
           <Col onClick={ () => clickNav('/clients' )}>
             clients
@@ -27,26 +28,25 @@ export default (props:any) => {
             about
           </Col>
         */}
-        <Col onClick={ () => clickNav('/work/all' )}>
-          <NavItem active={ props.location.pathname === '/work/all'}>
-            work
+       
+          <NavItem
+            active={ !!matchPath(props.location.pathname, { path: '/work/:type' }) }
+            onClick={ () => clickNav('/work/all' )}>
+              work
           </NavItem>
-        </Col>
-        <Col onClick={ () => clickNav('/contact' )}>
-          <NavItem active={ props.location.pathname === '/contact'}>
-            contact
+      
+          <NavItem
+            onClick={ () => clickNav('/contact' )}
+            active={ !!matchPath(props.location.pathname, { path: '/contact' }) }>
+              contact
           </NavItem>
-        </Col>
-        <Col onClick={ () => clickNav('/blog' )}>
-          <NavItem active={ props.location.pathname === '/blog'}>
-            blog
+        
+          <NavItem
+            active={ !!matchPath(props.location.pathname, { path: '/blog' }) }
+            onClick={ () => clickNav('/blog' )}>
+              blog
           </NavItem>
-        </Col>
       </Row>
     </Col>
   )
 }
-
-const NavItem = styled.div<{ active:boolean }>`
-  color: ${ p => p.active ? '#c1c1c1' : 'inherit'}
-`;

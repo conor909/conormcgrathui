@@ -73,3 +73,13 @@ const RightNav = styled.div`
   justify-content: flex-end;
   flex: 1;
 `;
+
+export const NavItem = styled.div<{ active:boolean }>`
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  height: 50px;
+  cursor: pointer;
+  color: ${ p => p.active ? 'lightgrey' : 'inherit' };
+`;
