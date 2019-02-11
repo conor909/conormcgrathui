@@ -4,14 +4,11 @@ import styled from 'styled-components';
 import './global.css';
 import { Home, About, Work, Contact, Blog } from './pages';
 import { Navbar } from './components';
-import { useNavbarState } from './hooks';
 
 export default () => {
-  
-  const navbarHeight = useNavbarState().navBarHeight;
-  
+
   return (
-    <AppWrap navbarHeight={ navbarHeight }>
+    <AppWrap>
       <Router>
         <React.Fragment>
           <Navbar />
@@ -28,9 +25,9 @@ export default () => {
   );
 }
 
-const AppWrap = styled.div<{ navbarHeight:number }>`
+const AppWrap = styled.div`
   display: flex;
   flex-direction: column;
-  padding-top: ${ p => p.navbarHeight }px;
+  padding-top: 50px;
   flex: 1;
 `;
