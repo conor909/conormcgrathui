@@ -22,7 +22,7 @@ export default () => ([
 	{
     id: 8,
     ref: 'advisian',
-    route: 'advisian',
+    niceName: 'advisian',
     title: 'Advisian Digital',
     client: 'Advisian',
     skills: ['Animation', 'React'],
@@ -37,7 +37,7 @@ export default () => ([
   {
     id: 1,
     ref: 'kilaBusinessCards',
-    route: 'kila',
+    niceName: 'kila',
     title: 'Kila',
     client: 'Kila Bar',
     skills: [ 'Graphic Design', 'Print' ],
@@ -52,7 +52,7 @@ export default () => ([
   {
     id: 2,
     ref: 'marklandInfrastructure',
-    route: 'markland',
+    niceName: 'markland',
     title: 'Markland Infrastructure',
     client: 'Markland Asia Infrastructure, Hong Kong',
     skills: ['Web Design', 'Web Development'],
@@ -67,7 +67,7 @@ export default () => ([
   {
     id: 3,
     ref: 'peterBlake',
-    route: 'peter-blake',
+    niceName: 'peter-blake',
     title: 'Peter Blake',
     client: 'The Cat Street Gallery, Hong Kong',
     skills: ['Graphic Design', 'Print'],
@@ -82,7 +82,7 @@ export default () => ([
   {
     id: 4,
     ref: 'rayne',
-    route: 'rayne',
+    niceName: 'rayne',
     title: 'Live Lounge',
     client: 'Rayne',
     skills: ['Graphic Design', 'Print'],
@@ -97,7 +97,7 @@ export default () => ([
   {
     id: 5,
     ref: 'meGirl',
-    route: 'me-girl',
+    niceName: 'me-girl',
     title: 'Style Me Girl',
     client: 'Frenzoo, Hong Kong',
     skills: ['UI', 'UX', 'Illustration', 'Web Design', 'Web Development'],
@@ -112,7 +112,7 @@ export default () => ([
   {
     id: 6,
     ref: 'theWellnessNomad',
-    route: 'the-wellness-nomad',
+    niceName: 'the-wellness-nomad',
     title: 'The Wellness Nomad',
     client: 'The Wellness Nomad',
     skills: ['Web Development'],
@@ -127,7 +127,7 @@ export default () => ([
   {
     id: 7,
     ref: 'cube19',
-    route: 'cube19',
+    niceName: 'cube19',
     title: 'cube19',
     client: null,
     skills: ['MVC', 'Data Visualisation', 'UI', 'UX', 'backbone', 'underscore', 'jQuery', 'React'],

@@ -73,7 +73,7 @@ const NavItem = styled.div`
   padding: 1rem;
   width: 100%;
   border-bottom: 1px solid #e1e1e1;
-  &:hover {
+  &:active {
     background: #fff
   }
 `;

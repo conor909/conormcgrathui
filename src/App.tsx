@@ -15,7 +15,7 @@ export default () => {
           <Switch>
             <Route path="/" exact component={ About } />
             <Route path="/about" exact component={ About } />
-            <Route path="/work/:category" exact component={ Work } />
+            <Route path="/work/:category" component={ Work } />
             <Route path="/contact" exact component={ Contact } />
             <Route path="/blog" exact component={ Blog } />
           </Switch>

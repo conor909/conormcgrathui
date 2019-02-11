@@ -39,6 +39,11 @@ article figure img {
   height: auto;
 }
 
+img {
+  z-index: -1;
+  position: relative;
+}
+
 .tech-logo {
   display: flex;
   flex-grow: 1;
