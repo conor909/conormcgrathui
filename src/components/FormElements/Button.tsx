@@ -24,14 +24,14 @@ export default (props:IButton) => {
 export const Button = styled.button<{ disabled:boolean }>`
   width: 100%;
   padding: 1rem;
-  background: #03a5df;
+  background: darkgrey;
   opacity: ${ p => p.disabled ? .2 : 1 };
   color: #fff;
   font-size: 1rem;
   border: 0;
   cursor: ${ p => p.disabled ? 'inherit' : 'pointer' };
     &:hover {
-      background: ${ p => p.disabled ? '#03a5df' : '#0283b1' };
+      background: ${ p => p.disabled ? '#03a5df' : '#7d7c7c' };
     }
     &:focus {
       outline: 0;

@@ -18,7 +18,7 @@ export default withRouter((props:any):any => {
       <Wrapper width={ width } >
         <Container fluid style={{ width: '100%' }}>
           <Row>
-            <LeftNav onClick={ () => props.history.push('/' )}>
+            <LeftNav style={{ cursor: 'pointer' }} onClick={ () => props.history.push('/' )}>
               conor mcgrath ui | ux
             </LeftNav>
             <RightNav>
