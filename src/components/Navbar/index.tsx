@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Motion, spring, presets } from 'react-motion';
 import { withRouter, matchPath } from 'react-router';
 import { Visible, Hidden, Container, Row, Col } from 'react-grid-system';
@@ -9,8 +9,11 @@ import styled from 'styled-components';
 
 export default withRouter((props:any):any => {
 
+  const [ isSidebarOpen, setIsSidebarOpen ] = useState<boolean>(false);
   const isShowingWorkRoute = matchPath(props.location.pathname, { path: '/work/:category', exact: false });
   const subNavTopPosition = isShowingWorkRoute ? 50 : 0;
+
+  console.log('isSidebarOpen: ',isSidebarOpen)
   
   return(
     <>
@@ -25,7 +28,9 @@ export default withRouter((props:any):any => {
                 <DesktopNav { ...props } />
               </Hidden>
               <Visible md sm xs>
-                <MobileNav { ...props } />
+              <Col>
+                <div onClick={ () => setIsSidebarOpen(!isSidebarOpen) }>=</div>
+              </Col>
               </Visible>
             </RightNav>
           </Row>
@@ -34,6 +39,11 @@ export default withRouter((props:any):any => {
       <Motion defaultStyle={{ top: 0 }} style={{ top: spring(subNavTopPosition, { stiffness: 500, damping: 50 }) }}>
         { interpolatingStyle => <WorkSubNav style={ interpolatingStyle } { ...props } /> }
       </Motion>
+      {/*
+        <Motion defaultStyle={{ right: setIsSidebarOpen ? window.innerWidth / 1.2 : 0 }} style={{ right: spring(isSidebarOpen ? window.innerWidth : 0, { stiffness: 500, damping: 50 }) }}>
+          { interpolatingStyle => <MobileNav style={ interpolatingStyle } { ...props } /> }
+        </Motion>
+      */}
     </>
   )
 });

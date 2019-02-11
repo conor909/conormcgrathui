@@ -32,4 +32,6 @@ export default (props:any) => {
 const SubNavWrapper = styled(props => <Wrapper { ...props } />)`
   z-index: 1 !important;
   top: ${ p => p.topPosition }px !important;
+  background: grey !important;
+  color: #fff !important;
 `;

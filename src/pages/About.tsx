@@ -8,12 +8,7 @@ export default (props:any) => (
       <Row nogutter={ true }>
         <Col lg={ 3 } md={ 4 } sm={ 12 } xs={ 12 }>
           <Row justify='center' nogutter={ true }>
-            <img src="https://cdn-images-1.medium.com/fit/c/150/150/1*qpYX-4I8X_4XTs5_tr7dJQ.jpeg" style={{ borderRadius: '50%' }} />
-          </Row>
-          <Row justify='center' nogutter={ true }>
-            <p style={{ fontSize: '0.8rem', textAlign: 'center', paddingTop: '1rem' }}>
-              <a href='http://www.github.com/conor909' target='_blank'>github.com/conor909</a>
-            </p>
+            <img src="https://cdn-images-1.medium.com/fit/c/150/150/1*9Hc9iYZTCc2Y_funVUgjUQ.jpeg" style={{ borderRadius: '50%' }} />
           </Row>
         </Col>
         <Col lg={ 9 } md={ 8 } sm={ 12 } xs={ 12 }>
@@ -27,7 +22,7 @@ export default (props:any) => (
           <TechLogosRow />
           <Row>
             {
-              blurbs.map(b => (<BlurbBox title={ b.title } blurb={ b.blurb } />))
+              blurbs.map(b => (<BlurbBox title={ b.title } blurb={ b.blurb } key={ Math.random() }/>))
             }
           </Row>
         </Col>
@@ -37,7 +32,7 @@ export default (props:any) => (
 )
 
 const BlurbBox = (props:{ title:string, blurb:string }) => (
-  <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 } style={{ borderBottom: '1px solid #e5e4e5' }}>
+  <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 } style={{ borderBottom: '1px solid #afafaf', marginBottom: '1rem' }}>
     <h3>{ props.title }</h3>
     <p>
       { props.blurb }
