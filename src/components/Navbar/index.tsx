@@ -35,7 +35,7 @@ export default withRouter((props:any):any => {
         </Container>
       </Wrapper>
       <WorkSubNav isOpen={ isShowingWorkRoute } { ...props } />
-      <Hidden xl lg md>
+      <Hidden xl lg>
         <MobileNav isOpen={ isMobileMenuOpen } { ...props } onClose={ () => setIsMobileMenuOpen(false) } />
       </Hidden>
     </>
@@ -77,7 +77,7 @@ const RightNav = styled.div`
 export const NavItem = styled.div<{ active:boolean }>`
   display: flex;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: center;
   flex: 1;
   height: 50px;
   cursor: pointer;

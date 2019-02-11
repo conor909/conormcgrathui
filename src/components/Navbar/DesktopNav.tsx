@@ -20,32 +20,38 @@ export default (props:any) => {
   return (
     <Col>
       <Row align='end' justify='between'>
-        {/*
-          <Col onClick={ () => clickNav('/clients' )}>
-            clients
-          </Col>
-          <Col onClick={ () => clickNav('/about' )}>
-            about
-          </Col>
-        */}
-       
-          <NavItem
-            active={ !!matchPath(props.location.pathname, { path: '/work/:type' }) }
-            onClick={ () => clickNav('/work/all' )}>
-              work
-          </NavItem>
-      
-          <NavItem
-            onClick={ () => clickNav('/contact' )}
-            active={ !!matchPath(props.location.pathname, { path: '/contact' }) }>
-              contact
-          </NavItem>
         
-          <NavItem
-            active={ !!matchPath(props.location.pathname, { path: '/blog' }) }
-            onClick={ () => clickNav('/blog' )}>
-              blog
-          </NavItem>
+        {/*
+        <NavItem
+          active={ !!matchPath(props.location.pathname, { path: '/about' }) }
+          onClick={ () => clickNav('/about' )}>
+            about
+        </NavItem>
+        
+        <NavItem
+          active={ !!matchPath(props.location.pathname, { path: '/clients' }) }
+          onClick={ () => clickNav('/clients' )}>
+            clients
+        </NavItem>
+        */}
+      
+        <NavItem
+          active={ !!matchPath(props.location.pathname, { path: '/work/:type' }) }
+          onClick={ () => clickNav('/work/all' )}>
+            work
+        </NavItem>
+    
+        <NavItem
+          onClick={ () => clickNav('/contact' )}
+          active={ !!matchPath(props.location.pathname, { path: '/contact' }) }>
+            contact
+        </NavItem>
+      
+        <NavItem
+          active={ !!matchPath(props.location.pathname, { path: '/blog' }) }
+          onClick={ () => clickNav('/blog' )}>
+            blog
+        </NavItem>
       </Row>
     </Col>
   )

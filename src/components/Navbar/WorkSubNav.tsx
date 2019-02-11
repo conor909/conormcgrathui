@@ -13,12 +13,12 @@ function SubNav (props:any) {
   useEffect(() => {
     if (props.isOpen) {
       new TimelineLite()
-        .set(subNavRef.current, { position: 'absoulte' })
+        .set(subNavRef.current, { position: 'absolute' })
         .to(subNavRef.current, .4, { top: 50, ease: Power4.easeOut })
         .set(subNavRef.current, { position: 'fixed' })
     } else {
       new TimelineLite()
-        .set(subNavRef.current, { position: 'absoulte' })
+        .set(subNavRef.current, { position: 'absolute' })
         .to(subNavRef.current, .4, { top: 0, ease: Power4.easeOut })
         .set(subNavRef.current, { position: 'fixed' })
     }
