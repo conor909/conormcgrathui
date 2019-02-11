@@ -58,7 +58,7 @@ const Wrapper = styled.nav<{ width:number }>`
   display: block;
   position: absolute;
   top: 50px;
-  right: ${ window.innerWidth }px;
+  right: ${ p => -p.width }px;
   height: ${ window.innerHeight }px;
   border-left: 1px solid #e1e1e1;
   width: ${ p => p.width }px;
