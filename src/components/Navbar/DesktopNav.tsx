@@ -1,5 +1,6 @@
 import React from 'react';
 import { Row, Col } from 'react-grid-system';
+import styled from 'styled-components';
 
 export default (props:any) => {
 
@@ -13,6 +14,8 @@ export default (props:any) => {
     }
   }
 
+  console.log(props.match)
+
   return (
     <Col>
       <Row>
@@ -25,15 +28,25 @@ export default (props:any) => {
           </Col>
         */}
         <Col onClick={ () => clickNav('/work/all' )}>
-          work
+          <NavItem active={ props.location.pathname === '/work/all'}>
+            work
+          </NavItem>
         </Col>
         <Col onClick={ () => clickNav('/contact' )}>
-          contact
+          <NavItem active={ props.location.pathname === '/contact'}>
+            contact
+          </NavItem>
         </Col>
         <Col onClick={ () => clickNav('/blog' )}>
-          blog
+          <NavItem active={ props.location.pathname === '/blog'}>
+            blog
+          </NavItem>
         </Col>
       </Row>
     </Col>
   )
 }
+
+const NavItem = styled.div<{ active:boolean }>`
+  color: ${ p => p.active ? '#c1c1c1' : 'inherit'}
+`;

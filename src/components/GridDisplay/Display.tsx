@@ -1,9 +1,9 @@
 import React, { useEffect, useRef } from 'react';
-import { TimelineLite, Power4 } from "gsap";
+import { TimelineLite } from "gsap";
 import { Container, Row, Col } from 'react-grid-system';
 import { IGridItem } from './index';
 import styled from 'styled-components';
-import { useLockBodyScroll, useNavbarState } from '../../hooks';
+import { useLockBodyScroll } from '../../hooks';
 
 export default React.memo(
   (props:{ item:IGridItem, onClose():void  }) => {

@@ -33,13 +33,11 @@ export default withRouter((props:any) => {
 
   return (
     <>
-      <div style={{ display: 'none' }} >
-        {
-          loadedImageCount !== items.length && items.map((work:IGridItem) => (
-            <img src={ work.feature } key={ Math.random() } onLoad={ () => setLoadedImageCount(loadedImageCount + 1) } />
-          ))
-        }
-      </div>
+      {
+        loadedImageCount !== items.length && items.map((work:IGridItem) => (
+          <img style={{ display: 'none' }} src={ work.feature } key={ Math.random() } onLoad={ () => setLoadedImageCount(loadedImageCount + 1) } />
+        ))
+      }
       <Container fluid style={{ width: '100%', padding: 0, margin: 0 }}>
         <Col>
           <Row>
