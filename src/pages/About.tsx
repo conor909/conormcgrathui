@@ -4,17 +4,12 @@ import { Page, TechLogosRow } from '../components';
 
 export default (props:any) => (
   <Page>
-    <Container>
+    <Container fluid={ true }>
       <Row nogutter={ true }>
-        <Col lg={ 3 } md={ 4 } sm={ 12 } xs={ 12 }>
-          <Row justify='center' nogutter={ true }>
-            <img src="https://cdn-images-1.medium.com/fit/c/150/150/1*9Hc9iYZTCc2Y_funVUgjUQ.jpeg" style={{ borderRadius: '50%' }} />
-          </Row>
-        </Col>
         <Col lg={ 9 } md={ 8 } sm={ 12 } xs={ 12 }>
           <Row justify='center' nogutter={ true }>
             <Col>
-              <h1>Hi, I'm Conor McGrath</h1>
+              <h1>Hi, I'm Conor</h1>
               <h3>I'm a contract UI developer with a focus in React and React Native.</h3>
               <h4>My expertise is in web and mobile app development, UI / UX design, data visualisation, web animations, wireframing and prototyping.</h4>
             </Col>

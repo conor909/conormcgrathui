@@ -55,7 +55,7 @@ const BlogContent = (props:{ articles:Array<IArticle> | null, feed:any }) => {
   // console.log(categoryArrays)
   
   return(
-    <Container>
+    <Container fluid={ true }>
       <Row nogutter={ true }>
         <Hidden xs sm>
           <Col lg={ 3 } md={ 4 } sm={ 12 } xs={ 12 }>
