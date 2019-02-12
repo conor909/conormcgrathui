@@ -43,7 +43,7 @@ export default
                 </div>
                 <div
                   ref={ actionBarRef }
-                  style={{ width: '100%', padding: '5px', color: 'white', opacity: 0 }}
+                  style={{ width: '100%', color: 'white', opacity: 0 }}
                   onClick={ props.onClose }>
                     <p style={{ background: 'grey', padding: '5px 3px' }}>←	back</p>
                 </div>
@@ -64,6 +64,7 @@ const Wrapper = styled.div`
   top: 100px;
   left: 0;
   right: 0;
+  bottom: 0;
   height: ${ window.innerHeight }px;
   width: 100%;
   background: #f6f6f6;

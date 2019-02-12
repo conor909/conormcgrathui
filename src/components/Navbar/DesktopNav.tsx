@@ -6,7 +6,6 @@ import { NavItem } from './index';
 export default (props:any) => {
 
   function clickNav(route:string) {
-    console.log(route, props.location.pathname)
     if (route === props.location.pathname) {
       return;
     }
@@ -14,8 +13,6 @@ export default (props:any) => {
       props.history.push(route);
     }
   }
-
-  console.log('MATCH: ',matchPath(props.location.pathname, { path: '/work/:type' }))
 
   return (
     <Col>

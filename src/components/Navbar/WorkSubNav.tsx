@@ -41,23 +41,23 @@ function SubNav (props:any) {
             <Col
               lg={ 2 } sm={ 4 } xs={ 4 }
               onClick={ () => clickNav('/work/development')}>
-                <NavItem active={ props.location.pathname ===  '/work/development' }>
+                <SubNavItem active={ !!matchPath(props.location.pathname, { path: '/work/development', exact: false }) }>
                   development
-                </NavItem>
+                </SubNavItem>
             </Col>
             <Col
               lg={ 2 } sm={ 4 } xs={ 4 }
               onClick={ () => clickNav('/work/design')}>
-                <NavItem active={ props.location.pathname ===  '/work/design' }>
+                <SubNavItem active={ !!matchPath(props.location.pathname, { path: '/work/design', exact: false }) }>
                   design
-                </NavItem>
+                </SubNavItem>
             </Col>
             <Col
               lg={ 2 } sm={ 4 } xs={ 4 }
               onClick={ () => clickNav('/work/javascript')}>
-                <NavItem active={ props.location.pathname ===  '/work/javascript' }>
+                <SubNavItem active={ !!matchPath(props.location.pathname, { path: '/work/javascript', exact: false }) }>
                   javascript
-                </NavItem>
+                </SubNavItem>
             </Col>
           </Row>
         </Container>
@@ -73,5 +73,14 @@ const SubNavWrapper = styled(props => <Wrapper { ...props } />)`
   color: #fff !important;
   border-bottom: none !important;
 `;
+
+const SubNavItem = styled(props => <NavItem { ...props } />)`
+  color: ${ p => p.active ? '#fffb00' : 'inherit' } !important;;
+  &:hover {
+    color: #fffb00 !important;
+  }
+`
+
+
 
 export default SubNav;

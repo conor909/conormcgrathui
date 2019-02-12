@@ -81,5 +81,8 @@ export const NavItem = styled.div<{ active:boolean }>`
   flex: 1;
   height: 50px;
   cursor: pointer;
-  color: ${ p => p.active ? 'lightgrey' : 'inherit' };
+  color: ${ p => p.active ? '#c70082' : 'inherit' };
+  &:hover {
+    color: #c70082;
+  }
 `;

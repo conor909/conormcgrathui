@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 //import debounce from 'lodash.debounce';
-import { Row } from 'react-grid-system';
+import { Row, Col } from 'react-grid-system';
 import { FormElements } from '../../components';
 
 export default (props:any) => {
@@ -57,7 +57,7 @@ export default (props:any) => {
           } = props;
           return(
             <form onSubmit={ handleSubmit }>
-              <Row nogutter={ true }>
+              <Row justify='center' nogutter={ true }>
                 <FormElements.Input
                   id='name'
                   type='text'
@@ -67,6 +67,8 @@ export default (props:any) => {
                   onBlur={ handleBlur }
                   error={ errors.name ? errors.name : null }
                 />
+              </Row>
+              <Row justify='center' nogutter={ true }>
                 <FormElements.Input
                   id='email'
                   label='Email'
@@ -76,6 +78,8 @@ export default (props:any) => {
                   onBlur={ handleBlur }
                   error={ errors.email ? errors.email : null }
                 />
+              </Row>
+              <Row justify='center' nogutter={ true }>
                 <FormElements.Input
                   id='phone'
                   label='Phone'
@@ -85,6 +89,8 @@ export default (props:any) => {
                   onBlur={ handleBlur }
                   error={ errors.phone ? errors.phone : null }
                 />
+              </Row>
+              <Row justify='center' nogutter={ true }>
                 <FormElements.TextArea
                   id='message'
                   label='Message'
@@ -94,6 +100,8 @@ export default (props:any) => {
                   onBlur={ handleBlur }
                   error={ errors.message ? errors.message : null }
                 />
+              </Row>
+              <Row justify='center' nogutter={ true }>
                 <div style={{ paddingTop: '1rem', width: '100%' }}>
                   <FormElements.Button
                     style={{ width: '100%' }}
@@ -107,7 +115,7 @@ export default (props:any) => {
               <Row justify='center' nogutter={ true }>
                   { emailStatus === 'sent' && <p style={{ textAlign: 'center' }}>Sent!</p> }
               </Row>
-            </form>
+          </form>
           )
         }
       }
