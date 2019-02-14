@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { ScreenBadge } from 'react-awesome-styled-grid';
 import { TweenLite, Power4 } from "gsap";
 import styled from 'styled-components';
 import './global.css';
@@ -17,8 +18,9 @@ export default () => {
 
   return (
     <AppWrap>
+      <ScreenBadge />
       <Router>
-        <React.Fragment>
+        <>
           <Navbar />
           <Switch>
             <Route path="/" exact component={ Home } />
@@ -27,7 +29,7 @@ export default () => {
             <Route path="/contact" exact component={ Contact } />
             <Route path="/blog" exact component={ Blog } />
           </Switch>
-        </React.Fragment>
+        </>
       </Router>
     </AppWrap>
   );

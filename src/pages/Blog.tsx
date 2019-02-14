@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Hidden, Container, Row, Col } from 'react-grid-system';
+import { Hidden, Container, Row, Col } from 'react-awesome-styled-grid';
 import { Page } from '../components';
 import loading from '../data/images/loading.svg';
 
@@ -54,50 +54,48 @@ const BlogContent = (props:{ articles:Array<IArticle> | null, feed:any }) => {
     .map((array:Array<string>) => array.map(i => i))
   
   return(
-    <Container fluid={ true }>
-      <Row nogutter={ true }>
-        <Hidden xs sm>
-          <Col lg={ 3 } md={ 4 } sm={ 12 } xs={ 12 }>
-            <Row nogutter={ true } justify='center'>
-              <img src={ props.feed.image } style={{ borderRadius: '50%' }} />
-            </Row>
-            <Row nogutter={ true } justify='center'>
-              <span style={{ fontSize: '0.8rem', textAlign: 'center', paddingTop: '1rem' }}>
-                Conor McGrath <br />on <a href='https://medium.com/@conor909' target='_blank'>Medium</a>
-              </span>
-            </Row>
-            {
-              props.articles && props.articles.length > 0 &&
-              <Row>
-                <ul>
-                  {/*
-                    uniqueCategories.map(cat => (<li>{ cat }</li>))
-                  */}
-                </ul>
-              </Row>
-            }
-          </Col>
-        </Hidden>
-        <Col lg={ 9 } md={ 8 } sm={ 12 } xs={ 12 }>
-          <Row nogutter={ true }>
-              {
-                !!props.articles &&
-                  props.articles.map((article:any) => (
-                    <article role="article" style={{ margin: '0 0 2rem', borderBottom: '1px solid #afafaf' }} id={ article.title }>
-                      <Row nogutter={ true }>
-                        <Col>
-                          <small style={{ color: '#727272', float: 'right' }}>
-                          <time>{ new Date(article.pubDate).toLocaleDateString() }</time></small>
-                          <h3 style={{ margin: 0 }}>{ article.title }</h3>
-                        </Col>
-                        <div key={ Math.random() } dangerouslySetInnerHTML={{ __html: article ? article.content : '' }} />
-                      </Row>
-                    </article>
-                  ))
-              }
+    <Row nogutter={ true }>
+      <Hidden xs sm>
+        <Col lg={ 3 } md={ 4 } sm={ 12 } xs={ 12 }>
+          <Row nogutter={ true } justify='center'>
+            <img src={ props.feed.image } style={{ borderRadius: '50%' }} />
           </Row>
+          <Row nogutter={ true } justify='center'>
+            <span style={{ fontSize: '0.8rem', textAlign: 'center', paddingTop: '1rem' }}>
+              Conor McGrath <br />on <a href='https://medium.com/@conor909' target='_blank'>Medium</a>
+            </span>
+          </Row>
+          {
+            props.articles && props.articles.length > 0 &&
+            <Row>
+              <ul>
+                {/*
+                  uniqueCategories.map(cat => (<li>{ cat }</li>))
+                */}
+              </ul>
+            </Row>
+          }
         </Col>
-      </Row>
-    </Container>
+      </Hidden>
+      <Col lg={ 9 } md={ 8 } sm={ 12 } xs={ 12 }>
+        <Row nogutter={ true }>
+            {
+              !!props.articles &&
+                props.articles.map((article:any) => (
+                  <article role="article" style={{ margin: '0 0 2rem', borderBottom: '1px solid #afafaf' }} id={ article.title }>
+                    <Row nogutter={ true }>
+                      <Col>
+                        <small style={{ color: '#727272', float: 'right' }}>
+                        <time>{ new Date(article.pubDate).toLocaleDateString() }</time></small>
+                        <h3 style={{ margin: 0 }}>{ article.title }</h3>
+                      </Col>
+                      <div key={ Math.random() } dangerouslySetInnerHTML={{ __html: article ? article.content : '' }} />
+                    </Row>
+                  </article>
+                ))
+            }
+        </Row>
+      </Col>
+    </Row>
   )
 }

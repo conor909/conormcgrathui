@@ -1,15 +1,10 @@
 import React from 'react';
-import styled from 'styled-components';
+import { Container } from 'react-awesome-styled-grid';
 
 export default (props:any) => (
-  <Page id='page' style={ props.style }>
-    { props.children }
-  </Page>
-)
-
-const Page = styled.div`
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-  padding: 1rem;
-`;
+  <Container
+    style={ props.style }
+    fluid={ true }>
+      { props.children }
+  </Container>
+);

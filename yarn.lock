@@ -8226,6 +8226,11 @@ react-app-polyfill@^0.2.0:
     raf "3.4.0"
     whatwg-fetch "3.0.0"
 
+react-awesome-styled-grid@^2.2.2:
+  version "2.2.2"
+  resolved "https://registry.yarnpkg.com/react-awesome-styled-grid/-/react-awesome-styled-grid-2.2.2.tgz#38168e52b29dd294248aa2c3769b01f87c4621f4"
+  integrity sha512-IycaeiRas+DAevPoM9VgyJtNdW34Ie/bR4dSAfeGxxGJLYVKjDXGDLoNqfnOYA+cdkQg5EY7qBKrLeUlH6SsNw==
+
 react-dev-utils@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/react-dev-utils/-/react-dev-utils-7.0.1.tgz#c53e759a22668ee2c0d146c24ce4bdec2b41e3c8"
@@ -8275,13 +8280,6 @@ react-fast-compare@^2.0.1:
   version "2.0.4"
   resolved "https://registry.yarnpkg.com/react-fast-compare/-/react-fast-compare-2.0.4.tgz#e84b4d455b0fec113e0402c329352715196f81f9"
   integrity sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
-
-react-grid-system@^4.4.2:
-  version "4.4.2"
-  resolved "https://registry.yarnpkg.com/react-grid-system/-/react-grid-system-4.4.2.tgz#0ddb8938cb0902ae7394d0f26d9e61d4d7294c75"
-  integrity sha512-wlCNgsKDe8eq7jvz912nFX6uuG1Zwjhir6IrkhS2SeUhqbv4RpPGmbs+n3NykTfmnpwXpnVPdRd+nZaGq8VtuA==
-  dependencies:
-    prop-types "^15.6.2"
 
 react-is@^16.6.0:
   version "16.7.0"

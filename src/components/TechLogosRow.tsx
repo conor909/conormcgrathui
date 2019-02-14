@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col } from 'react-grid-system';
+import { Row, Col } from 'react-awesome-styled-grid';
 import jsLogo from '../data/images/tech-logos/js.svg';
 import reactLogo from '../data/images/tech-logos/react.svg';
 import reduxLogo from '../data/images/tech-logos/redux.svg';

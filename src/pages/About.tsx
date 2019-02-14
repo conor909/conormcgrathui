@@ -1,33 +1,27 @@
 import React from 'react';
-import { Container, Row, Col } from 'react-grid-system';
+import { Row, Col } from 'react-awesome-styled-grid';
 import { Page, TechLogosRow } from '../components';
 
 export default (props:any) => (
   <Page>
-    <Container fluid={ true }>
-      <Row nogutter={ true }>
-        <Col lg={ 9 } md={ 8 } sm={ 12 } xs={ 12 }>
-          <Row justify='center' nogutter={ true }>
-            <Col>
-              <h1>Hi, I'm Conor</h1>
-              <h3>I'm a contract UI developer with a focus in React and React Native.</h3>
-              <h4>My expertise is in web and mobile app development, UI / UX design, data visualisation, web animations, wireframing and prototyping.</h4>
-            </Col>
-          </Row>
-          <TechLogosRow />
-          <Row>
-            {
-              blurbs.map(b => (<BlurbBox title={ b.title } blurb={ b.blurb } key={ Math.random() }/>))
-            }
-          </Row>
-        </Col>
-      </Row>
-    </Container>
+    <Row>
+      <Col lg={ 12 } md={ 12 } sm={ 12 } xs={ 12 }>
+        <h1>Hi, I'm Conor</h1>
+        <h3>I'm a contract UI developer with a focus in React and React Native.</h3>
+        <h4>My expertise is in web and mobile app development, UI / UX design, data visualisation, web animations, wireframing and prototyping.</h4>
+      </Col>
+      <Col lg={ 12 } md={ 12 } sm={ 12 } xs={ 12 }>
+        <TechLogosRow />
+      </Col>
+      {
+        blurbs.map(b => (<BlurbBox title={ b.title } blurb={ b.blurb } key={ Math.random() }/>))
+      }
+    </Row>
   </Page>
 )
 
 const BlurbBox = (props:{ title:string, blurb:string }) => (
-  <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 } style={{ borderBottom: '1px solid #afafaf', marginBottom: '1rem' }}>
+  <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 } style={{ borderBottom: '1px solid grey', marginBottom: '1rem' }}>
     <h3>{ props.title }</h3>
     <p>
       { props.blurb }

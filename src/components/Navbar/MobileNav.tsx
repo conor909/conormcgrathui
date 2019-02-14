@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { TweenLite, Power4 } from "gsap";
-import { Row, Col } from 'react-grid-system';
+import { Row, Col } from 'react-awesome-styled-grid';
 import styled from 'styled-components';
 import { useWindowSize } from '../../hooks';
 

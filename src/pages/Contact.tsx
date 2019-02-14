@@ -1,15 +1,15 @@
 import React from 'react';
-import { Container, Col } from 'react-grid-system';
+import { Row, Col } from 'react-awesome-styled-grid';
 import { Page, ContactForm } from '../components';
 
 export default () => {
   return(
     <Page>
-      <Container fluid={ true }>
+      <Row>
         <Col>
           <ContactForm />
         </Col>
-      </Container>
+      </Row>
     </Page>
   );
 };

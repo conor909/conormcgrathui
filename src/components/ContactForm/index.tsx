@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 //import debounce from 'lodash.debounce';
-import { Row, Col } from 'react-grid-system';
+import { Row, Col } from 'react-awesome-styled-grid';
 import { FormElements } from '../../components';
 
 export default (props:any) => {

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { withRouter } from 'react-router';
-import { TweenLite } from "gsap";
-import { Container, Row, Col } from 'react-grid-system';
+import { TweenLite, Power4 } from "gsap";
+import { Container, Row, Col } from 'react-awesome-styled-grid';
 import Display from './Display';
 import getWork from '../../data/work';
 
@@ -38,17 +38,15 @@ export default withRouter((props:any) => {
           <img style={{ display: 'none' }} src={ work.feature } key={ Math.random() } onLoad={ () => setLoadedImageCount(loadedImageCount + 1) } />
         ))
       }
-      <Container fluid style={{ width: '100%', padding: 0, margin: 0 }}>
-        <Col>
-          <Row>
-            {
-              loadedImageCount === items.length
-                ? items.map((item:IGridItem, i:number) => <GridItem item={ item } onSelectedItem={ handleSelectedItem } index={ i } location={ props.history.location.pathname } />)
-                : null
-            }
-          </Row>
-        </Col>
-      </Container>
+      <Col>
+        <Row>
+          {
+            loadedImageCount === items.length
+              ? items.map((item:IGridItem, i:number) => <GridItem item={ item } onSelectedItem={ handleSelectedItem } index={ i } location={ props.history.location.pathname } />)
+              : null
+          }
+        </Row>
+      </Col>
       {
         selectedItem &&
           <Display
@@ -64,7 +62,7 @@ const GridItem = React.memo(
     const itemRef = useRef(null);
     
     useEffect(() => {
-      TweenLite.to(itemRef.current, .5, { opacity: 1, paddingBottom: 0 }).delay( props.index / 10 );
+      TweenLite.fromTo(itemRef.current, .5, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power4.easeOut }).delay( props.index / 10 );
     }, [ props.location ]);
     
     return(

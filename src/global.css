@@ -24,6 +24,7 @@ body,
   flex-direction: column;
   flex: 1;
   color: #696969;
+  overflow-x: hidden;
 }
 
 body {

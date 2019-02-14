@@ -1,6 +1,6 @@
 import React from 'react';
 import { matchPath } from 'react-router-dom';
-import { Row, Col } from 'react-grid-system';
+import { Row, Col } from 'react-awesome-styled-grid';
 import { NavItem } from './index';
 
 export default (props:any) => {
@@ -16,9 +16,8 @@ export default (props:any) => {
 
   return (
     <Col>
-      <Row align='end' justify='between'>
+      <Row align='end'>
         
-        {/*
         <NavItem
           active={ !!matchPath(props.location.pathname, { path: '/about' }) }
           onClick={ () => clickNav('/about' )}>
@@ -30,7 +29,6 @@ export default (props:any) => {
           onClick={ () => clickNav('/clients' )}>
             clients
         </NavItem>
-        */}
       
         <NavItem
           active={ !!matchPath(props.location.pathname, { path: '/work/:type' }) }

@@ -15,7 +15,7 @@ export default (props:any) => {
 
   useEffect(() => {
     ScreenScene(outterScreenRef, innerScreenRef);
-    OrbsScene(circleScreenRef, sateliteScreenRef, satelite2ScreenRef).yoyo(true);
+    OrbsScene(circleScreenRef, sateliteScreenRef, satelite2ScreenRef);
   }, []);
 
   function ScreenScene(outterScreenRef:any, innerScreenRef:any) {
@@ -23,8 +23,7 @@ export default (props:any) => {
     tl
       .fromTo(outterScreenRef.current, 3, { drawSVG: '0%' }, { drawSVG: '100%', ease: Power4.easeOut }, 0)
       .fromTo(innerScreenRef.current, 4, { drawSVG: '0%' }, { drawSVG: '100%', ease: Power4.easeOut }, 0.5)
-      .fromTo(innerScreenRef.current, 2, { fill: 'transparent' }, { fill: '#f6f6f6', ease: Power4.easeOut }, 3)
-      .fromTo(outterScreenRef.current, 2,{ fill: 'transparent' }, { fill: 'white', ease: Power4.easeOut }, 3);
+    return tl;
   }
 
   function OrbsScene(circleScreenRef:any, sateliteScreenRef:any, satelite2ScreenRef:any) {
@@ -32,7 +31,7 @@ export default (props:any) => {
     tl
       .fromTo(circleScreenRef.current, 1, { opacity: 0, x: 20 }, { opacity: .5, x: 0, ease: Power4.easeOut }, 2)
       .fromTo(sateliteScreenRef.current, 1, { opacity: 0, x: 0 }, { opacity: .5, x: -100, ease: Power4.easeOut }, 2)
-      .fromTo(satelite2ScreenRef.current, 1, { opacity: 0, x: 0 }, { opacity: .5, x: -200, ease: Power4.easeOut }, 2)
+      .fromTo(satelite2ScreenRef.current, 1, { opacity: 0, x: 0 }, { opacity: .5, x: -200, ease: Power4.easeOut }, 2);
     return tl;
   }
 
@@ -44,8 +43,8 @@ export default (props:any) => {
           ref={ outterScreenRef }
           fill='transparent'
           stroke='grey'
-          strokeWidth={ 1 }
-          strokeMiterlimit={ 10 }
+          strokeWidth={ 3 }
+          strokeMiterlimit={ 3 }
           d="M842,533c0,0-8,64,29,94c0,0,29,19,0,19s-184,0-184,0s-72,3-60-10s35-18,39-103H360c0,0-31.5,5-31.5-31.5
           s0-451.5,0-451.5s-4-35.25,35.25-35.25s784.25,0,784.25,0s33.62-0.38,33.62,40.25s0,453,0,453s0.38,24-25.62,24s-490,0.75-490,0.75" />
         

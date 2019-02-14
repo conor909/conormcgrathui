@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { matchPath } from 'react-router-dom';
-import { Container, Row, Col } from 'react-grid-system';
+import { Hidden, Container, Row, Col } from 'react-awesome-styled-grid';
 import { TimelineLite, Power4 } from "gsap";
 import styled from 'styled-components';
 import { Wrapper } from '../Navbar';
@@ -12,75 +12,67 @@ function SubNav (props:any) {
 
   useEffect(() => {
     if (props.isOpen) {
-      new TimelineLite()
-        .set(subNavRef.current, { position: 'absolute' })
-        .to(subNavRef.current, .4, { top: 50, ease: Power4.easeOut })
-        .set(subNavRef.current, { position: 'fixed' })
+      new TimelineLite().to(subNavRef.current, .4, { y: 50, ease: Power4.easeOut })
     } else {
-      new TimelineLite()
-        .set(subNavRef.current, { position: 'absolute' })
-        .to(subNavRef.current, .4, { top: 0, ease: Power4.easeOut })
-        .set(subNavRef.current, { position: 'fixed' })
+      new TimelineLite().to(subNavRef.current, .4, { y: 0, ease: Power4.easeOut })
     }
   }, [ props.isOpen ]);
 
   function clickNav(route:string) {
     if (route === props.location.pathname) {
       return;
-    }
-    else {
+    } else {
       props.history.push(route);
     }
   }
   
   return (
-    <div ref={ subNavRef } style={{ top: 0, width: '100%' }}>
-      <SubNavWrapper>
-        <Container fluid style={{ width: '100%', padding: 0 }}>
-          <Row justify='end'>
-            <Col
-              lg={ 2 } sm={ 4 } xs={ 4 }
-              onClick={ () => clickNav('/work/development')}>
-                <SubNavItem active={ !!matchPath(props.location.pathname, { path: '/work/development', exact: false }) }>
+    <Hidden xs sm md>
+      <Wrapper as={ SubNavWrapper } ref={ subNavRef }>
+        <Container fluid={ true }>
+          <Row reverse={ true }>
+            <Col lg={ 2 } sm={ 4 } xs={ 4 }>
+              <NavItem
+                as={ SubNavItem }
+                active={ !!matchPath(props.location.pathname, { path: '/work/development', exact: false }) }
+                onClick={ () => clickNav('/work/development')}>
                   development
-                </SubNavItem>
+              </NavItem>
             </Col>
-            <Col
-              lg={ 2 } sm={ 4 } xs={ 4 }
-              onClick={ () => clickNav('/work/design')}>
-                <SubNavItem active={ !!matchPath(props.location.pathname, { path: '/work/design', exact: false }) }>
+            <Col lg={ 2 } sm={ 4 } xs={ 4 }>
+              <NavItem
+                as={ SubNavItem }
+                active={ !!matchPath(props.location.pathname, { path: '/work/design', exact: false }) }
+                onClick={ () => clickNav('/work/design')}>
                   design
-                </SubNavItem>
+              </NavItem>
             </Col>
-            <Col
-              lg={ 2 } sm={ 4 } xs={ 4 }
-              onClick={ () => clickNav('/work/javascript')}>
-                <SubNavItem active={ !!matchPath(props.location.pathname, { path: '/work/javascript', exact: false }) }>
+            <Col lg={ 2 } sm={ 4 } xs={ 4 }>
+              <NavItem
+                as={ SubNavItem }
+                active={ !!matchPath(props.location.pathname, { path: '/work/javascript', exact: false }) }
+                onClick={ () => clickNav('/work/javascript')}>
                   javascript
-                </SubNavItem>
+              </NavItem>
             </Col>
           </Row>
         </Container>
-      </SubNavWrapper>
-    </div>
+      </Wrapper>
+    </Hidden>
   )
 }
 
-const SubNavWrapper = styled(props => <Wrapper { ...props } />)`
-  position: relative !important;
-  z-index: 1 !important;
+const SubNavWrapper = styled.nav`
   background: grey !important;
   color: #fff !important;
   border-bottom: none !important;
+  z-index: 1 !important;
 `;
 
-const SubNavItem = styled(props => <NavItem { ...props } />)`
+const SubNavItem = styled.div<{ active:boolean }>`
   color: ${ p => p.active ? '#fffb00' : 'inherit' } !important;;
   &:hover {
     color: #fffb00 !important;
   }
 `
-
-
-
 export default SubNav;

@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { withRouter, matchPath } from 'react-router';
-import { Visible, Hidden, Container, Row, Col } from 'react-grid-system';
+import { Visible, Hidden, Container, Row, Col } from 'react-awesome-styled-grid';
 import { useWindowSize } from '../../hooks';
 import DesktopNav from './DesktopNav';
-import MobileNav from './MobileNav';
+// import MobileNav from './MobileNav';
 import WorkSubNav from './WorkSubNav';
 import styled from 'styled-components';
 
@@ -15,63 +15,60 @@ export default withRouter((props:any):any => {
   
   return(
     <>
-      <Wrapper width={ width } >
-        <Container fluid style={{ width: '100%' }}>
+      <Wrapper>
+        <Container fluid={ true }>
           <Row>
-            <LeftNav style={{ cursor: 'pointer' }} onClick={ () => props.history.push('/' )}>
+            <Title onClick={ () => props.history.push('/' )}>
               conor mcgrath ui | ux
-            </LeftNav>
-            <RightNav>
+            </Title>
+            <Nav>
               <Hidden md sm xs>
                 <DesktopNav { ...props } />
               </Hidden>
               <Visible md sm xs>
-              <Col>
-                <div style={{ width: '100%', textAlign: 'right', fontSize: 'x-large', fontWeight: 'bold' }}onClick={ () => setIsMobileMenuOpen(!isMobileMenuOpen) }>=</div>
-              </Col>
+                <div style={{ width: '100%', textAlign: 'right', fontSize: 'x-large', fontWeight: 'bold' }}onClick={ () => setIsMobileMenuOpen(!isMobileMenuOpen) }>
+                  =
+                </div>
               </Visible>
-            </RightNav>
+            </Nav>
           </Row>
         </Container>
+        {/*
+          <Hidden xl lg>
+            <MobileNav isOpen={ isMobileMenuOpen } { ...props } onClose={ () => setIsMobileMenuOpen(false) } />
+          </Hidden>
+        */}
       </Wrapper>
       <WorkSubNav isOpen={ isShowingWorkRoute } { ...props } />
-      <Hidden xl lg>
-        <MobileNav isOpen={ isMobileMenuOpen } { ...props } onClose={ () => setIsMobileMenuOpen(false) } />
-      </Hidden>
     </>
   )
 });
 
-export const Wrapper = styled.nav<{ width:number }>`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+export const Wrapper = styled.div`
   position: fixed;
   top: 0px;
-  width: ${ p => p.width }px;
+  width: 100%;
   height: 50px;
-  font-size: 1em;
-  margin: 0;
-  padding: 0;
   border-bottom: 1px solid #e1e1e1;
-  padding: 0 1rem;
   background: #f6f6f6;
-  z-index: 2;
+  z-index: 2
 `;
 
-const LeftNav = styled.div`
+const Title = styled.div`
   display: flex;
+  flex: 1;
+  height: 50px;
   flex-direction: row;
   align-items: center;
-  flex: 1;
+  cursor: pointer;
 `;
 
-const RightNav = styled.div`
+const Nav = styled.div`
   display: flex;
+  flex: 1;
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
-  flex: 1;
 `;
 
 export const NavItem = styled.div<{ active:boolean }>`
