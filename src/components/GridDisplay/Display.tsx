@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { TimelineLite } from "gsap";
 import { Row, Col } from 'react-awesome-styled-grid';
 import { IGridItem } from './index';
@@ -9,6 +9,16 @@ export default
   (props:{ item:IGridItem, onClose():void  }) => {
     
     useLockBodyScroll();
+
+    // repeated in App.tsx
+      const [ width, setWidth ] = useState<number>(window.innerWidth);
+      const [ height, setHeight ] = useState<number>(window.innerHeight);
+      useEffect(() => {
+        function onResize() { setWidth(window.innerWidth); setHeight(window.innerHeight); }
+        window.addEventListener('resize', onResize);
+        return () => { window.removeEventListener('resize', onResize) }
+      }, []);
+    // repeated end
 
     const titleRef = useRef<any>(null);
     const descriptionRef = useRef<any>(null);

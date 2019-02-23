@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ScreenBadge } from 'react-awesome-styled-grid';
 import styled from 'styled-components';
@@ -7,7 +7,17 @@ import './global.css';
 import { Home, About, Work, Contact, Blog } from './pages';
 import { Navbar } from './components';
 
-export default () => {
+export default (props:any) => {
+
+  // repeated in Display.tsx
+    const [ width, setWidth ] = useState<number>(window.innerWidth);
+    const [ height, setHeight ] = useState<number>(window.innerHeight);
+    useEffect(() => {
+      function onResize() { setWidth(window.innerWidth); setHeight(window.innerHeight); }
+      window.addEventListener('resize', onResize);
+      return () => { window.removeEventListener('resize', onResize) }
+    }, []);
+  // repeated end
 
   return (
     <AppWrap>
