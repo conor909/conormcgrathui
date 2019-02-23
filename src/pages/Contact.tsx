@@ -1,15 +1,13 @@
 import React from 'react';
-import { Row, Col } from 'react-awesome-styled-grid';
+import { Container } from 'react-awesome-styled-grid';
 import { Page, ContactForm } from '../components';
 
 export default () => {
   return(
     <Page>
-      <Row>
-        <Col>
-          <ContactForm />
-        </Col>
-      </Row>
+      <Container>
+        <ContactForm />
+      </Container>
     </Page>
   );
 };

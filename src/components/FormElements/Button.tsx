@@ -24,7 +24,7 @@ export default (props:IButton) => {
 export const Button = styled.button<{ disabled:boolean }>`
   width: 100%;
   padding: 1rem;
-  background: darkgrey;
+  background: #fcd100;
   opacity: ${ p => p.disabled ? .2 : 1 };
   color: #fff;
   font-size: 1rem;

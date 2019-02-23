@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { TimelineLite } from "gsap";
-import { Container, Row, Col } from 'react-awesome-styled-grid';
+import { Row, Col } from 'react-awesome-styled-grid';
 import { IGridItem } from './index';
 import styled from 'styled-components';
 import { useLockBodyScroll } from '../../hooks';
@@ -27,7 +27,7 @@ export default
       <Wrapper>
         <Row reverse={ true }>
           <Col lg={ 4 } md={ 4 } sm={ 12 } xs={ 12 }>
-            <h1 style={{ width: '100%' }} ref={ titleRef }>
+            <h1 style={{ width: '100%', opacity: 0 }} ref={ titleRef }>
               { props.item.title }
             </h1>
             <div ref={ descriptionRef } style={{ opacity: 0 }}>
@@ -41,9 +41,9 @@ export default
             </div>
             <div
               ref={ actionBarRef }
-              style={{ width: '100%', color: 'white', opacity: 0 }}
+              style={{ width: '100%', opacity: 0 }}
               onClick={ props.onClose }>
-                <p style={{ background: 'grey', padding: '5px 3px' }}>←	back</p>
+                <p style={{ background: '#efefef', padding: '5px 3px', border: '1px solid #e1e1e1' }}>←	back</p>
             </div>
           </Col>
           <Col lg={ 8 } md={ 8 } sm={ 12 } xs={ 12 }>
@@ -61,8 +61,8 @@ const Wrapper = styled.div`
   left: 0;
   right: 0;
   bottom: 0;
-  height: ${ window.innerHeight }px;
-  width: ${ window.innerWidth - 100 }px;
+  height: ${ window.innerHeight - 100 }px;
+  width: ${ window.innerWidth }px;
   background: #f6f6f6;
   z-index: 1;
   overflow-y: scroll;

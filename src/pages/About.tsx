@@ -1,18 +1,22 @@
 import React from 'react';
 import { Row, Col } from 'react-awesome-styled-grid';
 import { Page, TechLogosRow } from '../components';
+import me from '../data/images/me.svg';
 
 export default (props:any) => (
   <Page>
-    <Row>
-      <Col lg={ 12 } md={ 12 } sm={ 12 } xs={ 12 }>
-        <h1>Hi, I'm Conor</h1>
-        <h3>I'm a contract UI developer with a focus in React and React Native.</h3>
-        <h4>My expertise is in web and mobile app development, UI / UX design, data visualisation, web animations, wireframing and prototyping.</h4>
+    <Row style={{ marginTop: '1rem' }}>
+      <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
+        <img src={ me } style={{ alignSelf: 'start', width: '100%', maxWidth: '200px', opacity: .8 }} />
       </Col>
-      <Col lg={ 12 } md={ 12 } sm={ 12 } xs={ 12 }>
+      <Col lg={ 10 } md={ 10 } sm={ 12 } xs={ 12 }>
+        <h1 style={{ marginTop: 0 }}>Hello! I'm Conor</h1>
+        <h3 style={{ marginTop: 0 }}>A contract user interface developer with a focus in React and React Native.</h3>
+        <h4 style={{ marginTop: 0 }}>My expertise is in web and mobile app development, UI / UX design, data visualisation, web animations, wireframing and prototyping.</h4>
         <TechLogosRow />
       </Col>
+    </Row>
+    <Row style={{ marginTop: '1rem' }}>
       {
         blurbs.map(b => (<BlurbBox title={ b.title } blurb={ b.blurb } key={ Math.random() }/>))
       }
@@ -21,11 +25,15 @@ export default (props:any) => (
 )
 
 const BlurbBox = (props:{ title:string, blurb:string }) => (
-  <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 } style={{ borderBottom: '1px solid grey', marginBottom: '1rem' }}>
-    <h3>{ props.title }</h3>
-    <p>
-      { props.blurb }
-    </p>
+  <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 }>
+    <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', marginBottom: '2em'}}>
+      <h3 style={{ margin: 0 }}>
+        { props.title }
+      </h3>
+      <p>
+        { props.blurb }
+      </p>
+    </div>
   </Col>
 )
 
@@ -44,7 +52,7 @@ const blurbs = [
   },
   {
     title: 'Architecture',
-    blurb: "Coming from vanilla javacript, and different frameworks from jQuery, backbone, react and redux. I've learned to understand basic principals of clean architecture. The data model might be constructed or stored differently, and the view rendered differently, or actions and contollers might tigger state changes and events differently, my expereince in different frameworks and understanding basic principles has taught me good structure and maintainability of code."
+    blurb: "Coming from vanilla javacript, old and modern frameworks. I've learned to understand basic principals of clean architecture. The data model might be constructed or stored differently, and the view rendered differently, or actions and contollers might tigger state changes and events differently, my expereince in different frameworks and understanding basic principles has taught me good structure and maintainability of code."
   },
   {
     title: 'Clean Code',

@@ -18,23 +18,9 @@ import cube19_leaderboard from './images/c19/c19_leaderboard.png';
 import advisian from './images/feat_worleys.jpg';
 import advisian2 from './images/feat_worleys2.jpg';
 
+import tobes from './images/feat_tobes.jpg';
+
 export default () => ([
-	{
-    id: 8,
-    ref: 'advisian',
-    niceName: 'advisian',
-    title: 'Advisian Digital',
-    client: 'Advisian',
-    skills: ['Animation', 'React'],
-    desc: ["Advisian Digital Interactive infographic, a single page app with bespoke interactive design and animated icons and graphics."],
-    color: '#005f83',
-		fontColor: '#fff',
-    feature: advisian,
-    images: [ advisian2, advisian ],
-    url: 'http://www.advisian.com',
-    categories: ['development', 'javascript'],
-    tools: ['react', 'ai']
-  },
   {
     id: 1,
     ref: 'kilaBusinessCards',
@@ -144,7 +130,39 @@ export default () => ([
     feature: cube19,
     images: [ cube19_dashboard, cube19_leaderboard, cube19_configure_chart, cube19_4, cube19_1, cube19_3, cube19_2 ],
     url: 'http://www.cube19.com',
-		categories: ['design', 'development', 'javascript'],
+		categories: ['design', 'development', 'code'],
     tools: ['js', 'react', 'scss', 'backbone']
+  },
+  {
+    id: 8,
+    ref: 'advisian',
+    niceName: 'advisian',
+    title: 'Advisian Digital',
+    client: 'Advisian',
+    skills: ['Animation', 'React'],
+    desc: ["Advisian Digital Interactive infographic, a single page app with bespoke interactive design and animated icons and graphics."],
+    color: '#005f83',
+		fontColor: '#fff',
+    feature: advisian,
+    images: [ advisian2, advisian ],
+    url: 'http://www.advisian.com',
+    categories: ['development', 'code'],
+    tools: ['react', 'ai']
+  },
+  {
+    id: 9,
+    ref: 'planning',
+    niceName: 'planning',
+    title: 'Planning & Documentation',
+    client: null,
+    skills: ['UI', 'UX'],
+    desc: ['Illustration explaining functionality for a complex data storing and UX.', 'Depending on each scenario, the data needed to be saved to a Redux store or component state, deleted or overwritten.', "The precedence of the data could vary depending on user interactions and words weren't always enough to communicate this functionality easily, so I came up with this illustration to help conversations during planning, development and testing."],
+    color: '#1e1e1e',
+		fontColor: '#fff',
+    feature: tobes,
+    images: [  ],
+    url: '',
+		categories: ['design', 'development'],
+    tools: ['react', 'redux', 'ai']
   }
 ]);

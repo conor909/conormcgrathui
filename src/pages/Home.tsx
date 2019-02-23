@@ -8,30 +8,26 @@ export default (props:any) => {
   const outterScreenRef = useRef(null);
   const innerScreenRef = useRef(null);
   const circleScreenRef = useRef(null);
-  const sateliteScreenRef = useRef(null);
-  const satelite2ScreenRef = useRef(null);
   const width = window.innerWidth;
   const height = window.innerHeight;
 
   useEffect(() => {
     ScreenScene(outterScreenRef, innerScreenRef);
-    OrbsScene(circleScreenRef, sateliteScreenRef, satelite2ScreenRef);
+    OrbsScene(circleScreenRef);
   }, []);
 
   function ScreenScene(outterScreenRef:any, innerScreenRef:any) {
     const tl = new TimelineMax();
     tl
-      .fromTo(outterScreenRef.current, 3, { drawSVG: '0%' }, { drawSVG: '100%', ease: Power4.easeOut }, 0)
-      .fromTo(innerScreenRef.current, 4, { drawSVG: '0%' }, { drawSVG: '100%', ease: Power4.easeOut }, 0.5)
+      .fromTo(outterScreenRef.current, 3, { drawSVG: '0%' }, { drawSVG: '100% 0%', ease: Power4.easeOut }, 0)
+      .fromTo(innerScreenRef.current, 4, { drawSVG: '0%' }, { drawSVG: '100% 0%', ease: Power4.easeOut }, 0.5)
     return tl;
   }
 
-  function OrbsScene(circleScreenRef:any, sateliteScreenRef:any, satelite2ScreenRef:any) {
+  function OrbsScene(circleScreenRef:any) {
     const tl = new TimelineMax();
     tl
-      .fromTo(circleScreenRef.current, 1, { opacity: 0, x: 20 }, { opacity: .5, x: 0, ease: Power4.easeOut }, 2)
-      .fromTo(sateliteScreenRef.current, 1, { opacity: 0, x: 0 }, { opacity: .5, x: -100, ease: Power4.easeOut }, 2)
-      .fromTo(satelite2ScreenRef.current, 1, { opacity: 0, x: 0 }, { opacity: .5, x: -200, ease: Power4.easeOut }, 2);
+      .fromTo(circleScreenRef.current, 1, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power4.easeOut }, 2)
     return tl;
   }
 
@@ -66,31 +62,14 @@ export default (props:any) => {
         <circle
           ref={ circleScreenRef }
           style={{ cursor: 'pointer' }}
-          fill='#54e400'
-          cx="739"
-          cy="289"
-          r="98"
-          onClick={ () => props.history.push('/work/all') } />
-
-        <circle
-          ref={ sateliteScreenRef }
-          style={{ cursor: 'pointer' }}
-          fill='yellow'
-          cx="739"
-          cy="289"
-          r="98"
-          onClick={ () => props.history.push('/work/all') } />
-
-        <circle
-          ref={ satelite2ScreenRef }
-          style={{ cursor: 'pointer' }}
-          fill='aquamarine'
+          fill='#F7C90B'
           cx="739"
           cy="289"
           r="98"
           onClick={ () => props.history.push('/work/all') } />
 
       </svg>
+      
     </Page>
   )
 }

@@ -2,12 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import { TweenLite, Power4 } from "gsap";
 import { Row, Col } from 'react-awesome-styled-grid';
 import styled from 'styled-components';
-import { useWindowSize } from '../../hooks';
 
 export default (props:any) => {
 
   const mobileSideMenu = useRef(null);
-  const { width } = useWindowSize();
 
   useEffect(() => {
     if (props.isOpen) {
@@ -23,16 +21,18 @@ export default (props:any) => {
   }
 
   return (
-    <Wrapper ref={ mobileSideMenu } width={ width }>
+    <Wrapper ref={ mobileSideMenu }>
       <Col>
-        {/*
-          <Row onClick={ () => props.history.push('/clients' )}>
+        <Row onClick={ () => props.history.push('/clients' )}>
+          <MobileNavItem>
             clients
-          </Row>
-          <Row onClick={ () => props.history.push('/about' )}>
+          </MobileNavItem>
+        </Row>
+        <Row onClick={ () => props.history.push('/about' )}>
+          <MobileNavItem>
             about
-          </Row>
-        */}
+          </MobileNavItem>
+        </Row>
         <Row onClick={ () => clickNav('/work/all' )}>
           <MobileNavItem>
             work
@@ -53,15 +53,15 @@ export default (props:any) => {
   )
 }
 
-const Wrapper = styled.nav<{ width:number }>`
+const Wrapper = styled.nav`
   font-size: 2rem;
   display: block;
   position: absolute;
   top: 50px;
-  right: ${ p => -p.width }px;
+  right: ${ -window.innerWidth }px;
   height: ${ window.innerHeight }px;
   border-left: 1px solid #e1e1e1;
-  width: ${ p => p.width }px;
+  width: ${ window.innerWidth }px;
   background: #f6f6f6;
   z-index: 3;
   overflow-y: scroll;

@@ -1,20 +1,13 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { ScreenBadge } from 'react-awesome-styled-grid';
-import { TweenLite, Power4 } from "gsap";
 import styled from 'styled-components';
+import './flex-box.css';
 import './global.css';
 import { Home, About, Work, Contact, Blog } from './pages';
 import { Navbar } from './components';
 
 export default () => {
-
-  const circleRef = useRef(null);
-
-  useEffect(() => {
-    function touchAnim () { new TweenLite(circleRef.current, .4, { right: 0, ease: Power4.easeOut }); }
-    window.addEventListener('mouseup', touchAnim);
-  });
 
   return (
     <AppWrap>

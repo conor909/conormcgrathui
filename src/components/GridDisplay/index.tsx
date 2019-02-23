@@ -34,7 +34,7 @@ export default withRouter((props:any) => {
   return (
     <>
       {
-        loadedImageCount !== items.length && items.map((work:IGridItem) => (
+        loadedImageCount < items.length && items.map((work:IGridItem) => (
           <img style={{ display: 'none' }} src={ work.feature } key={ Math.random() } onLoad={ () => setLoadedImageCount(loadedImageCount + 1) } />
         ))
       }
@@ -42,7 +42,7 @@ export default withRouter((props:any) => {
         <Row>
           {
             loadedImageCount === items.length
-              ? items.map((item:IGridItem, i:number) => <GridItem item={ item } onSelectedItem={ handleSelectedItem } index={ i } location={ props.history.location.pathname } />)
+              ? items.map((item:IGridItem, i:number) => <GridItem key={ Math.random() } item={ item } onSelectedItem={ handleSelectedItem } index={ i } location={ props.history.location.pathname } />)
               : null
           }
         </Row>

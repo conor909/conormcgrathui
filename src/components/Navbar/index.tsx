@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { withRouter, matchPath } from 'react-router';
-import { Visible, Hidden, Container, Row, Col } from 'react-awesome-styled-grid';
-import { useWindowSize } from '../../hooks';
+import { Container, Row, ScreenClass } from 'react-awesome-styled-grid';
 import DesktopNav from './DesktopNav';
-// import MobileNav from './MobileNav';
+import MobileNav from './MobileNav';
 import WorkSubNav from './WorkSubNav';
 import styled from 'styled-components';
 
@@ -11,8 +10,6 @@ export default withRouter((props:any):any => {
 
   const [ isMobileMenuOpen, setIsMobileMenuOpen ] = useState<boolean>(false);
   const isShowingWorkRoute = matchPath(props.location.pathname, { path: '/work/:category', exact: false });
-  const { width } = useWindowSize();
-  
   return(
     <>
       <Wrapper>
@@ -22,22 +19,25 @@ export default withRouter((props:any):any => {
               conor mcgrath ui | ux
             </Title>
             <Nav>
-              <Hidden md sm xs>
-                <DesktopNav { ...props } />
-              </Hidden>
-              <Visible md sm xs>
-                <div style={{ width: '100%', textAlign: 'right', fontSize: 'x-large', fontWeight: 'bold' }}onClick={ () => setIsMobileMenuOpen(!isMobileMenuOpen) }>
-                  =
-                </div>
-              </Visible>
+              <ScreenClass render={(screen:any) => {
+                if (!['sm', 'xs'].includes(screen)) {
+                  return <DesktopNav { ...props } />
+                } else {
+                  return (
+                    <div style={{ width: '100%', textAlign: 'right', fontSize: 'x-large', fontWeight: 'bold' }}onClick={ () => setIsMobileMenuOpen(!isMobileMenuOpen) }>
+                      =
+                    </div>
+                  )
+                }
+              }} />
             </Nav>
           </Row>
         </Container>
-        {/*
-          <Hidden xl lg>
-            <MobileNav isOpen={ isMobileMenuOpen } { ...props } onClose={ () => setIsMobileMenuOpen(false) } />
-          </Hidden>
-        */}
+        <ScreenClass render={(screen:any) => {
+          if (['sm', 'xs'].includes(screen) && isMobileMenuOpen) {
+            return <MobileNav isOpen={ isMobileMenuOpen } { ...props } onClose={ () => setIsMobileMenuOpen(false) } />
+          }
+        }} />
       </Wrapper>
       <WorkSubNav isOpen={ isShowingWorkRoute } { ...props } />
     </>
@@ -78,8 +78,4 @@ export const NavItem = styled.div<{ active:boolean }>`
   flex: 1;
   height: 50px;
   cursor: pointer;
-  color: ${ p => p.active ? '#c70082' : 'inherit' };
-  &:hover {
-    color: #c70082;
-  }
 `;

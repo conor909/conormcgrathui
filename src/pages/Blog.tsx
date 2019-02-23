@@ -4,32 +4,52 @@ import { Hidden, Container, Row, Col } from 'react-awesome-styled-grid';
 import { Page } from '../components';
 import loading from '../data/images/loading.svg';
 
+{/*<div style={{ position: 'relative', width: '100%' }}>
+  <div style={{ background: '#fff', border: '1px solid #e1e1e1', position: 'fixed' }}>
+    <ul>
+      { props.articles.length > 0 && props.articles.map((a:IArticle) => (<li><a>{ a.title }</a></li>)) }
+    </ul>
+    {/*<ul>
+      { categoriesArray.length > 0 && categoriesArray.map((cat:string) => (<li>{ cat }</li>)) }
+    </ul>
+  </div>
+</div>*/}
+
 export default () => {
-  
-  const [ mediumData, setMedium ] = useState<IMediumData | null>(null);
-  
-  //  siihee0otmc639idb8lzefltte4lkxqd5hljszzn
+
+  const [ hasGotData, setHasGotData ] = useState<boolean>(false);
+  const [ articles, setArticles ] = useState<any>([]);
+  const [ categories, setCategories ] = useState<any>([]);
+  const [ feed, setFeed ] = useState<any>(null);
   
   useEffect(() => {
+    getArticles();
+    return () => { setFeed(null) };
+  }, []);
+
+  function getArticles() {
     const requestObject = {
       url: 'https://api.rss2json.com/v1/api.json?rss_url=https://medium.com/feed/@conor909&api_key=q1hi4ihgrufvqtyfbpsb2wjqfm0yr5vo5q64yqak'
     };
     axios(requestObject)
       .then((res) => {
-        setMedium(res.data);
+        const articles = res.data.items.filter((item:IArticle) => (item.categories.length > 0)).reverse();
+        const categories = new Set(articles
+          .map((a:IArticle) => (a.categories.map(c => c)))
+          .map((array:Array<string>) => array.map(i => i))
+          .flat());
+        setFeed(res.data.feed);
+        setArticles(articles);
+        setCategories(categories);
+        setHasGotData(true);
       });
-    return () => setMedium(null);
-  }, []);
-  
-  const articles = mediumData
-    ? mediumData.items.filter((item:IArticle) => (item.categories.length > 0)).reverse()
-    : [];
+  }
   
   return(
     <Page>
       {
-        mediumData
-          ? <BlogContent key={ Math.random() } articles={ articles } feed={ mediumData.feed }/>
+        hasGotData
+          ? <Blog key={ Math.random() } articles={ articles } feed={ feed } categories={ categories }/>
           : <img src={ loading } />
       }
     </Page>
@@ -47,54 +67,36 @@ interface IArticle {
   categories: Array<string>;
 }
 
-const BlogContent = (props:{ articles:Array<IArticle> | null, feed:any }) => {
-
-  const categoryArrays = props.articles &&
-    props.articles.map((a:IArticle) => (a.categories.map(c => c)))
-    .map((array:Array<string>) => array.map(i => i))
+const Blog = (props:{ articles:Array<IArticle>, feed:any, categories:any }) => {
   
+  const categoriesArray:Array<string> = [];
+  props.categories.forEach((c:string) => categoriesArray.push(c));
+
   return(
-    <Row nogutter={ true }>
-      <Hidden xs sm>
-        <Col lg={ 3 } md={ 4 } sm={ 12 } xs={ 12 }>
-          <Row nogutter={ true } justify='center'>
-            <img src={ props.feed.image } style={{ borderRadius: '50%' }} />
-          </Row>
-          <Row nogutter={ true } justify='center'>
-            <span style={{ fontSize: '0.8rem', textAlign: 'center', paddingTop: '1rem' }}>
-              Conor McGrath <br />on <a href='https://medium.com/@conor909' target='_blank'>Medium</a>
-            </span>
-          </Row>
-          {
-            props.articles && props.articles.length > 0 &&
-            <Row>
-              <ul>
-                {/*
-                  uniqueCategories.map(cat => (<li>{ cat }</li>))
-                */}
-              </ul>
-            </Row>
-          }
-        </Col>
-      </Hidden>
+    <Row style={{ marginTop: '1rem' }}>
+      <Col lg={ 3 } md={ 4 } sm={ 12 } xs={ 12 }>
+        <img src={ props.feed.image } style={{ borderRadius: '50%', alignSelf: 'center', width: '100%', maxWidth: '200px' }} />
+        <div style={{ fontSize: '0.8rem', textAlign: 'center', paddingTop: '1rem', width: '100%' }}>
+          Conor McGrath <br />on <a href='https://medium.com/@conor909' target='_blank'>Medium</a>
+        </div>
+      </Col>
       <Col lg={ 9 } md={ 8 } sm={ 12 } xs={ 12 }>
-        <Row nogutter={ true }>
-            {
-              !!props.articles &&
-                props.articles.map((article:any) => (
-                  <article role="article" style={{ margin: '0 0 2rem', borderBottom: '1px solid #afafaf' }} id={ article.title }>
-                    <Row nogutter={ true }>
-                      <Col>
-                        <small style={{ color: '#727272', float: 'right' }}>
-                        <time>{ new Date(article.pubDate).toLocaleDateString() }</time></small>
-                        <h3 style={{ margin: 0 }}>{ article.title }</h3>
-                      </Col>
-                      <div key={ Math.random() } dangerouslySetInnerHTML={{ __html: article ? article.content : '' }} />
-                    </Row>
-                  </article>
-                ))
-            }
-        </Row>
+        {
+          !!props.articles &&
+            props.articles.map((article:any) => (
+              <article key={ Math.random() } role="article" style={{ margin: '0 0 2rem', borderBottom: '1px solid #afafaf' }} id={ article.title }>
+                <Row>
+                  <Col>
+                    <small style={{ color: '#727272', textAlign: 'right' }}>
+                      <time>{ new Date(article.pubDate).toLocaleDateString() }</time>
+                    </small>
+                    <h3 style={{ marginTop: 0 }}>{ article.title }</h3>
+                    <div key={ Math.random() } dangerouslySetInnerHTML={{ __html: article ? article.content : '' }} />
+                  </Col>
+                </Row>
+              </article>
+            ))
+        }
       </Col>
     </Row>
   )
