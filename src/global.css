@@ -26,11 +26,13 @@ body,
   flex-direction: column;
   flex: 1;
   color: #696969;
-  overflow-x: hidden;
 }
 
 body {
   background: #f6f6f6;
+  overflow-x: hidden;
+  overflow-y: scroll; /* has to be scroll, not auto */
+  -webkit-overflow-scrolling: touch;
 }
 
 a {

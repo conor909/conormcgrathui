@@ -3,7 +3,7 @@ import { Container } from 'react-awesome-styled-grid';
 
 export default (props:any) => (
   <Container
-    style={{ ...props.style, position: 'relative', overflowY: 'scroll', overflowScrolling: 'touch' }}
+    style={{ ...props.style, position: 'relative' }}
     fluid={ true }>
       { props.children }
   </Container>
