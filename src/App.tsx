@@ -13,18 +13,18 @@ export default (props:any) => {
 
     // doesnt solve chrome and safari mobile
 
-    // const [ width, setWidth ] = useState<number>(window.innerWidth);
-    // const [ height, setHeight ] = useState<number>(window.innerHeight);
-    // useEffect(() => {
-    //   function onResize() { setWidth(window.innerWidth); setHeight(window.innerHeight); }
-    //   window.addEventListener('resize', onResize);
-    //   return () => { window.removeEventListener('resize', onResize) }
-    // }, []);
+    const [ width, setWidth ] = useState<number>(window.innerWidth);
+    const [ height, setHeight ] = useState<number>(window.innerHeight);
+    useEffect(() => {
+      function onResize() { setWidth(window.innerWidth); setHeight(window.innerHeight); }
+      window.addEventListener('resize', onResize);
+      return () => { window.removeEventListener('resize', onResize) }
+    }, []);
   // repeated end
 
+  // <ScreenBadge />
   return (
     <AppWrap>
-      <ScreenBadge />
       <Router>
         <>
           <Navbar />

@@ -58,8 +58,10 @@ img {
   position: relative;
 }
 
-svg {
-  width: 100%;
+/*img[src$=".svg"] { width: 100% }*/
+
+.svg-container {
+  width: 10em;
 }
 
 .tech-logo {
@@ -78,4 +80,23 @@ ol {
 .blog-nav li {
   font-size: .7rem;
   padding: 1rem 0;
+}
+
+
+/* width */
+::-webkit-scrollbar {
+  width: 15px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f6f6f6;
+  border-left: 1px solid #e1e1e1;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #fcd100;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #fcd100;
 }

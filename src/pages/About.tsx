@@ -10,7 +10,7 @@ export default (props:any) => (
         <img src={ me } style={{ alignSelf: 'start', width: '100%', maxWidth: '200px', opacity: .8 }} />
       </Col>
       <Col lg={ 10 } md={ 10 } sm={ 12 } xs={ 12 }>
-        <h1 style={{ marginTop: 0 }}>Hello! I'm Conor</h1>
+        <h1 style={{ marginTop: 0 }}>Hey! I'm Conor</h1>
         <h3 style={{ marginTop: 0 }}>A contract user interface developer with a focus in React and React Native.</h3>
         <h4 style={{ marginTop: 0 }}>My expertise is in web and mobile app development, UI / UX design, data visualisation, web animations, wireframing and prototyping.</h4>
         <TechLogosRow />
@@ -44,15 +44,15 @@ const blurbs = [
   },
   {
     title: 'Design',
-    blurb: "I designed for print, web and UX for many years before becoming a developer. It's easy for developers to over compromise the design in favour of functionality, but my design experience won't allow me to be satisfied until the look and feel is polished and complete."
+    blurb: "I designed for print, web and UX for years before becoming a developer. I think it's easy for developers to over compromise the design in favour of functionality, but I can't be satisfied until the look and feel is polished and complete."
   },
   {
     title: 'UX',
-    blurb: "Engineering and sales are no longer the main concern for tech companies. Good design and user experience is crucial to conversions. My background in design & UX has helped me communicate ideas for user journeys and functionality throughout the UI."
+    blurb: "Engineering and sales are no longer the main concern for tech companies. A good user experience is crucial to conversions. My experience communicating ideas through wireframes and prototypes has helped develop great user journeys and functionality throughout UIs."
   },
   {
     title: 'Architecture',
-    blurb: "Coming from vanilla javacript, old and modern frameworks. I've learned to understand basic principals of clean architecture. The data model might be constructed or stored differently, and the view rendered differently, or actions and contollers might tigger state changes and events differently, my expereince in different frameworks and understanding basic principles has taught me good structure and maintainability of code."
+    blurb: "My background in vanilla javacript, old, and modern frameworks, has tought me to understand basic underlying principals of clean architecture. The data model might be constructed or stored differently, and the view rendered differently, or actions and contollers might tigger state changes and events differently.  But my expereinces have taught me to appreciate simplicity, and good structure and maintainability of code."
   },
   {
     title: 'Clean Code',
