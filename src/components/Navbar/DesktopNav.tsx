@@ -18,17 +18,21 @@ export default (props:any) => {
     <Col>
       <Row align='end'>
         
+        {/*
         <NavItem
           active={ !!matchPath(props.location.pathname, { path: '/about' }) }
           onClick={ () => clickNav('/about' )}>
             about
         </NavItem>
+        */}
         
-        <NavItem
-          active={ !!matchPath(props.location.pathname, { path: '/clients' }) }
-          onClick={ () => clickNav('/clients' )}>
-            clients
-        </NavItem>
+        {/*
+          <NavItem
+            active={ !!matchPath(props.location.pathname, { path: '/clients' }) }
+            onClick={ () => clickNav('/clients' )}>
+              clients
+          </NavItem>
+        */}
       
         <NavItem
           active={ !!matchPath(props.location.pathname, { path: '/work/:type' }) }

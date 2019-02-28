@@ -7,7 +7,7 @@ export default (props:any) => (
   <Page>
     <Row style={{ marginTop: '1rem' }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
-        <img src={ me } style={{ alignSelf: 'start', width: '100%', maxWidth: '200px', opacity: .8 }} />
+        <img src={ me } style={{ alignSelf: 'start', width: '100%', maxWidth: '200px' }} />
       </Col>
       <Col lg={ 10 } md={ 10 } sm={ 12 } xs={ 12 }>
         <h1 style={{ marginTop: 0 }}>Hey! I'm Conor</h1>

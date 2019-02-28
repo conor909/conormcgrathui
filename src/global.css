@@ -89,7 +89,7 @@ ol {
 }
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #f6f6f6;
+  background: #333;
   border-left: 1px solid #e1e1e1;
 }
 /* Handle */
