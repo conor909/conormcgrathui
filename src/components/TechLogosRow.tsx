@@ -10,40 +10,26 @@ import tsLogo from '../data/images/tech-logos/ts.svg';
 
 export default () => (
   <Row style={{ justifyContent: 'space-between', flexWrap: 'nowrap' }}>
-    <Col lg={ 1 } md={ 1 } sm={ 1 } xs={ 1 } style={{ justifyContent: 'center' }}>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <img src={ jsLogo } className='tech-logo' />
-      </div>
+    <Col lg={ 1 } md={ 1 } sm={ 1 } xs={ 1 }>
+      <img src={ jsLogo } className='tech-logo' />
     </Col>
     <Col lg={ 1 } md={ 1 } sm={ 1 } xs={ 1 }>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <img src={ tsLogo } className='tech-logo' />
-      </div>
+      <img src={ tsLogo } className='tech-logo' />
     </Col>
     <Col lg={ 1 } md={ 1 } sm={ 1 } xs={ 1 }>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <img src={ reactLogo } className='tech-logo' />
-      </div>
+      <img src={ reactLogo } className='tech-logo' />
     </Col>
     <Col lg={ 1 } md={ 1 } sm={ 1 } xs={ 1 }>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <img src={ reduxLogo } className='tech-logo' />
-      </div>
+      <img src={ reduxLogo } className='tech-logo' />
     </Col>
     <Col lg={ 1 } md={ 1 } sm={ 1 } xs={ 1 }>
-      <div style={{ display: 'flex', justifyContent: 'center' }}>
-        <img src={ nodeLogo } className='tech-logo' />
-      </div>
+      <img src={ nodeLogo } className='tech-logo' />
     </Col>
       <Col lg={ 1 } md={ 1 } sm={ 1 } xs={ 1 }>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <img src={ aiLogo } className='tech-logo' />
-        </div>
+        <img src={ aiLogo } className='tech-logo' />
       </Col>
       <Col lg={ 1 } md={ 1 } sm={ 1 } xs={ 1 }>
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <img src={ psLogo } className='tech-logo' />
-        </div>
+        <img src={ psLogo } className='tech-logo' />
       </Col>
   </Row>
 );
