@@ -28,7 +28,7 @@ export default (props:any) => {
   }
   
   return(
-    <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+    <div style={{ maxWidth: '960px', margin: '0 auto', position: 'relative' }}>
       <Formik
         initialValues={{ email: '', name: '', phone: '', message: '' }}
         onSubmit={(values) => {

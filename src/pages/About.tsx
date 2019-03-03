@@ -38,9 +38,6 @@ const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
           { props.blurb }
         </p>
       </div>
-      {/*
-        props.index !== 4 &&  props.index !== 3 && <img src={ divider } />
-      */}
     </Col>
   )
 }
@@ -48,22 +45,22 @@ const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
 const blurbs = [
   {
     title: 'Tech',
-    blurb: "React, React-Native, Typescript, Redux, Node.. There's definitly too many frameworks and tools to list here, but I've enjoyed building, refactoring, testing, integrating and maintaining apps from the ground up, solving problems in all aspects of planning and development."
+    blurb: "React, React-Native, Typescript, Redux, Node.. There's too many frameworks and tools to mention here, but I've enjoyed building, refactoring, testing, integrating and maintaining apps from the ground up, solving problems in all aspects of planning and development."
   },
   {
     title: 'Design',
-    blurb: "I designed for print, web and UX for years before becoming a developer. I think it's easy for developers to over compromise the design in favour of functionality, but I can't be satisfied until the look and feel is polished and complete."
+    blurb: "I designed graphics for print, websites and games before becoming a UI developer, and understanding design processes really helps me in the planning stages of building UIs."
   },
   {
     title: 'UX',
-    blurb: "Engineering and sales are no longer the main concern for tech companies. A good user experience is crucial to conversions. My experience communicating ideas through wireframes and prototypes has helped develop great user journeys and functionality throughout UIs."
+    blurb: "Engineering and sales are no longer the main concern for tech companies. A good user experience is crucial to conversions. My experience communicating ideas through wireframes and prototypes have helped me develop great user journeys and complex components."
   },
   {
     title: 'Architecture',
-    blurb: "My background in vanilla javacript, old, and modern frameworks, has tought me to understand basic underlying principals of clean architecture. The data model might be constructed or stored differently, and the view rendered differently, or actions and contollers might tigger state changes and events differently.  But my expereinces have taught me to appreciate simplicity, and good structure and maintainability of code."
+    blurb: "My background in vanilla javacript, and old and new frameworks, have tought me basic principals of clean architecture. The data model might be constructed or stored differently, and the view rendered differently, or actions and contollers can trigger state changes and events differently.  But simplicity and good structure leads to maintainability of code and quick turnarounds for new features."
   },
   {
     title: 'Clean Code',
-    blurb: "Over the years I've picked up some skills that I believe only experience can teach you. Extracting chunks of code into sperate classes or functions before the overall feature has matured, or imagining a project file/folder system prematurly can lead to spaghetti code and unhappy developers. Keeping code simple, easy to read, and written for the immediate use case, helps to keep refactors easy, and new features quick to deliver and keeps happy programmers."
+    blurb: "Over the years I've picked up some skills that I believe only experience can teach you. Extracting chunks of code into sperate classes or functions before the overall feature has matured, or imagining a project file/folder system prematurly can lead to spaghetti code and unhappy developers. Keeping code simple, easy to read, and written for the immediate use case, helps to keep refactors easy, and new features quick to deliver and keeps programmers happy."
   },
 ]

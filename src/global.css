@@ -25,7 +25,7 @@ body,
   display: flex;
   flex-direction: column;
   flex: 1;
-  color: #1b000e;
+  color: #380000;
 }
 
 body {
@@ -53,20 +53,15 @@ article h3 {
   margin: 0;
 }
 
-/* img {
-  z-index: -1;
-  position: relative;
-} */
-
-/*img[src$=".svg"] { width: 100% }*/
-
-.svg-container {
-  width: 10em;
+.tech-logo {
+  display: block;
+  width: 100%;
 }
 
-.tech-logo {
-  display: flex;
-  flex-grow: 1;
+input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
 }
 
 ul {

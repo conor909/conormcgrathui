@@ -30,9 +30,6 @@ export const Button = styled.button<{ disabled:boolean }>`
   font-size: 1rem;
   border: 0;
   cursor: ${ p => p.disabled ? 'inherit' : 'pointer' };
-    &:hover {
-      background: ${ p => p.disabled ? '#03a5df' : '#7d7c7c' };
-    }
     &:focus {
       outline: 0;
     }
