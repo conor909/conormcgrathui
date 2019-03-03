@@ -4,10 +4,8 @@ import { Page, ContactForm } from '../components';
 
 export default () => {
   return(
-    <Page>
-      <Container>
-        <ContactForm />
-      </Container>
+    <Page style={{ background: '#333', width: '100%', color: 'white' }}>
+      <ContactForm />
     </Page>
   );
 };

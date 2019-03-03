@@ -6,7 +6,7 @@ import divider from '../data/images/divider.svg';
 
 export default (props:any) => (
   <Page>
-    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: "#333", color: "white" }}>
+    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: "#1b000e", color: "white" }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
         <img src={ me } style={{ alignSelf: 'start', width: '100%', maxWidth: '200px' }} />
       </Col>
@@ -31,9 +31,9 @@ const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
   return (
     <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 }>
       <ScreenClass render={(screen:any) => (
-        <h3 style={{ color: ['sm', 'md'].includes(screen) ? 'red' : 'purple' }}>{ props.title }</h3>
+        <h3>{ props.title }</h3>
       )} />
-      <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', border: '1px solid #505050' }}>
+      <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', border: '1px solid #1b000e' }}>
         <p>
           { props.blurb }
         </p>
