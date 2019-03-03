@@ -1,41 +1,49 @@
 import React from 'react';
-import { Row, Col } from 'react-awesome-styled-grid';
+import { Row, Col, ScreenClass } from 'react-awesome-styled-grid';
 import { Page, TechLogosRow } from '../components';
 import me from '../data/images/me.svg';
+import divider from '../data/images/divider.svg';
 
 export default (props:any) => (
   <Page>
-    <Row style={{ marginTop: '1rem' }}>
+    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: "#333", color: "white" }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
         <img src={ me } style={{ alignSelf: 'start', width: '100%', maxWidth: '200px' }} />
       </Col>
       <Col lg={ 10 } md={ 10 } sm={ 12 } xs={ 12 }>
         <h1 style={{ marginTop: 0 }}>Hey! I'm Conor</h1>
         <h3 style={{ marginTop: 0 }}>A contract user interface developer with a focus in React and React Native.</h3>
-        <h4 style={{ marginTop: 0 }}>My expertise is in web and mobile app development, UI / UX design, data visualisation, web animations, wireframing and prototyping.</h4>
+        <h4 style={{ marginTop: 0 }}>My expertise is in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
         <TechLogosRow />
       </Col>
     </Row>
     <Row style={{ marginTop: '1rem' }}>
       {
-        blurbs.map(b => (<BlurbBox title={ b.title } blurb={ b.blurb } key={ Math.random() }/>))
+        blurbs.map((b, index) => (
+            <BlurbBox title={ b.title } blurb={ b.blurb } key={ Math.random() } index={ index } />
+        ))
       }
     </Row>
   </Page>
 )
 
-const BlurbBox = (props:{ title:string, blurb:string }) => (
-  <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 }>
-    <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', marginBottom: '2em'}}>
-      <h3 style={{ margin: 0 }}>
-        { props.title }
-      </h3>
-      <p>
-        { props.blurb }
-      </p>
-    </div>
-  </Col>
-)
+const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
+  return (
+    <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 }>
+      <ScreenClass render={(screen:any) => (
+        <h3 style={{ color: ['sm', 'md'].includes(screen) ? 'red' : 'purple' }}>{ props.title }</h3>
+      )} />
+      <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', border: '1px solid #505050' }}>
+        <p>
+          { props.blurb }
+        </p>
+      </div>
+      {/*
+        props.index !== 4 &&  props.index !== 3 && <img src={ divider } />
+      */}
+    </Col>
+  )
+}
 
 const blurbs = [
   {

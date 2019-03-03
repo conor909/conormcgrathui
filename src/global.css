@@ -53,10 +53,10 @@ article h3 {
   margin: 0;
 }
 
-img {
+/* img {
   z-index: -1;
   position: relative;
-}
+} */
 
 /*img[src$=".svg"] { width: 100% }*/
 
