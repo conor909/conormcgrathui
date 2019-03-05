@@ -3,25 +3,24 @@ import { TimelineLite } from "gsap";
 import { Row, Col } from 'react-awesome-styled-grid';
 import { IGridItem } from './index';
 import styled from 'styled-components';
-import { useLockBodyScroll } from '../../hooks';
 
 export default 
   (props:{ item:IGridItem, onClose():void  }) => {
-    
-    useLockBodyScroll();
 
-    // repeated in App.tsx
+    function lockScroll() {
+      const grid:any = document.getElementById("grid-items");
+      grid.style.overflowY = "hidden";
+    }
 
-      // doesnt solve chrome and safari mobile
+    function unlockScroll() {
+      const grid:any = document.getElementById("grid-items");
+      grid.style.overflowY = "scroll";
+    }
 
-      // const [ width, setWidth ] = useState<number>(window.innerWidth);
-      // const [ height, setHeight ] = useState<number>(window.innerHeight);
-      // useEffect(() => {
-      //   function onResize() { setWidth(window.innerWidth); setHeight(window.innerHeight); }
-      //   window.addEventListener('resize', onResize);
-      //   return () => { window.removeEventListener('resize', onResize) }
-      // }, []);
-    // repeated end
+    useEffect(() => {
+      lockScroll()
+      return () => unlockScroll()
+    }, []);
 
     const titleRef = useRef<any>(null);
     const descriptionRef = useRef<any>(null);

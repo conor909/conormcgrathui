@@ -8,12 +8,12 @@ export default (props:any) => {
   const outterScreenRef = useRef(null);
   const innerScreenRef = useRef(null);
   const circleScreenRef = useRef(null);
-  const width = window.innerWidth;
-  const height = window.innerHeight - 55;
+  //const width = window.innerWidth;
+  //const height = window.innerHeight - 55;
 
   useEffect(() => {
     ScreenScene(outterScreenRef, innerScreenRef);
-    OrbsScene(circleScreenRef);
+    //OrbsScene(circleScreenRef);
   }, []);
 
   function ScreenScene(outterScreenRef:any, innerScreenRef:any) {
@@ -24,12 +24,12 @@ export default (props:any) => {
     return tl;
   }
 
-  function OrbsScene(circleScreenRef:any) {
-    const tl = new TimelineMax();
-    tl
-      .fromTo(circleScreenRef.current, 1, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power4.easeOut }, 2)
-    return tl;
-  }
+  // function OrbsScene(circleScreenRef:any) {
+  //   const tl = new TimelineMax();
+  //   tl
+  //     .fromTo(circleScreenRef.current, 1, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power4.easeOut }, 2)
+  //   return tl;
+  // }
 
   return(
     <Page>

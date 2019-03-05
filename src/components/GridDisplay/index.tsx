@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { withRouter } from 'react-router';
 import { TweenLite, Power4 } from "gsap";
-import { Container, Row, Col } from 'react-awesome-styled-grid';
+import { Row, Col } from 'react-awesome-styled-grid';
 import Display from './Display';
 import getWork from '../../data/work';
 
@@ -32,28 +32,26 @@ export default withRouter((props:any) => {
   }
 
   return (
-    <>
-      {
-        loadedImageCount < items.length && items.map((work:IGridItem) => (
-          <img style={{ display: 'none' }} src={ work.feature } key={ Math.random() } onLoad={ () => setLoadedImageCount(loadedImageCount + 1) } />
-        ))
-      }
-      <Col>
-        <Row>
-          {
-            loadedImageCount === items.length
-              ? items.map((item:IGridItem, i:number) => <GridItem key={ Math.random() } item={ item } onSelectedItem={ handleSelectedItem } index={ i } location={ props.history.location.pathname } />)
-              : null
-          }
-        </Row>
-      </Col>
-      {
-        selectedItem &&
-          <Display
-            onClose={ onClickBack }
-            item={ selectedItem } />
-      }
-    </>
+    <Row>
+      <div className='grid-items'>
+        {
+          loadedImageCount < items.length && items.map((work:IGridItem) => (
+            <img style={{ display: 'none' }} src={ work.feature } key={ Math.random() } onLoad={ () => setLoadedImageCount(loadedImageCount + 1) } />
+          ))
+        }
+        {
+          loadedImageCount === items.length
+            ? items.map((item:IGridItem, i:number) => <GridItem key={ Math.random() } item={ item } onSelectedItem={ handleSelectedItem } index={ i } location={ props.history.location.pathname } />)
+            : null
+        }
+        {
+          selectedItem &&
+            <Display
+              onClose={ onClickBack }
+              item={ selectedItem } />
+        }
+      </div>
+    </Row>
   )
 });
 

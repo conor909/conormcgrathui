@@ -6,7 +6,7 @@ import divider from '../data/images/divider.svg';
 
 export default (props:any) => (
   <Page>
-    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: "#1b000e", color: "white" }}>
+    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: "#38001d", color: "white" }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
         <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
       </Col>
@@ -53,14 +53,14 @@ const blurbs = [
   },
   {
     title: 'UX',
-    blurb: "Engineering and sales are no longer the main concern for tech companies. A good user experience is crucial to conversions. My experience communicating ideas through wireframes and prototypes have helped me develop great user journeys and complex components."
+    blurb: "Engineering and sales are no longer the main concern for tech companies, a good user experience is crucial to conversions. My experience in design and development helps me communicate ideas for great user journeys and complex UI components."
   },
   {
     title: 'Architecture',
-    blurb: "My background in vanilla javacript, and old and new frameworks, have tought me basic principals of clean architecture. The data model might be constructed or stored differently, and the view rendered differently, or actions and contollers can trigger state changes and events differently.  But simplicity and good structure leads to maintainability of code and quick turnarounds for new features."
+    blurb: "My background in vanilla javacript, object oriented & functional frameworks has given me solid principals of clean architecture. I favour simplicity, and readability over syntax or frameworks, which leads to quick turnarounds of new features or refactors."
   },
   {
     title: 'Clean Code',
-    blurb: "Over the years I've picked up some skills that I believe only experience can teach you. Extracting chunks of code into sperate classes or functions before the overall feature has matured, or imagining a project file/folder system prematurly can lead to spaghetti code and unhappy developers. Keeping code simple, easy to read, and written for the immediate use case, helps to keep refactors easy, and new features quick to deliver and keeps programmers happy."
+    blurb: "Over the years I've picked up some skills that I believe only experience can teach you. Day to day things like knowing when it's time to extract chunks of code, or experiences with managing file systems can avoid spaghetti code, unhappy developers and keep project managers happy."
   },
 ]
