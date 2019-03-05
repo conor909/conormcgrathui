@@ -6,7 +6,7 @@ import divider from '../data/images/divider.svg';
 
 export default (props:any) => (
   <Page>
-    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: "#38001d", color: "white" }}>
+    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: "#dadada" }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
         <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
       </Col>
