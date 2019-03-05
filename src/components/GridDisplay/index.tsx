@@ -1,11 +1,11 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { memo, useState, useEffect, useRef } from 'react';
 import { withRouter } from 'react-router';
 import { TweenLite, Power4 } from "gsap";
 import { Row, Col } from 'react-awesome-styled-grid';
 import Display from './Display';
 import getWork from '../../data/work';
 
-export default withRouter((props:any) => {
+export default memo(withRouter((props:any) => {
     
   const [ loadedImageCount, setLoadedImageCount ] = useState<number>(0);
   const [ selectedItem, setSelectedItem ] = useState<IGridItem | null>(null);
@@ -53,7 +53,7 @@ export default withRouter((props:any) => {
       }
     </>
   )
-});
+}));
 
 const GridItem = React.memo(
   function (props:{ item:IGridItem, onSelectedItem:(item:IGridItem)=>void, index:number, location:string }) {
