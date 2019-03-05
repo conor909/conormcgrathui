@@ -3,24 +3,12 @@ import { TimelineLite } from "gsap";
 import { Row, Col } from 'react-awesome-styled-grid';
 import { IGridItem } from './index';
 import styled from 'styled-components';
+import { useLockBodyScroll } from '../../hooks';
 
 export default 
   (props:{ item:IGridItem, onClose():void  }) => {
-
-    function lockScroll() {
-      const grid:any = document.getElementById("grid-items");
-      grid.style.overflowY = "hidden";
-    }
-
-    function unlockScroll() {
-      const grid:any = document.getElementById("grid-items");
-      grid.style.overflowY = "scroll";
-    }
-
-    useEffect(() => {
-      lockScroll()
-      return () => unlockScroll()
-    }, []);
+    
+    useLockBodyScroll();
 
     const titleRef = useRef<any>(null);
     const descriptionRef = useRef<any>(null);
@@ -78,5 +66,6 @@ const Wrapper = styled.div`
   background: #f6f6f6;
   z-index: 1;
   overflow-y: scroll;
+  overflow-x: hidden;
   padding: 1rem;
 `;

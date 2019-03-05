@@ -32,26 +32,26 @@ export default withRouter((props:any) => {
   }
 
   return (
-    <Row>
-      <div className='grid-items'>
-        {
-          loadedImageCount < items.length && items.map((work:IGridItem) => (
-            <img style={{ display: 'none' }} src={ work.feature } key={ Math.random() } onLoad={ () => setLoadedImageCount(loadedImageCount + 1) } />
-          ))
-        }
-        {
-          loadedImageCount === items.length
-            ? items.map((item:IGridItem, i:number) => <GridItem key={ Math.random() } item={ item } onSelectedItem={ handleSelectedItem } index={ i } location={ props.history.location.pathname } />)
-            : null
-        }
-        {
-          selectedItem &&
-            <Display
-              onClose={ onClickBack }
-              item={ selectedItem } />
-        }
-      </div>
+    <>
+      {
+        loadedImageCount < items.length && items.map((work:IGridItem) => (
+          <img style={{ display: 'none' }} src={ work.feature } key={ Math.random() } onLoad={ () => setLoadedImageCount(loadedImageCount + 1) } />
+        ))
+      }
+    <Row style={ selectedItem ? { overflow: 'hidden' } : {} }>
+      {
+        loadedImageCount === items.length
+          ? items.map((item:IGridItem, i:number) => <GridItem key={ Math.random() } item={ item } onSelectedItem={ handleSelectedItem } index={ i } location={ props.history.location.pathname } />)
+          : null
+      }
     </Row>
+      {
+        selectedItem &&
+          <Display
+            onClose={ onClickBack }
+            item={ selectedItem } />
+      }
+    </>
   )
 });
 
