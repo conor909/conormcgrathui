@@ -50,7 +50,7 @@ export default () => {
       {
         hasGotData
           ? <Blog key={ Math.random() } articles={ articles } feed={ feed } categories={ categories }/>
-          : <img src={ loading } />
+          : null
       }
     </Page>
   )
@@ -74,13 +74,7 @@ const Blog = (props:{ articles:Array<IArticle>, feed:any, categories:any }) => {
 
   return(
     <Row style={{ marginTop: '1rem' }}>
-      <Col lg={ 3 } md={ 3 } sm={ 12 } xs={ 12 }>
-        <img src={ props.feed.image } style={{ borderRadius: '50%', alignSelf: 'center', width: '100%', maxWidth: '200px' }} />
-        <div style={{ fontSize: '0.8rem', textAlign: 'center', paddingTop: '1rem', width: '100%' }}>
-          Conor McGrath <br />on <a href='https://medium.com/@conor909' target='_blank'>Medium</a>
-        </div>
-      </Col>
-      <Col lg={ 9 } md={ 9 } sm={ 12 } xs={ 12 }>
+      <Col>
         {
           !!props.articles &&
             props.articles.map((article:any) => (
