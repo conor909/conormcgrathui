@@ -1,12 +1,15 @@
 import React from 'react';
+import { Home } from '../pages';
 import { Row, Col, ScreenClass } from 'react-awesome-styled-grid';
 import { Page, TechLogosRow } from '../components';
 import me from '../data/images/me.svg';
 import divider from '../data/images/divider.svg';
 
+
+
 export default (props:any) => (
   <Page>
-    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: '#333', color: '#fffd' }}>
+    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: '#efefef', border: '1px solid #e1e1e1' }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
         <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
       </Col>
@@ -33,7 +36,7 @@ const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
       <ScreenClass render={(screen:any) => (
         <h3>{ props.title }</h3>
       )} />
-      <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', border: '1px solid #1b000e' }}>
+      <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', border: '1px solid #e1e1e1' }}>
         <p>
           { props.blurb }
         </p>

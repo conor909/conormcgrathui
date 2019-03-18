@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { Hidden, Container, Row, Col } from 'react-awesome-styled-grid';
+import { Row, Col } from 'react-awesome-styled-grid';
 import { Page } from '../components';
-import loading from '../data/images/loading.svg';
 
 {/*<div style={{ position: 'relative', width: '100%' }}>
   <div style={{ background: '#fff', border: '1px solid #e1e1e1', position: 'fixed' }}>
