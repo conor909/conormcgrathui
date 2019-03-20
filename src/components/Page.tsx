@@ -9,7 +9,8 @@ export default withRouter((props:any) => (
           { props.children }
         </div>
         <footer  style={{ flexShrink: 0 }}>
-            <Row style={{ marginTop: '2rem', padding: '1rem', marginLeft: '-30px', marginRight: "-30px", minHeight: '300px', background: '#efefef', borderTop: '1px solid #e1e1e1', alignSelf: 'flex-end' }}>
+            <Row style={{ marginTop: '2rem', padding: '1rem', marginLeft: '-30px', marginRight: "-30px", minHeight: '300px', background: '#efefef', borderTop: '1px solid #e1e1e1', justifyContent: 'center'}}>
+              <span style={{ textShadow: '1px 1px 1px #fff', color: '#c5c5c5' }}>conor mcgrath ui | ux </span>
               {/*
               <NavItem
                 active={ !!matchPath(props.location.pathname, { path: '/clients' }) }

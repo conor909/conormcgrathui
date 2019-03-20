@@ -10,20 +10,22 @@ export default (props:any) => (
     <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: '#efefef', border: '1px solid #e1e1e1', borderTop: 'none' }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
         <ScreenClass render={(screen:any) => {
-            const styles = screen === 'sm' || screen === 'xs' ? { display: 'none' } : { }
+            const styles = screen === 'sm' || screen === 'xs' ? { height: '100px' } : { }
             return (
-              <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto', ...styles }} />
+              <div style={{ background: screen === 'sm' || screen === 'xs' ? '#ffce00' : 'transparent' }}>
+                <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
+              </div>
             )
           }} />
       </Col>
-      <Col lg={ 10 } md={ 10 } sm={ 12 } xs={ 12 }>
+      <Col lg={ 10 } md={ 9 } sm={ 12 } xs={ 12 }>
         <h1 style={{ marginTop: 0, color: '#1d1d1d' }}>Dia dhuit, Hello, Hola, Olá, Dzień dobry, नमस्ते, مرحبا, 你好, こんにちは </h1> 
         <h3 style={{ marginTop: 0 }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for finance tech and data analytics companies.</h3>
         <h4 style={{ marginTop: 0 }}>I have 10 years front end experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
         <TechLogosRow />
       </Col>
     </Row>
-    <Row style={{ marginTop: '1rem' }}>
+    <Row style={{ paddingTop: '1rem' }}>
       {
         blurbs.map((b, index) => (
             <BlurbBox title={ b.title } blurb={ b.blurb } key={ Math.random() } index={ index } />

@@ -23,7 +23,7 @@ export default (props:any) => {
   return (
     <Wrapper ref={ mobileSideMenu }>
       <Col>
-        <Row onClick={ () => props.history.push('/clients' )}>
+        <Row onClick={ () => clickNav('/clients' )}>
           <MobileNavItem>
             clients
           </MobileNavItem>
