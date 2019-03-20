@@ -33,7 +33,9 @@ const Client = (props:any) => (
             <h1>{ props.title }</h1>
             <small>{ props.timeframe }</small>
             { props.desc.map((p:string) => <p>{ p }</p>) }
-            <a href='https://www.baesystems.com/en/cybersecurity/about-us/ai-labs'>www.baesystems.com</a>
+            <a href='https://www.baesystems.com/en/cybersecurity/about-us/ai-labs' target='_BLANK'>
+                www.baesystems.com
+            </a>
         </Col>
     </Row>
 )

@@ -1,17 +1,20 @@
 import React from 'react';
-import { Home } from '../pages';
 import { Row, Col, ScreenClass } from 'react-awesome-styled-grid';
 import { Page, TechLogosRow } from '../components';
 import me from '../data/images/me.svg';
-import divider from '../data/images/divider.svg';
 
 
 
 export default (props:any) => (
   <Page>
-    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: '#efefef', border: '1px solid #e1e1e1' }}>
+    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: '#efefef', border: '1px solid #e1e1e1', borderTop: 'none' }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
-        <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
+        <ScreenClass render={(screen:any) => {
+            const styles = screen === 'sm' || screen === 'xs' ? { display: 'none' } : { }
+            return (
+              <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto', ...styles }} />
+            )
+          }} />
       </Col>
       <Col lg={ 10 } md={ 10 } sm={ 12 } xs={ 12 }>
         <h1 style={{ marginTop: 0, color: '#1d1d1d' }}>Dia dhuit, Hello, Hola, Olá, Dzień dobry, नमस्ते, مرحبا, 你好, こんにちは </h1> 
