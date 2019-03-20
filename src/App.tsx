@@ -4,7 +4,7 @@ import { ScreenBadge } from 'react-awesome-styled-grid';
 import styled from 'styled-components';
 import './flex-box.css';
 import './global.css';
-import { Home, About, Work, Contact, Blog } from './pages';
+import { Home, About, Work, Contact, Blog, Clients } from './pages';
 import { Navbar } from './components';
 
 export default (props:any) => {
@@ -30,6 +30,7 @@ export default (props:any) => {
           <Navbar />
           <Switch>
             <Route path="/" exact component={ About } />
+            <Route path="/clients" exact component={ Clients } />
             <Route path="/about" exact component={ About } />
             <Route path="/work/:category" component={ Work } />
             <Route path="/contact" exact component={ Contact } />

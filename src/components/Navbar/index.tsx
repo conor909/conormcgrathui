@@ -21,7 +21,7 @@ export default withRouter((props:any):any => {
             <Nav>
               <ScreenClass render={(screen:any) => {
                 if (!['sm', 'xs'].includes(screen)) {
-                  return <DesktopNav { ...props } />
+                  return <DesktopNav />
                 } else {
                   return (
                     <div style={{ width: '100%', textAlign: 'right', fontSize: 'x-large', fontWeight: 'bold' }}onClick={ () => setIsMobileMenuOpen(!isMobileMenuOpen) }>

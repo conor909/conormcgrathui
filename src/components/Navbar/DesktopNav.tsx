@@ -1,9 +1,9 @@
 import React from 'react';
-import { matchPath } from 'react-router-dom';
+import { matchPath, withRouter } from 'react-router-dom';
 import { Row, Col } from 'react-awesome-styled-grid';
 import { NavItem } from './index';
 
-export default (props:any) => {
+export default withRouter((props:any) => {
 
   function clickNav(route:string) {
     if (route === props.location.pathname) {
@@ -26,13 +26,11 @@ export default (props:any) => {
         </NavItem>
         */}
         
-        {/*
           <NavItem
             active={ !!matchPath(props.location.pathname, { path: '/clients' }) }
             onClick={ () => clickNav('/clients' )}>
               clients
           </NavItem>
-        */}
       
         <NavItem
           active={ !!matchPath(props.location.pathname, { path: '/work/:type' }) }
@@ -54,4 +52,4 @@ export default (props:any) => {
       </Row>
     </Col>
   )
-}
+})

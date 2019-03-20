@@ -14,9 +14,9 @@ export default (props:any) => (
         <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
       </Col>
       <Col lg={ 10 } md={ 10 } sm={ 12 } xs={ 12 }>
-        <h1 style={{ marginTop: 0 }}>Hey! I'm Conor</h1>
-        <h3 style={{ marginTop: 0 }}>A contract user interface developer with a focus in React and React Native.</h3>
-        <h4 style={{ marginTop: 0 }}>My expertise is in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
+        <h1 style={{ marginTop: 0, color: '#1d1d1d' }}>Dia dhuit, Hello, Hola, Olá, Dzień dobry, नमस्ते, مرحبا, 你好, こんにちは </h1> 
+        <h3 style={{ marginTop: 0 }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for finance tech and data analytics companies.</h3>
+        <h4 style={{ marginTop: 0 }}>I have 10 years front end experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
         <TechLogosRow />
       </Col>
     </Row>
@@ -34,7 +34,7 @@ const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
   return (
     <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 }>
       <ScreenClass render={(screen:any) => (
-        <h3>{ props.title }</h3>
+        <h3 style={{ color: '#1d1d1d' }}>{ props.title }</h3>
       )} />
       <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', border: '1px solid #e1e1e1' }}>
         <p>
