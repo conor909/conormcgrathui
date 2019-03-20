@@ -3,7 +3,7 @@ import axios from 'axios';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 //import debounce from 'lodash.debounce';
-import { Row, Col } from 'react-awesome-styled-grid';
+import { Row, ScreenClass } from 'react-awesome-styled-grid';
 import { FormElements } from '../../components';
 
 export default (props:any) => {
@@ -28,7 +28,10 @@ export default (props:any) => {
   }
   
   return(
-    <div style={{ maxWidth: '960px', margin: '0 auto', position: 'relative' }}>
+    <ScreenClass render={(screen:any) => {
+      const messageBoxRowSpan = (screen === 'sm' || screen === 'xs') ? 5 : 10;
+      return (
+        <div style={{ maxWidth: '960px', margin: '0 auto', position: 'relative' }}>
       <Formik
         initialValues={{ email: '', name: '', phone: '', message: '' }}
         onSubmit={(values) => {
@@ -99,6 +102,7 @@ export default (props:any) => {
                     value={ values.message }
                     onChange={ handleChange }
                     onBlur={ handleBlur }
+                    rowspan={ messageBoxRowSpan }
                     error={ errors.message ? errors.message : null }
                   />
                 </Row>
@@ -122,5 +126,7 @@ export default (props:any) => {
         }
       </Formik>
     </div>
+      )
+    }} />
   )
 }

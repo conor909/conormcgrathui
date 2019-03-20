@@ -2,7 +2,7 @@ import React from 'react';
 import { InputWrapper, Validation, InputLabel, IInput } from './Input';
 
 export default (props:IInput) => {
-  const { id, label, error, value, onChange } = props;
+  const { id, label, error, value, onChange, rowspan } = props;
   return (
     <>
       <InputLabel>
@@ -12,7 +12,7 @@ export default (props:IInput) => {
       }
       </InputLabel>
       <InputWrapper error={ error }>
-        <textarea id={ id } rows={ 10 } value={ value } onChange={ onChange } />
+        <textarea id={ id } rows={ rowspan } value={ value } onChange={ onChange } />
       </InputWrapper>
     </>
   )

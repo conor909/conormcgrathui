@@ -55,4 +55,5 @@ export interface IInput {
   onBlur:any;
   label:string;
   error:string | null;
+  rowspan?:number
 }
