@@ -10,9 +10,9 @@ export default (props:any) => (
     <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: '#efefef', border: '1px solid #e1e1e1', borderTop: 'none' }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
         <ScreenClass render={(screen:any) => {
-            const styles = screen === 'sm' || screen === 'xs' ? { height: '100px' } : { }
+            const style = (screen === 'sm' || screen === 'xs') ?  { marginLeft: '-15px', marginRight: '-15px', marginTop: '-15px', background: '#ffce00' } : {}
             return (
-              <div style={{ background: screen === 'sm' || screen === 'xs' ? '#ffce00' : 'transparent' }}>
+              <div style={ style }>
                 <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
               </div>
             )
