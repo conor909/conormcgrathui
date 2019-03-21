@@ -19,8 +19,8 @@ export default (props:any) => (
           }} />
       </Col>
       <Col lg={ 10 } md={ 9 } sm={ 12 } xs={ 12 }>
-        <h1 style={{ marginTop: 0, color: '#1d1d1d' }}>Dia dhuit, Hello, Hola, Olá, Dzień dobry, नमस्ते, مرحبا, 你好, こんにちは </h1> 
-        <h3 style={{ marginTop: 0 }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for finance tech and data analytics companies.</h3>
+        <h1 style={{ marginTop: 0, color: '#1d1d1d' }}>Dia dhuit, Hey, Hola, Olá, Dzień dobry, नमस्ते, مرحبا, 你好 </h1> 
+        <h3 style={{ marginTop: 0 }}>I'm Conor, a JavaScript developer with a focus on high performance apps for fin tech and data analytics companies.</h3>
         <h4 style={{ marginTop: 0 }}>I have 10 years front end experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
         <TechLogosRow />
       </Col>
@@ -53,22 +53,22 @@ const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
 const blurbs = [
   {
     title: 'Tech',
-    blurb: "React, React-Native, Typescript, Redux, Node.. There's too many frameworks and tools to mention here, but I've enjoyed building, refactoring, testing, integrating and maintaining apps from the ground up, solving problems in all aspects of planning and development."
+    blurb: "React, React-Native, Typescript, Redux, Node.. There's too many frameworks and tools to mention here, but I've enjoyed building, refactoring, testing, integrating and maintaining apps from the ground up, solving problems from all aspects of planning and development."
   },
   {
     title: 'Design',
-    blurb: "I designed graphics for print, websites and games before becoming a UI developer, and understanding design processes really helps me in the planning stages of building UIs."
+    blurb: "I was an illustrator and graphic designer for print, websites and game UIs before becoming a developer.  My experience with design processes really helps me in design and planning stages of building apps."
   },
   {
     title: 'UX',
-    blurb: "Engineering and sales are no longer the main concern for tech companies, a good user experience is crucial to conversions. My experience in design and development helps me communicate ideas for great user journeys and complex UI components."
+    blurb: "Engineering and sales are no longer the main concern for tech companies, a good user experience is crucial to conversions. My experience in design and development helps me communicate my ideas for great user journeys and complex UI components."
   },
   {
     title: 'Architecture',
-    blurb: "My background in vanilla javacript, object oriented & functional frameworks has given me solid principals of clean architecture. I favour simplicity, and readability over syntax or frameworks, which leads to quick turnarounds of new features or refactors."
+    blurb: "My background in vanilla javacript, object oriented & functional frameworks has given me solid principals of clean architecture. So rather then being too reliant on frameworks, I favour simplicity and readability, which leads to quick turnarounds of new features."
   },
   {
     title: 'Clean Code',
-    blurb: "Over the years I've picked up some skills that I believe only experience can teach you. Day to day things like knowing when it's time to extract chunks of code, or experiences with managing file systems can avoid spaghetti code, unhappy developers and keep project managers happy."
+    blurb: "Developers have left companies, and startups have shut down because of the insurmountable technical debt that unclean code has brought them.  This may only raise it's ugly head 2 years into a project and by then it's too late. My expereince in every day small things like knowing when it's time to extract chunks of code, or managing file systems can help keep this to a minimum."
   },
 ]
