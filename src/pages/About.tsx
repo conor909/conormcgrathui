@@ -7,7 +7,15 @@ import me from '../data/images/me.svg';
 
 export default (props:any) => (
   <Page>
-    <Row style={{ padding: '1rem', marginLeft: '-30px', marginRight: "-30px", background: '#efefef', border: '1px solid #e1e1e1', borderTop: 'none' }}>
+    <Row style={{
+        padding: '1rem',
+        marginLeft: '-30px',
+        marginRight: "-30px",
+        border: '1px solid #e1e1e1',
+        borderTop: 'none',
+        color: '#fff',
+        background: 'linear-gradient(to left, #84002d, #dc2430)'
+      }}>
       <Col lg={ 2 } md={ 2 } sm={ 12 } xs={ 12 }>
         <ScreenClass render={(screen:any) => {
             const style = (screen === 'sm' || screen === 'xs') ?  { marginLeft: '-15px', marginRight: '-15px', marginTop: '-15px', background: '#ffce00' } : {}
@@ -19,7 +27,7 @@ export default (props:any) => (
           }} />
       </Col>
       <Col lg={ 10 } md={ 9 } sm={ 12 } xs={ 12 }>
-        <h1 style={{ marginTop: 0, color: '#1d1d1d' }}>Dia dhuit, Hey, Hola, Olá, Dzień dobry, नमस्ते, مرحبا, 你好 </h1> 
+        <h1 style={{ marginTop: 0 }}>Dia dhuit, Hey, Hola, Olá, Dzień dobry, नमस्ते, مرحبا, 你好 </h1> 
         <h3 style={{ marginTop: 0 }}>I'm Conor, a JavaScript developer with a focus on high performance apps for fin tech and data analytics companies.</h3>
         <h4 style={{ marginTop: 0 }}>I have 10 years front end experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
         <TechLogosRow />
