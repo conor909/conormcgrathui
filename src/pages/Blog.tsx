@@ -1,21 +1,10 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import { Row, Col } from 'react-awesome-styled-grid';
 import { Page } from '../components';
-
-{/*<div style={{ position: 'relative', width: '100%' }}>
-  <div style={{ background: '#fff', border: '1px solid #e1e1e1', position: 'fixed' }}>
-    <ul>
-      { props.articles.length > 0 && props.articles.map((a:IArticle) => (<li><a>{ a.title }</a></li>)) }
-    </ul>
-    {/*<ul>
-      { categoriesArray.length > 0 && categoriesArray.map((cat:string) => (<li>{ cat }</li>)) }
-    </ul>
-  </div>
-</div>*/}
+import { TimelineLite } from 'gsap';
 
 export default () => {
-
   const [ hasGotData, setHasGotData ] = useState<boolean>(false);
   const [ articles, setArticles ] = useState<any>([]);
   const [ categories, setCategories ] = useState<any>([]);
@@ -48,7 +37,7 @@ export default () => {
     <Page>
       {
         hasGotData
-          ? <Blog key={ Math.random() } articles={ articles } feed={ feed } categories={ categories }/>
+          ? <Blog key={ Math.random() } articles={ articles } feed={ feed } categories={ categories } />
           : null
       }
     </Page>
@@ -67,12 +56,17 @@ interface IArticle {
 }
 
 const Blog = (props:{ articles:Array<IArticle>, feed:any, categories:any }) => {
+
+  useEffect(() => {
+    new TimelineLite().fromTo(blog.current, 1, { opacity: 0 }, { opacity: 1 }, 0)
+  }, []);
   
+  const blog = useRef<any>(null);
   const categoriesArray:Array<string> = [];
   props.categories.forEach((c:string) => categoriesArray.push(c));
 
   return(
-    <Row style={{ marginTop: '1rem' }}>
+    <Row style={{ marginTop: '1rem', opacity: 0 }} ref={ blog }>
       <Col>
         {
           !!props.articles &&

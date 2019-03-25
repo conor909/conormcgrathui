@@ -26,7 +26,7 @@ export const Button = styled.button<{ disabled:boolean }>`
   padding: 1rem;
   background: #fcd100;
   opacity: ${ p => p.disabled ? .2 : 1 };
-  color: #fff;
+  color: #b15400;
   font-size: 1rem;
   border: 0;
   cursor: ${ p => p.disabled ? 'inherit' : 'pointer' };

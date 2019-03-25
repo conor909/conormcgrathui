@@ -1,9 +1,19 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { TweenLite, Power4 } from "gsap";
 import { Row, Col } from 'react-awesome-styled-grid';
 import styled from 'styled-components';
 
 export default (props:any) => {
+
+  const [ width, setWidth ] = useState<number>(window.innerWidth);
+  const [ height, setHeight ] = useState<number>(window.innerHeight);
+  
+  function onResize() { setWidth(window.innerWidth); setHeight(window.innerHeight) }
+    
+  useEffect(() => {
+    window.addEventListener('resize', onResize);
+    return () => { window.removeEventListener('resize', onResize) }
+  }, []);
 
   const mobileSideMenu = useRef(null);
 
@@ -11,7 +21,7 @@ export default (props:any) => {
     if (props.isOpen) {
       new TweenLite(mobileSideMenu.current, .4, { right: 0, ease: Power4.easeOut });
     } else {
-      new TweenLite(mobileSideMenu.current, .4, { right: -window.innerWidth, ease: Power4.easeOut });
+      new TweenLite(mobileSideMenu.current, .4, { right: -width, ease: Power4.easeOut });
     }
   }, [ props.isOpen ]);
 
@@ -21,7 +31,7 @@ export default (props:any) => {
   }
 
   return (
-    <Wrapper ref={ mobileSideMenu }>
+    <Wrapper width={ width } height={ height } ref={ mobileSideMenu }>
       <Col>
         <Row onClick={ () => clickNav('/clients' )}>
           <MobileNavItem>
@@ -55,15 +65,15 @@ export default (props:any) => {
   )
 }
 
-const Wrapper = styled.nav`
+const Wrapper = styled.nav<{ width:number, height:number }>`
   font-size: 2rem;
   display: block;
   position: absolute;
   top: 50px;
-  right: ${ -window.innerWidth }px;
-  height: ${ window.innerHeight }px;
+  right: ${ props => -props.width }px;
+  height: ${ props => props.height }px;
   border-left: 1px solid #e1e1e1;
-  width: ${ window.innerWidth }px;
+  width: ${ props => props.width }px;
   background: #f6f6f6;
   z-index: 3;
   overflow-y: scroll;

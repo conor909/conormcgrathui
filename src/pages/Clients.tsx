@@ -1,12 +1,13 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { Row, Col } from 'react-awesome-styled-grid';
 import { Page } from '../components';
 import baeLogo from '../data/clients/bae/logo.svg';
+import { TimelineLite } from "gsap";
 
 const clients = [
     {
         name: 'BAE Systems Applied Inteligence',
-        desc: ['Europes largest cyber security software providers.  Based in Dublin, in their Applied Inteligence Labs I lead the UI development of a POC re-development of their financial crime software used by top tier banks, insurance and trading companies worldwide.', 'The UI focused on rendering thousands of rows of data at peak performance.'],
+        desc: ['A world leader in cyber security software, Based in their Applied Inteligence Labs in Dublin I lead the UI development of a POC re-development of financial crime software used by top tier banks, insurance and trading companies worldwide.', 'The UI focuses on handling hundreds of thousands of rows of data at peak performance.'],
         logo: baeLogo,
         timeframe: '3 month contract',
         url: 'https://www.baesystems.com/en/cybersecurity/about-us/ai-labs'
@@ -26,16 +27,41 @@ export default (props:any) => {
   )
 }
 
-const Client = (props:any) => (
-    <Row style={{ borderBottom: '1px solid #e1e1e1', padding: '1rem 0px' }}>
-        <Col lg={ 12  } md={ 6 } sm={ 12 } xs={ 12 }>
-            <img src={ props.logo } width='200px' />
-            <h1>{ props.title }</h1>
-            <small>{ props.timeframe }</small>
-            { props.desc.map((p:string) => <p>{ p }</p>) }
-            <a href='https://www.baesystems.com/en/cybersecurity/about-us/ai-labs' target='_BLANK'>
-                www.baesystems.com
-            </a>
-        </Col>
-    </Row>
-)
+const Client = (props:any) => {
+
+    const logo = useRef<any>(null);
+    const title = useRef<any>(null);
+    const timeframe = useRef<any>(null);
+    const desc = useRef<any>(null);
+    const link = useRef<any>(null);
+
+    useEffect(() => {
+        new TimelineLite()
+            .fromTo(logo.current, .5, { x: -50, opacity: 0 }, { x: 0, opacity: 1 }, 0)
+            .fromTo(link.current, .5, { x: -50, opacity: 0 }, { x: 0, opacity: 1 }, .5)
+            .fromTo(title.current, .5, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, .0)
+            .fromTo(timeframe.current, .5, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, .3)
+            .fromTo(desc.current, .5, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, .5)
+      }, [ ]);
+
+    return (
+        <Row style={{ borderBottom: '1px solid #e1e1e1', padding: '1rem 0px' }}>
+            <Col lg={ 4  } md={ 4 } sm={ 6 } xs={ 12 }>
+                <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
+                    <img ref={ logo } src={ props.logo }  style={{ marginBottom: '1rem', width: '50%', opacity: 0 }}/>
+                    <div>
+                        <a ref={ link } style={{ opacity: 0  }} href='https://www.baesystems.com/en/cybersecurity/about-us/ai-labs' target='_BLANK'>
+                            www.baesystems.com
+                        </a>
+                    </div>
+                </div>
+            </Col>
+            <Col lg={ 8 } md={ 8 } sm={ 6 } xs={ 12 }>
+                <h1 ref={ title } style={{ opacity: 0  }}>{ props.title }</h1>
+                <small ref={ timeframe } style={{ opacity: 0  }}>{ props.timeframe }</small>
+                <div ref={ desc } style={{ opacity: 0  }}>
+                    { props.desc.map((p:string) => <p>{ p }</p>) }
+                </div>
+            </Col>
+        </Row>
+)}

@@ -5,8 +5,17 @@ import { IGridItem } from './index';
 import styled from 'styled-components';
 import { useLockBodyScroll } from '../../hooks';
 
-export default 
-  (props:{ item:IGridItem, onClose():void  }) => {
+export default (props:{ item:IGridItem, onClose():void  }) => {
+
+    const [ width, setWidth ] = useState<number>(window.innerWidth);
+    const [ height, setHeight ] = useState<number>(window.innerHeight);
+  
+    function onResize() { setWidth(window.innerWidth); setHeight(window.innerHeight) }
+    
+    useEffect(() => {
+      window.addEventListener('resize', onResize);
+      return () => { window.removeEventListener('resize', onResize) }
+    }, []);
     
     useLockBodyScroll();
 
@@ -24,7 +33,7 @@ export default
     }, []);
 
     return (
-      <Wrapper>
+      <Wrapper width={ width } height={ height }>
         <Row reverse={ true }>
           <Col lg={ 4 } md={ 4 } sm={ 12 } xs={ 12 }>
             <h1 style={{ width: '100%', opacity: 0 }} ref={ titleRef }>
@@ -54,15 +63,15 @@ export default
     );
   }
 
-const Wrapper = styled.div`
+const Wrapper = styled.div<{ height:number, width:number }>`
   display: block;
   position: fixed;
   top: 100px;
   left: 0;
   right: 0;
   bottom: 0;
-  height: ${ window.innerHeight - 100 }px;
-  width: ${ window.innerWidth }px;
+  height: ${ props => props.height - 100 }px;
+  width: ${ props => props.width }px;
   background: #f6f6f6;
   z-index: 1;
   overflow-y: scroll;

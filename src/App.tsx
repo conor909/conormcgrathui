@@ -1,44 +1,59 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
+import { TimelineLite } from "gsap";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ScreenBadge } from 'react-awesome-styled-grid';
 import styled from 'styled-components';
 import './flex-box.css';
 import './global.css';
-import { Home, About, Work, Contact, Blog, Clients } from './pages';
+import { About, Work, Contact, Blog, Clients } from './pages';
 import { Navbar } from './components';
 
 export default (props:any) => {
 
-  // repeated in Display.tsx
+  const circle = useRef<any>(null);
 
-    // doesnt solve chrome and safari mobile
+  useEffect(() => {
+    window.addEventListener('click', playCircle);
+    return () => { window.removeEventListener('click', playCircle) }
+  }, []);
+  
+  function playCircle(e:any) {
+    const xPosition = e.clientX;
+    const yPosition = e.clientY;
+    new TimelineLite()
+      .fromTo(circle.current, .2, { x: xPosition, y: yPosition }, { scale: 10, transformOrigin:"center center" })
+  }
 
-    const [ width, setWidth ] = useState<number>(window.innerWidth);
-    const [ height, setHeight ] = useState<number>(window.innerHeight);
-    useEffect(() => {
-      function onResize() { setWidth(window.innerWidth); setHeight(window.innerHeight); }
-      window.addEventListener('resize', onResize);
-      return () => { window.removeEventListener('resize', onResize) }
-    }, []);
-  // repeated end
+  const circleStyles = {
+    position: 'absolute' as 'absolute',
+    zIndex: 99,
+    width: '0px',
+    height: '0px',
+    borderRadius: '50%',
+    backgroundColor: 'red'
+  }
 
-  // <ScreenBadge />
+  //<svg>
+    //<circle cx="0" cy="0" r="0" ref={ circle } style={ circleStyles } />
+  //</svg>
+
   return (
-    <AppWrap>
-      <Router>
-        <>
-          <Navbar />
-          <Switch>
-            <Route path="/" exact component={ About } />
-            <Route path="/clients" exact component={ Clients } />
-            <Route path="/about" exact component={ About } />
-            <Route path="/work/:category" component={ Work } />
-            <Route path="/contact" exact component={ Contact } />
-            <Route path="/blog" exact component={ Blog } />
-          </Switch>
-        </>
-      </Router>
-    </AppWrap>
+    <>
+      <AppWrap>
+        <Router>
+          <>
+            <Navbar />
+            <Switch>
+              <Route path="/" exact component={ About } />
+              <Route path="/clients" exact component={ Clients } />
+              <Route path="/about" exact component={ About } />
+              <Route path="/work/:category" component={ Work } />
+              <Route path="/contact" exact component={ Contact } />
+              <Route path="/blog" exact component={ Blog } />
+            </Switch>
+          </>
+        </Router>
+      </AppWrap>
+    </>
   );
 }
 
