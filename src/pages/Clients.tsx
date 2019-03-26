@@ -6,8 +6,8 @@ import { TimelineLite } from "gsap";
 
 const clients = [
     {
-        name: 'BAE Systems Applied Inteligence',
-        desc: ['A world leader in cyber security software, Based in their Applied Inteligence Labs in Dublin I lead the UI development of a POC re-development of financial crime software used by top tier banks, insurance and trading companies worldwide.', 'The UI focuses on handling hundreds of thousands of rows of data at peak performance.'],
+        name: 'BAE Systems Applied Intelligence',
+        desc: ['A world leader in cyber security software, Based in their Applied Intelligence Labs in Dublin I lead the UI development of a POC re-development of financial crime software used by top tier banks, insurance and trading companies worldwide.', 'The UI focuses on handling hundreds of thousands of rows of data at peak performance.'],
         logo: baeLogo,
         timeframe: '3 month contract',
         url: 'https://www.baesystems.com/en/cybersecurity/about-us/ai-labs'
