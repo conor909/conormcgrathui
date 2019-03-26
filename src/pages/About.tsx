@@ -75,6 +75,6 @@ const blurbs = [
   },
   {
     title: 'Clean Code',
-    blurb: "Developers have left companies, and startups have shut down because of the insurmountable technical debt that unclean code has brought them.  This may only raise it's ugly head 2 years into a project and by then it's too late. My expereince in every day small things like knowing when it's time to extract chunks of code, or managing file systems can help keep this to a minimum."
+    blurb: "Developers have left companies and startups have shut down because of the insurmountable technical debt that unclean code has brought them.  This may only raise it's ugly head years into a project and by then it's too late. My expereince in every day things like knowing when it's time to extract chunks of code, or managing classes and folder structures can help keep this to a minimum."
   },
 ]
