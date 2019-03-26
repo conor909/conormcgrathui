@@ -28,8 +28,8 @@ export default (props:any) => (
       </Col>
       <Col lg={ 10 } md={ 12 } sm={ 12 } xs={ 12 }>
         <h1 style={{ marginTop: 0 }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
-        <h3 style={{ marginTop: 0 }}>I'm Conor, a JavaScript developer with a focus on high performance apps for fin tech and data analytics companies.</h3>
-        <h4 style={{ marginTop: 0 }}>I have 10 years front end experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
+        <h3 style={{ marginTop: 0 }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
+        <h4 style={{ marginTop: 0 }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
         <TechLogosRow />
       </Col>
     </Row>
