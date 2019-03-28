@@ -46,7 +46,7 @@ export default () => ([
     title: 'Orbs',
     client: null,
     skills: ['ES6', 'canvas'],
-    desc: [ "Canvas sketch using ES6 classes" ],
+    desc: [ "Canvas sketch with ES6 classes" ],
     category: 'code',
     feature: orbs,
     tools: [ 'javascript' ]
