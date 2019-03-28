@@ -30,7 +30,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
       .fromTo(titleRef.current, .5, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, 0)
       .fromTo(descriptionRef.current, .5, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, .2)
       .fromTo(actionBarRef.current, .5, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, .4)
-      .fromTo(featureRef.current, .5, { x: 100, opacity: 0 }, { x: 0, opacity: 1 }, 0)
+      .fromTo(featureRef.current, .5, { opacity: 0 }, { opacity: 1 }, 0)
     }, []);
 
     return (

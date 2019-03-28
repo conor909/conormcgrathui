@@ -170,7 +170,7 @@ export default () => ([
     title: 'Advisian Digital',
     client: 'Advisian',
     skills: ['Animation', 'React'],
-    desc: ["Advisian Digital Interactive infographic, a single page app with bespoke interactive design and animated icons and graphics."],
+    desc: ["Advisian Digital Interactive infographic, a single page app with interactive design, animations, icons and graphics."],
     color: '#005f83',
 		fontColor: '#fff',
     feature: advisian,
