@@ -20,6 +20,8 @@ import advisian2 from './images/feat_worleys2.jpg';
 
 import tobes from './images/feat_tobes.jpg';
 
+import orbs from './images/orbs.jpg';
+
 export default () => ([
   {
     id: 1,
@@ -34,7 +36,7 @@ export default () => ([
     feature: kilaBusinessCards,
     images: [ kilaBusinessCards ],
     url: '',
-		categories: ['design'],
+		category: 'design',
     tools: ['ps', 'ai']
   },
   {
@@ -50,7 +52,7 @@ export default () => ([
     feature: markland,
     images: [ markland ],
     url: 'http://marklandasia.com/',
-		categories: ['design', 'development'],
+		category: 'development',
     tools: ['js', 'css', 'html']
   },
   {
@@ -66,7 +68,7 @@ export default () => ([
     feature: peterBlake,
     images: [ peterBlake ],
     url: '',
-		categories: ['design'],
+		category: 'design',
     tools: ['ps', 'ai']
   },
   {
@@ -82,7 +84,7 @@ export default () => ([
     feature: liveLounge,
     images: [ liveLounge ],
     url: '',
-		categories: ['design'],
+		category: 'design',
     tools: ['ps', 'ai']
   },
   {
@@ -98,7 +100,7 @@ export default () => ([
     feature: meGirl,
     images: [ meGirl ],
     url: '',
-		categories: ['design', 'development', 'mobile'],
+		category: 'design',
     tools: ['ps', 'ai', 'js', 'css', 'html']
   },
   {
@@ -114,7 +116,7 @@ export default () => ([
     feature: theWellnessNomad,
     images: [ theWellnessNomad ],
     url: 'http://thewellnessnomad.com/',
-		categories: ['design', 'development'],
+		category: 'development',
     tools: ['php', 'sql', 'html', 'css']
   },
   {
@@ -130,7 +132,7 @@ export default () => ([
     feature: cube19,
     images: [ cube19_dashboard, cube19_leaderboard, cube19_configure_chart, cube19_4, cube19_1, cube19_3, cube19_2 ],
     url: 'http://www.cube19.com',
-		categories: ['design', 'development', 'code'],
+		category: 'development',
     tools: ['js', 'react', 'scss', 'backbone']
   },
   {
@@ -146,7 +148,7 @@ export default () => ([
     feature: advisian,
     images: [ advisian2, advisian ],
     url: 'http://www.advisian.com',
-    categories: ['development', 'code'],
+    category: 'development',
     tools: ['react', 'ai']
   },
   {
@@ -162,7 +164,19 @@ export default () => ([
     feature: tobes,
     images: [  ],
     url: '',
-		categories: ['design', 'development'],
+		category: 'development',
     tools: ['react', 'redux', 'ai']
+  },
+  {
+    id: 10,
+    ref: 'orbs',
+    niceName: 'orbs',
+    title: 'Orbs',
+    client: null,
+    skills: ['ES6', 'canvas'],
+    desc: [ "Canvas sketch using ES6 classes" ],
+    category: 'code',
+    feature: orbs,
+    tools: [ 'javascript' ]
   }
 ]);

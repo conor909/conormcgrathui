@@ -6,10 +6,12 @@ import Display from './Display';
 import getWork from '../../data/work';
 
 export default memo(withRouter((props:any) => {
+
+  const itemsView = useRef<any>(null);
     
   const [ loadedImageCount, setLoadedImageCount ] = useState<number>(0);
   const [ selectedItem, setSelectedItem ] = useState<IGridItem | null>(null);
-  const [ items, setItems ] = useState<Array<IGridItem>>(getItems());
+  const [ items, setItems ] = useState<any>(getItems());
 
   useEffect(() => {
     setLoadedImageCount(0);
@@ -18,7 +20,7 @@ export default memo(withRouter((props:any) => {
   }, [ props.category ]);
 
   function getItems() {
-    return getWork().filter(item => (props.category === 'all' || item.categories.some(cat => cat === props.category)));
+    return getWork().filter(item => (props.category === 'all' || item.category === props.category));
   }
 
   function handleSelectedItem(item:IGridItem) {
@@ -38,7 +40,7 @@ export default memo(withRouter((props:any) => {
           <img style={{ display: 'none' }} src={ work.feature } key={ Math.random() } onLoad={ () => setLoadedImageCount(loadedImageCount + 1) } />
         ))
       }
-    <Row style={ selectedItem ? { overflow: 'hidden' } : {} }>
+    <Row style={ selectedItem ? { overflow: 'hidden' } : {} } ref={ itemsView }>
       {
         loadedImageCount === items.length
           ? items.map((item:IGridItem, i:number) => <GridItem key={ Math.random() } item={ item } onSelectedItem={ handleSelectedItem } index={ i } location={ props.history.location.pathname } />)
@@ -55,31 +57,30 @@ export default memo(withRouter((props:any) => {
   )
 }));
 
-const GridItem = React.memo(
-  function (props:{ item:IGridItem, onSelectedItem:(item:IGridItem)=>void, index:number, location:string }) {
-    const itemRef = useRef(null);
-    
-    useEffect(() => {
-      TweenLite.fromTo(itemRef.current, .5, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power4.easeOut }).delay( props.index / 10 );
-    }, [ props.location ]);
-    
-    return(
-      <Col
-        key={ Math.random() }
-        lg={ 4 } md={ 6 } sm={ 12 } xs={ 12 }>
-          <section ref={ itemRef } onClick={ () => props.onSelectedItem(props.item) } style={{ opacity: 0 }}>
-            <img
-              src={ props.item.feature }
-              style={{
-                width: '100%',
-                height: 'auto',
-                padding: '2rem'
-              }} />
-          </section>
-      </Col>
-    )
-  }
-)
+
+function GridItem (props:{ item:IGridItem, onSelectedItem:(item:IGridItem)=>void, index:number, location:string }) {
+  const itemRef = useRef(null);
+  
+  useEffect(() => {
+    TweenLite.fromTo(itemRef.current, .5, { opacity: 0, y: 20 }, { opacity: 1, y: 0, ease: Power4.easeOut }).delay( props.index / 10 );
+  }, [ props.location ]);
+  
+  return(
+    <Col
+      key={ Math.random() }
+      lg={ 4 } md={ 6 } sm={ 12 } xs={ 12 }>
+        <section ref={ itemRef } onClick={ () => props.onSelectedItem(props.item) } style={{ opacity: 0 }}>
+          <img
+            src={ props.item.feature }
+            style={{
+              width: '100%',
+              height: 'auto',
+              padding: '2rem'
+            }} />
+        </section>
+    </Col>
+  )
+}
 
 export interface IGridItem {
   id: number,
@@ -94,5 +95,5 @@ export interface IGridItem {
   feature: string;
   images: Array<string>;
   url: null | string;
-  categories: Array<string>;
+  category: string;
 }

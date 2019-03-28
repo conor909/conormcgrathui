@@ -20,7 +20,7 @@ export default (props:any) => {
     const xPosition = e.clientX;
     const yPosition = e.clientY;
     new TimelineLite()
-      .fromTo(circle.current, .2, { x: xPosition, y: yPosition }, { scale: 10, transformOrigin:"center center" })
+      .fromTo(circle.current, .2, { x: xPosition, y: yPosition, width: '0px', height: '0px', transformOrigin:"center center" }, { width: '100px', height: '100px', transformOrigin:"center center"  })
   }
 
   const circleStyles = {
@@ -31,10 +31,6 @@ export default (props:any) => {
     borderRadius: '50%',
     backgroundColor: 'red'
   }
-
-  //<svg>
-    //<circle cx="0" cy="0" r="0" ref={ circle } style={ circleStyles } />
-  //</svg>
 
   return (
     <>
