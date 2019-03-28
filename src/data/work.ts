@@ -24,20 +24,48 @@ import orbs from './images/orbs.jpg';
 
 export default () => ([
   {
-    id: 1,
-    ref: 'kilaBusinessCards',
-    niceName: 'kila',
-    title: 'Kila',
-    client: 'Kila Bar',
-    skills: [ 'Graphic Design', 'Print' ],
-    desc: ["Business cards for Kila bar, Hong Kong."],
-    color: '#1e211a',
+    id: 7,
+    ref: 'cube19',
+    niceName: 'cube19',
+    title: 'cube19',
+    client: null,
+    skills: ['MVC', 'Data Visualisation', 'UI', 'UX', 'backbone', 'underscore', 'jQuery', 'React'],
+    desc: ["At cube19 I was part of a 3 person front end team.  I was responsible for designing UI, and building complex charting tools and data visualization dashboards.", "As the complexity of the app grew and new front end technology became available (React), we improved the performance and usability of the app by maintaining the older components in backbone / jQuery, while writing new features in React, and eventually refactoring the front end.", "The app is used worldwide by large and small companies, processing large data sets from their CRMs for business analytics and management.", "I also worked on a similar product available on the Salesforce App Exchange and built apps for internal customer management use."],
+    color: '#1e1e1e',
 		fontColor: '#fff',
-    feature: kilaBusinessCards,
-    images: [ kilaBusinessCards ],
+    feature: cube19,
+    images: [ cube19_dashboard, cube19_leaderboard, cube19_configure_chart, cube19_4, cube19_1, cube19_3, cube19_2 ],
+    url: 'http://www.cube19.com',
+		category: 'development',
+    tools: ['js', 'react', 'scss', 'backbone']
+  },
+  {
+    id: 10,
+    ref: 'orbs',
+    niceName: 'orbs',
+    title: 'Orbs',
+    client: null,
+    skills: ['ES6', 'canvas'],
+    desc: [ "Canvas sketch using ES6 classes" ],
+    category: 'code',
+    feature: orbs,
+    tools: [ 'javascript' ]
+  },
+  {
+    id: 9,
+    ref: 'planning',
+    niceName: 'planning',
+    title: 'Planning & Documentation',
+    client: null,
+    skills: ['UI', 'UX'],
+    desc: ['Illustration explaining functionality for a complex data storing and UX.', 'Depending on each scenario, the data needed to be saved to a Redux store or component state, deleted or overwritten.', "The precedence of the data could vary depending on user interactions and words weren't always enough to communicate this functionality easily, so I came up with this illustration to help conversations during planning, development and testing."],
+    color: '#1e1e1e',
+		fontColor: '#fff',
+    feature: tobes,
+    images: [  ],
     url: '',
-		category: 'design',
-    tools: ['ps', 'ai']
+		category: 'development',
+    tools: ['react', 'redux', 'ai']
   },
   {
     id: 2,
@@ -67,6 +95,22 @@ export default () => ([
 		fontColor: '#fff',
     feature: peterBlake,
     images: [ peterBlake ],
+    url: '',
+		category: 'design',
+    tools: ['ps', 'ai']
+  },
+  {
+    id: 1,
+    ref: 'kilaBusinessCards',
+    niceName: 'kila',
+    title: 'Kila',
+    client: 'Kila Bar',
+    skills: [ 'Graphic Design', 'Print' ],
+    desc: ["Business cards for Kila bar, Hong Kong."],
+    color: '#1e211a',
+		fontColor: '#fff',
+    feature: kilaBusinessCards,
+    images: [ kilaBusinessCards ],
     url: '',
 		category: 'design',
     tools: ['ps', 'ai']
@@ -120,22 +164,6 @@ export default () => ([
     tools: ['php', 'sql', 'html', 'css']
   },
   {
-    id: 7,
-    ref: 'cube19',
-    niceName: 'cube19',
-    title: 'cube19',
-    client: null,
-    skills: ['MVC', 'Data Visualisation', 'UI', 'UX', 'backbone', 'underscore', 'jQuery', 'React'],
-    desc: ["At cube19 I was part of a 3 person front end team.  I was responsible for designing UI, and building complex charting tools and data visualization dashboards.", "As the complexity of the app grew and new front end technology became available (React), we improved the performance and usability of the app by maintaining the older components in backbone / jQuery, while writing new features in React, and eventually refactoring the front end.", "The app is used worldwide by large and small companies, processing large data sets from their CRMs for business analytics and management.", "I also worked on a similar product available on the Salesforce App Exchange and built apps for internal customer management use."],
-    color: '#1e1e1e',
-		fontColor: '#fff',
-    feature: cube19,
-    images: [ cube19_dashboard, cube19_leaderboard, cube19_configure_chart, cube19_4, cube19_1, cube19_3, cube19_2 ],
-    url: 'http://www.cube19.com',
-		category: 'development',
-    tools: ['js', 'react', 'scss', 'backbone']
-  },
-  {
     id: 8,
     ref: 'advisian',
     niceName: 'advisian',
@@ -150,33 +178,5 @@ export default () => ([
     url: 'http://www.advisian.com',
     category: 'development',
     tools: ['react', 'ai']
-  },
-  {
-    id: 9,
-    ref: 'planning',
-    niceName: 'planning',
-    title: 'Planning & Documentation',
-    client: null,
-    skills: ['UI', 'UX'],
-    desc: ['Illustration explaining functionality for a complex data storing and UX.', 'Depending on each scenario, the data needed to be saved to a Redux store or component state, deleted or overwritten.', "The precedence of the data could vary depending on user interactions and words weren't always enough to communicate this functionality easily, so I came up with this illustration to help conversations during planning, development and testing."],
-    color: '#1e1e1e',
-		fontColor: '#fff',
-    feature: tobes,
-    images: [  ],
-    url: '',
-		category: 'development',
-    tools: ['react', 'redux', 'ai']
-  },
-  {
-    id: 10,
-    ref: 'orbs',
-    niceName: 'orbs',
-    title: 'Orbs',
-    client: null,
-    skills: ['ES6', 'canvas'],
-    desc: [ "Canvas sketch using ES6 classes" ],
-    category: 'code',
-    feature: orbs,
-    tools: [ 'javascript' ]
   }
 ]);

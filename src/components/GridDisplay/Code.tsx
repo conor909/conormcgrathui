@@ -35,7 +35,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
 
     return (
       <Wrapper width={ width } height={ height }>
-        <Row reverse={ false } style={{ minHeight: '100%' }}>
+        <Row reverse={ true } style={{ minHeight: '100%' }}>
           <Col lg={ 6 } md={ 6 } sm={ 12 } xs={ 12 }>
             <h1 style={{ width: '100%', opacity: 0 }} ref={ titleRef }>
               { props.item.title }
