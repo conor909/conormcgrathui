@@ -192,7 +192,7 @@ export default Dimensions()(
 
             scene.render();
 
-        }, [])
+        }, [ props.containerWidth, props.containerHeight ])
 
         return (
             <canvas style={{ width: props.containerWidth, height: props.containerHeight }} ref={ myCanvas } />

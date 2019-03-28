@@ -34,6 +34,15 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
     return (
       <Wrapper width={ width } height={ height }>
         <Row reverse={ true }>
+          <Col lg={ 8 } md={ 8 } sm={ 12 } xs={ 12 }>
+              <div
+              ref={ actionBarRef }
+              style={{ width: '100%', opacity: 0 }}
+              onClick={ props.onClose }>
+                <p style={{ background: '#efefef', padding: '5px 3px', border: '1px solid #e1e1e1' }}>←	back</p>
+            </div>
+            <img src={ props.item.feature } style={{ width: '100%', height: 'auto', opacity: 0 }} ref={ featureRef }/>
+          </Col>
           <Col lg={ 4 } md={ 4 } sm={ 12 } xs={ 12 }>
             <h1 style={{ width: '100%', opacity: 0 }} ref={ titleRef }>
               { props.item.title }
@@ -47,15 +56,6 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
                 )
               }
             </div>
-            <div
-              ref={ actionBarRef }
-              style={{ width: '100%', opacity: 0 }}
-              onClick={ props.onClose }>
-                <p style={{ background: '#efefef', padding: '5px 3px', border: '1px solid #e1e1e1' }}>←	back</p>
-            </div>
-          </Col>
-          <Col lg={ 8 } md={ 8 } sm={ 12 } xs={ 12 }>
-            <img src={ props.item.feature } style={{ width: '100%', height: 'auto', opacity: 0 }} ref={ featureRef }/>
           </Col>
         </Row>
       </Wrapper>
