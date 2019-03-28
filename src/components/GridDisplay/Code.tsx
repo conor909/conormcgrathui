@@ -27,13 +27,24 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
     useEffect(() => {
       new TimelineLite()
       .fromTo(descriptionRef.current, .5, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, .2)
-      .fromTo(actionBarRef.current, .5, { y: 20, opacity: 0 }, { y: 0, opacity: 1 }, .4)
+      .fromTo(actionBarRef.current, .5, { x: 20, opacity: 0 }, { x: 0, opacity: 1 }, .4)
       .fromTo(featureRef.current, .5, { opacity: 0 }, { opacity: 1 }, 0)
     }, []);
 
     return (
       <Wrapper width={ width } height={ height }>
-        <Row reverse={ true } style={{ minHeight: '100%' }}>
+        <Row reverse={ false } style={{ minHeight: '100%' }}>
+          <Col lg={ 6 } md={ 6 } sm={ 12 } xs={ 12 }>
+                <div
+                  ref={ actionBarRef }
+                  style={{ width: '100%', opacity: 0 }}
+                  onClick={ props.onClose }>
+                    <p style={{ background: '#efefef', padding: '5px 3px', border: '1px solid #e1e1e1' }}>←	back</p>
+                </div>
+              <div ref={ featureRef } style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
+                <Orbs />
+              </div>
+          </Col>
           <Col lg={ 6 } md={ 6 } sm={ 12 } xs={ 12 }>
             <div ref={ descriptionRef } style={{ opacity: 0 }}>
               {
@@ -44,17 +55,6 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
                 )
               }
               <EmbeddedGist gist="conor909/d18ea902c31367a672e0a87a6acf663c"></EmbeddedGist>
-            </div>
-          </Col>
-          <Col lg={ 6 } md={ 6 } sm={ 12 } xs={ 12 }>
-              <div
-                ref={ actionBarRef }
-                style={{ width: '100%', opacity: 0 }}
-                onClick={ props.onClose }>
-                  <p style={{ background: '#efefef', padding: '5px 3px', border: '1px solid #e1e1e1' }}>←	back</p>
-              </div>
-            <div ref={ featureRef } style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-              <Orbs />
             </div>
           </Col>
         </Row>
