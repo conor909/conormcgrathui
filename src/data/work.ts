@@ -58,7 +58,7 @@ export default () => ([
     title: 'Planning & Documentation',
     client: null,
     skills: ['UI', 'UX'],
-    desc: ['Illustration explaining functionality for a complex data storing and UX.', 'Depending on each scenario, the data needed to be saved to a Redux store or component state, deleted or overwritten.', "The precedence of the data could vary depending on user interactions and words weren't always enough to communicate this functionality easily, so I came up with this illustration to help conversations during planning, development and testing."],
+    desc: ['Illustration explaining functionality for a complex data storing interface.', 'Depending on each scenario, data needed to be saved to a Redux store or in component state, deleted or overwritten.', "The precedence of the data could vary depending on user interactions. Converstations about this flow weren't easy to communicate, so I came up with this illustration to help conversations during planning, development and testing."],
     color: '#1e1e1e',
 		fontColor: '#fff',
     feature: tobes,
