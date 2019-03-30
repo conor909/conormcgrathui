@@ -95,5 +95,6 @@ export interface IGridItem {
   feature: string;
   images: Array<string>;
   url: null | string;
+  displayLink: null | string;
   category: string;
 }

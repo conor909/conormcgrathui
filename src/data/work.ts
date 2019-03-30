@@ -24,6 +24,23 @@ import orbs from './images/orbs.jpg';
 
 export default () => ([
   {
+    id: 8,
+    ref: 'advisian',
+    niceName: 'advisian',
+    title: 'Advisian Digital',
+    client: 'Advisian',
+    skills: ['Animation', 'React'],
+    desc: ["Advisian Digital Interactive infographic, a single page app with interactive design, animations, icons and graphics."],
+    color: '#005f83',
+		fontColor: '#fff',
+    feature: advisian,
+    images: [ advisian2, advisian ],
+    url: 'https://www.advisian.com/en-gb/what-we-do/services/advisian-digital/digital-future',
+    displayLink: 'www.advisian.com/digital-future',
+    category: 'development',
+    tools: ['react', 'ai']
+  },
+  {
     id: 7,
     ref: 'cube19',
     niceName: 'cube19',
@@ -50,6 +67,22 @@ export default () => ([
     category: 'code',
     feature: orbs,
     tools: [ 'javascript' ]
+  },
+  {
+    id: 6,
+    ref: 'theWellnessNomad',
+    niceName: 'the-wellness-nomad',
+    title: 'The Wellness Nomad',
+    client: 'The Wellness Nomad',
+    skills: ['Web Development'],
+    desc: ["Web development and database for The Wellness Nomad, Hong Kong."],
+    color: '#61cdcd',
+		fontColor: '#fff',
+    feature: theWellnessNomad,
+    images: [ theWellnessNomad ],
+    url: 'http://thewellnessnomad.com/',
+		category: 'development',
+    tools: ['php', 'sql', 'html', 'css']
   },
   {
     id: 9,
@@ -146,37 +179,5 @@ export default () => ([
     url: '',
 		category: 'design',
     tools: ['ps', 'ai', 'js', 'css', 'html']
-  },
-  {
-    id: 6,
-    ref: 'theWellnessNomad',
-    niceName: 'the-wellness-nomad',
-    title: 'The Wellness Nomad',
-    client: 'The Wellness Nomad',
-    skills: ['Web Development'],
-    desc: ["Web development and database for The Wellness Nomad, Hong Kong."],
-    color: '#61cdcd',
-		fontColor: '#fff',
-    feature: theWellnessNomad,
-    images: [ theWellnessNomad ],
-    url: 'http://thewellnessnomad.com/',
-		category: 'development',
-    tools: ['php', 'sql', 'html', 'css']
-  },
-  {
-    id: 8,
-    ref: 'advisian',
-    niceName: 'advisian',
-    title: 'Advisian Digital',
-    client: 'Advisian',
-    skills: ['Animation', 'React'],
-    desc: ["Advisian Digital Interactive infographic, a single page app with interactive design, animations, icons and graphics."],
-    color: '#005f83',
-		fontColor: '#fff',
-    feature: advisian,
-    images: [ advisian2, advisian ],
-    url: 'http://www.advisian.com',
-    category: 'development',
-    tools: ['react', 'ai']
   }
 ]);

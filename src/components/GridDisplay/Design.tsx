@@ -68,6 +68,14 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
                   </p>
                 )
               }
+              {
+                props.item.url &&
+                <p>
+                  <a href={ props.item.url } target='_blank'>
+                    { props.item.displayLink }
+                  </a>
+                </p>
+              }
             </div>
           </Col>
         </Row>
