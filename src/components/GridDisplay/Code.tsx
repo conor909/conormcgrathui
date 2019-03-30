@@ -35,12 +35,25 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
       <Wrapper width={ width } height={ height }>
         <Row reverse={ false } style={{ minHeight: '100%' }}>
           <Col lg={ 6 } md={ 6 } sm={ 12 } xs={ 12 }>
-              <div
-                ref={ actionBarRef }
-                style={{ width: '100%', opacity: 0 }}
-                onClick={ props.onClose }>
-                  <p style={{ background: '#efefef', padding: '5px 3px', border: '1px solid #e1e1e1' }}>←	back</p>
-              </div>
+            <p
+              ref={ actionBarRef }
+              style={{ opacity: 0, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}
+              onClick={ props.onClose }>
+                <div style={{
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  background: '#efefef',
+                  padding: '5px 3px',
+                  width: '50px',
+                  height: '50px',
+                  borderRadius: '50%',
+                  border: '1px solid #e1e1e1',
+                  textAlign: 'center'
+                }}>
+                  ←
+                </div>
+              </p>
               <div ref={ featureRef } style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
                 <Orbs />
               </div>
