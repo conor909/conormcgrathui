@@ -46,7 +46,7 @@ const Client = (props:any) => {
 
     return (
         <Row style={{ borderBottom: '1px solid #e1e1e1', padding: '1rem 0px' }}>
-            <Col lg={ 4  } md={ 4 } sm={ 6 } xs={ 12 }>
+            <Col xl={ 4  } lg={ 4 } sm={ 6 } xs={ 12 }>
                 <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', flex: 1 }}>
                     <img ref={ logo } src={ props.logo }  style={{ marginBottom: '1rem', width: '50%', opacity: 0 }}/>
                     <div>
@@ -56,7 +56,7 @@ const Client = (props:any) => {
                     </div>
                 </div>
             </Col>
-            <Col lg={ 8 } md={ 8 } sm={ 6 } xs={ 12 }>
+            <Col xl={ 8 } lg={ 8 } sm={ 6 } xs={ 12 }>
                 <h1 ref={ title } style={{ opacity: 0  }}>{ props.title }</h1>
                 <small ref={ timeframe } style={{ opacity: 0  }}>{ props.timeframe }</small>
                 <div ref={ desc } style={{ opacity: 0  }}>

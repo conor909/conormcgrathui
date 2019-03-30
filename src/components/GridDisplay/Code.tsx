@@ -18,7 +18,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
       return () => { window.removeEventListener('resize', onResize) }
     }, []);
     
-    useLockBodyScroll();
+    //useLockBodyScroll();
 
     const descriptionRef = useRef<any>(null);
     const actionBarRef = useRef<any>(null);
@@ -34,7 +34,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
     return (
       <Wrapper width={ width } height={ height }>
         <Row reverse={ false } style={{ minHeight: '100%' }}>
-          <Col lg={ 6 } md={ 6 } sm={ 12 } xs={ 12 }>
+          <Col xl={ 6 } lg={ 6 } sm={ 12 } xs={ 12 }>
             <p
               ref={ actionBarRef }
               style={{ opacity: 0, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}
@@ -58,7 +58,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
                 <Orbs />
               </div>
           </Col>
-          <Col lg={ 6 } md={ 6 } sm={ 12 } xs={ 12 }>
+          <Col xl={ 6 } lg={ 6 } sm={ 12 } xs={ 12 }>
             <div ref={ descriptionRef } style={{ opacity: 0 }}>
               {
                 props.item.desc.map(paragraph => 

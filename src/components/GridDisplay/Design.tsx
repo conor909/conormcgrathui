@@ -16,7 +16,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
       return () => { window.removeEventListener('resize', onResize) }
     }, []);
     
-    useLockBodyScroll();
+    //useLockBodyScroll();
 
     const titleRef = useRef<any>(null);
     const descriptionRef = useRef<any>(null);
@@ -34,10 +34,10 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
     return (
       <Wrapper width={ width } height={ height }>
         <Row reverse={ true }>
-          <Col lg={ 8 } md={ 8 } sm={ 12 } xs={ 12 }>
+          <Col xl={ 8 } lg={ 8 } sm={ 12 } xs={ 12 }>
             <img src={ props.item.feature } style={{ width: '100%', height: 'auto', opacity: 0 }} ref={ featureRef }/>
           </Col>
-          <Col lg={ 4 } md={ 4 } sm={ 12 } xs={ 12 }>
+          <Col xl={ 4 } lg={ 4 } sm={ 12 } xs={ 12 }>
           <p
             ref={ actionBarRef }
             style={{ opacity: 0, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}

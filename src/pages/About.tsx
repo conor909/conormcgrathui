@@ -16,7 +16,7 @@ export default (props:any) => (
         color: '#fff',
         background: 'linear-gradient(to left, #84002d, #dc2430)'
       }}>
-      <Col lg={ 2 } md={ 12 } sm={ 12 } xs={ 12 }>
+      <Col xl={ 2 } lg={ 12 } sm={ 12 } xs={ 12 }>
         <ScreenClass render={(screen:any) => {
             const style = (screen !== 'lg') ?  { marginLeft: '-15px', marginRight: '-15px', marginTop: '-15px', background: '#ffce00' } : {}
             return (
@@ -26,7 +26,7 @@ export default (props:any) => (
             )
           }} />
       </Col>
-      <Col lg={ 10 } md={ 12 } sm={ 12 } xs={ 12 }>
+      <Col xl={ 10 } lg={ 12 } sm={ 12 } xs={ 12 }>
         <h1 style={{ marginTop: 0 }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
         <h3 style={{ marginTop: 0 }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
         <h4 style={{ marginTop: 0 }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
@@ -45,7 +45,7 @@ export default (props:any) => (
 
 const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
   return (
-    <Col lg={ 6 } md={ 12 } sm={ 12 } xs={ 12 }>
+    <Col xl={ 6 } lg={ 12 } sm={ 12 } xs={ 12 }>
       <h3 style={{ color: '#1d1d1d' }}>{ props.title }</h3>
       <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', border: '1px solid #e1e1e1' }}>
         <p>
