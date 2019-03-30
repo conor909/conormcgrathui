@@ -1,8 +1,22 @@
 import { useLayoutEffect } from 'react';
 
 export default function useLockBodyScroll () {
+  
+  const page:any = document.getElementById('page');
+  
+  function lockPageAndBody() {
+    document.body.style.overflowY = 'hidden';
+    page.style.overflowY  = 'hidden';
+  }
+
+  function unLockPageAndBody() {
+    document.body.style.overflowY = 'scroll';
+    page.style.overflowY  = 'inherit';
+  }
+
   useLayoutEffect(() => {
-    document.body.style.overflowY = 'hidden'; // on mount
-    return () => document.body.style.overflowY = 'scroll'; // Re-enable scrolling when component unmounts
-   }, []); // Empty array ensures effect is only run on mount and unmount
+    lockPageAndBody()
+    return () => unLockPageAndBody()
+   }, []);
+
 }
