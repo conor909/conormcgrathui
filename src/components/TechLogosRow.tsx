@@ -9,7 +9,7 @@ import psLogo from '../data/images/tech-logos/ps.svg';
 import tsLogo from '../data/images/tech-logos/ts.svg';
 
 export default () => (
-  <Row style={{ justifyContent: 'space-between', flexWrap: 'nowrap' }}>
+  <Row style={{ justifyContent: 'space-between', flexWrap: 'nowrap', padding: '1rem' }}>
     <Col xl={ 1 } lg={ 1 } sm={ 1 } xs={ 1 } reverse={true}>
       <img src={ jsLogo } className='tech-logo' />
     </Col>

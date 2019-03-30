@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Col, ScreenClass } from 'react-awesome-styled-grid';
+import { Row, Col, ScreenClass, ScreenBadge } from 'react-awesome-styled-grid';
 import { Page, TechLogosRow } from '../components';
 import me from '../data/images/me.svg';
 
@@ -8,7 +8,6 @@ import me from '../data/images/me.svg';
 export default (props:any) => (
   <Page>
     <Row style={{
-        padding: '1rem',
         marginLeft: '-30px',
         marginRight: "-30px",
         border: '1px solid #e1e1e1',
@@ -16,21 +15,16 @@ export default (props:any) => (
         color: '#fff',
         background: 'linear-gradient(to left, #84002d, #dc2430)'
       }}>
-      <Col xl={ 2 } lg={ 12 } sm={ 12 } xs={ 12 }>
-        <ScreenClass render={(screen:any) => {
-            const style = (screen !== 'lg') ?  { marginLeft: '-15px', marginRight: '-15px', marginTop: '-15px', background: '#ffce00' } : {}
-            return (
-              <div style={{ display: 'flex', flexDirection: 'column', ...style }}>
-                <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
-              </div>
-            )
-          }} />
+      <Col sm={ 1 } xs={ 8 }>
+          <div style={{ display: 'flex', flexDirection: 'column', margin: 0, background: '#ffce00', flex:1, justifyContent: 'flex-end' }}>
+            <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
+          </div>
       </Col>
-      <Col xl={ 10 } lg={ 12 } sm={ 12 } xs={ 12 }>
-        <h1 style={{ marginTop: 0 }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
-        <h3 style={{ marginTop: 0 }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
-        <h4 style={{ marginTop: 0 }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
-        <TechLogosRow />
+      <Col sm={ 7 } xs={ 8 }>
+            <h1 style={{ marginTop: '1rem', marginLeft: '1rem' }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
+            <h3 style={{ marginTop: 0, marginLeft: '1rem' }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
+            <h4 style={{ marginTop: 0, marginLeft: '1rem' }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
+            <TechLogosRow />
       </Col>
     </Row>
     <Row style={{ paddingTop: '1rem' }}>
@@ -45,7 +39,7 @@ export default (props:any) => (
 
 const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
   return (
-    <Col xl={ 6 } lg={ 12 } sm={ 12 } xs={ 12 }>
+    <Col xl={ 4 } lg={ 4 } sm={ 4 } xs={ 8 }>
       <h3 style={{ color: '#1d1d1d' }}>{ props.title }</h3>
       <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', border: '1px solid #e1e1e1' }}>
         <p>

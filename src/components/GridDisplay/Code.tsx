@@ -33,7 +33,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
 
     return (
       <Wrapper width={ width } height={ height }>
-        <Row reverse={ false } style={{ minHeight: '100%' }}>
+        <Row reverse={['sm', 'md']} style={{ minHeight: '100%' }}>
           <Col xl={ 6 } lg={ 6 } sm={ 12 } xs={ 12 }>
             <p
               ref={ actionBarRef }
