@@ -35,7 +35,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
       switch(item.niceName) {
         case 'orbs':
           return (
-            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '500px' }} ref={ featureRef } >
+            <div style={{ display: 'flex', flexDirection: 'column', flex: 1 }} ref={ featureRef } >
               <Orbs />
             </div>
             );
