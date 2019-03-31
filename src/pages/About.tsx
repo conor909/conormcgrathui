@@ -39,7 +39,7 @@ export default (props:any) => (
 
 const BlurbBox = (props:{ title:string, blurb:string, index:number }) => {
   return (
-    <Col xl={ 4 } lg={ 4 } sm={ 4 } xs={ 8 }>
+    <Col sm={ 4 } xs={ 8 }>
       <h3 style={{ color: '#1d1d1d' }}>{ props.title }</h3>
       <div style={{ display: 'flex', flex: 1, flexDirection: 'column', background: '#fff', padding: '1rem', border: '1px solid #e1e1e1' }}>
         <p>
@@ -69,6 +69,6 @@ const blurbs = [
   },
   {
     title: 'Clean Code',
-    blurb: "Developers have left companies and startups have shut down because of the insurmountable technical debt that unclean code has brought them.  This may only raise it's ugly head years into a project and by then it's too late. My expereince in every day things like knowing when it's time to extract chunks of code, or managing classes and folder structures can help keep this to a minimum."
+    blurb: "Developers have left companies and startups have shut down because of the insurmountable technical debt that unclean code has brought them.  This may only raise it's ugly head years into a project and by then it's too late. My experience in every day things like knowing when it's time to extract chunks of code, or managing classes and folder structures can help keep this to a minimum."
   },
 ]

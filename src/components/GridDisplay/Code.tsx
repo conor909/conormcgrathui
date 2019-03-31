@@ -31,10 +31,24 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
       .fromTo(featureRef.current, .5, { opacity: 0 }, { opacity: 1 }, 0)
     }, []);
 
+    function getComponent(item:any) {
+      switch(item.niceName) {
+        case 'orbs':
+          return (
+            <div style={{ display: 'flex', flexDirection: 'column', minHeight: '500px' }} ref={ featureRef } >
+              <Orbs />
+            </div>
+            );
+        case 'webcomponents':
+          return <img width='100%' height='auto' src={ item.feature } ref={ featureRef } />;
+        default: <img width='100%' height='auto' src={ item.feature } ref={ featureRef } />;
+      }
+    }
+
     return (
       <Wrapper width={ width } height={ height }>
         <Row reverse={['sm', 'md']} style={{ minHeight: '100%' }}>
-          <Col xl={ 6 } lg={ 6 } sm={ 12 } xs={ 12 }>
+          <Col xl={ 4 } lg={ 4 } sm={ 8 } xs={ 8 }>
             <p
               ref={ actionBarRef }
               style={{ opacity: 0, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}
@@ -54,12 +68,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
                   ←
                 </div>
               </p>
-              <div ref={ featureRef } style={{ display: 'flex', flexDirection: 'column', flex: 1 }}>
-                <Orbs />
-              </div>
-          </Col>
-          <Col xl={ 6 } lg={ 6 } sm={ 12 } xs={ 12 }>
-            <div ref={ descriptionRef } style={{ opacity: 0 }}>
+              <h1 style={{ margin: 0 }}>{ props.item.title }</h1>
               {
                 props.item.desc.map(paragraph => 
                   <p key={ Math.random() } style={{ width: '100%' }}>
@@ -67,8 +76,20 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
                   </p>
                 )
               }
-              <EmbeddedGist gist="conor909/d18ea902c31367a672e0a87a6acf663c"></EmbeddedGist>
+              {
+                props.item.url &&
+                <p>
+                  <a href={ props.item.url } target='_blank'>
+                    { props.item.displayLink }
+                  </a>
+                </p>
+              }
+              { getComponent(props.item) }
+              <div ref={ descriptionRef } style={{ opacity: 0 }}>
             </div>
+          </Col>
+          <Col xl={ 8 } lg={ 8 } sm={ 8 } xs={ 8 }>
+            <EmbeddedGist gist={ props.item.gist }></EmbeddedGist>
           </Col>
         </Row>
       </Wrapper>

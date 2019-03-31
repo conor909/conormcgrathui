@@ -75,7 +75,7 @@ const Blog = (props:{ articles:Array<IArticle>, feed:any, categories:any }) => {
                 <Row>
                   <Col>
                     <small style={{ color: '#727272', textAlign: 'right' }}>
-                      <time>{ new Date(article.pubDate).toLocaleDateString() }</time>
+                      <time>{ new Date(article.pubDate).toLocaleDateString('en-GB') }</time>
                     </small>
                     <h3 style={{ marginTop: 0 }}>{ article.title }</h3>
                     <div key={ Math.random() } dangerouslySetInnerHTML={{ __html: article ? article.content : '' }} />

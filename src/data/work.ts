@@ -22,6 +22,8 @@ import tobes from './images/feat_tobes.jpg';
 
 import orbs from './images/orbs.jpg';
 
+import rwb from './images/webcomponents.jpg';
+
 export default () => ([
   {
     id: 8,
@@ -60,13 +62,29 @@ export default () => ([
     id: 10,
     ref: 'orbs',
     niceName: 'orbs',
-    title: 'Orbs',
+    title: 'Canvas Sketch',
     client: null,
     skills: ['ES6', 'canvas'],
-    desc: [ "Canvas sketch with ES6 classes" ],
+    desc: [ "Animated orbs using ES6 classes" ],
+    gist: "conor909/d18ea902c31367a672e0a87a6acf663c",
     category: 'code',
     feature: orbs,
     tools: [ 'javascript' ]
+  },
+  {
+    id: 11,
+    ref: 'webcomps',
+    niceName: 'webcomponents',
+    title: 'React App inside a Web Component',
+    client: null,
+    skills: [],
+    desc: [ "Web components are a set of web platform APIs that allow you to create new custom, reusable, encapsulated HTML tags to use in web pages and web apps.", "This is a script I wrote to insert React apps inside custom elements.  There are some webpack build steps to go with it, if your interested in learning more get in touch, or check out the web components community."  ],
+    gist: "conor909/8466594f678d82d7469b2ff70af2e0cb",
+    url: "https://www.webcomponents.org/",
+    displayLink: 'www.webcomponents.org',
+    category: "code",
+    feature: rwb,
+    tools: [ "javascript" ]
   },
   {
     id: 6,

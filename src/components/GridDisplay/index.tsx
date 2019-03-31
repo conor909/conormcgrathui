@@ -97,4 +97,5 @@ export interface IGridItem {
   url: null | string;
   displayLink: null | string;
   category: string;
+  gist: null | string;
 }

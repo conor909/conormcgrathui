@@ -37,6 +37,9 @@ export default (props:any) => {
       <AppWrap>
         <Router>
           <>
+            <svg viewBox="0 0 100 100"> 
+              <circle fill="#000" id="lingin" cx="150" cy="125" r="100" ref={ circle } style={ circleStyles }/>
+            </svg>
             <Navbar />
             <Switch>
               <Route path="/" exact component={ About } />
