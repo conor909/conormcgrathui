@@ -40,7 +40,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
           <Col xl={ 4 } lg={ 4 } sm={ 12 } xs={ 12 }>
           <p
             ref={ actionBarRef }
-            style={{ opacity: 0, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}
+            style={{ opacity: 0, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', margin: 0 }}
             onClick={ props.onClose }>
               <div style={{
                 display: 'flex',

@@ -9,37 +9,34 @@ import { Navbar } from './components';
 
 export default (props:any) => {
 
-  const circle = useRef<any>(null);
+  // const circle = useRef<any>(null);
 
-  useEffect(() => {
-    window.addEventListener('click', playCircle);
-    return () => { window.removeEventListener('click', playCircle) }
-  }, []);
+  // useEffect(() => {
+  //   window.addEventListener('click', playCircle);
+  //   return () => { window.removeEventListener('click', playCircle) }
+  // }, []);
   
-  function playCircle(e:any) {
-    const xPosition = e.clientX;
-    const yPosition = e.clientY;
-    new TimelineLite()
-      .fromTo(circle.current, .2, { x: xPosition, y: yPosition, width: '0px', height: '0px', transformOrigin:"center center" }, { width: '100px', height: '100px', transformOrigin:"center center"  })
-  }
+  // function playCircle(e:any) {
+  //   new TimelineLite()
+  //     .fromTo(circle.current, .5, { x: e.clientX, y: e.clientY, scale: 0 }, { x: e.clientX, y: e.clientY, scale: 5, transformOrigin: "center center"  }, 0)
+  //     .fromTo(circle.current, .5, { fill: '#ffce00' }, { fill: 'transparent' }, 0)
+  // }
 
-  const circleStyles = {
-    position: 'absolute' as 'absolute',
-    zIndex: 99,
-    width: '0px',
-    height: '0px',
-    borderRadius: '50%',
-    backgroundColor: 'red'
-  }
+  // const svgStyle = {
+  //   position: 'absolute' as 'absolute',
+  //   zIndex: 999999,
+  //   pointerEvents: 'none' as 'none'
+  // }
+
+  // <svg viewBox={`0 0 ${ window.innerWidth } ${ window.innerHeight }`} style={ svgStyle }>
+  //   <circle r={ 10 } ref={ circle } />
+  // </svg>
 
   return (
     <>
       <AppWrap>
         <Router>
           <>
-            <svg viewBox="0 0 100 100"> 
-              <circle fill="#000" id="lingin" cx="150" cy="125" r="100" ref={ circle } style={ circleStyles }/>
-            </svg>
             <Navbar />
             <Switch>
               <Route path="/" exact component={ About } />
@@ -49,6 +46,7 @@ export default (props:any) => {
               <Route path="/contact" exact component={ Contact } />
               <Route path="/blog" exact component={ Blog } />
             </Switch>
+            
           </>
         </Router>
       </AppWrap>

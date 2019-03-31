@@ -51,7 +51,7 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
           <Col xl={ 4 } lg={ 4 } sm={ 8 } xs={ 8 }>
             <p
               ref={ actionBarRef }
-              style={{ opacity: 0, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start' }}
+              style={{ opacity: 0, display: 'flex', flexDirection: 'row', justifyContent: 'flex-start', margin: 0 }}
               onClick={ props.onClose }>
                 <div style={{
                   display: 'flex',
@@ -78,11 +78,11 @@ export default (props:{ item:IGridItem, onClose():void  }) => {
               }
               {
                 props.item.url &&
-                <p>
-                  <a href={ props.item.url } target='_blank'>
-                    { props.item.displayLink }
-                  </a>
-                </p>
+                  <p>
+                    <a href={ props.item.url } target='_blank'>
+                      { props.item.displayLink }
+                    </a>
+                  </p>
               }
               { getComponent(props.item) }
               <div ref={ descriptionRef } style={{ opacity: 0 }}>
