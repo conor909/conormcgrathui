@@ -1,13 +1,12 @@
-import React, { useEffect, useRef } from 'react';
-import { TimelineLite } from "gsap";
-import { BrowserRouter as Router, Route, Switch, withRouter } from "react-router-dom";
+import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from 'styled-components';
 import './flex-box.css';
 import './global.css';
 import { About, Work, Contact, Blog, Clients } from './pages';
 import { Navbar } from './components';
-import { IGridItem } from './components/GridDisplay';
 import getWork from './data/work';
+import me from './data/images/me.svg';
 
 export default (props:any) => {
 
@@ -35,6 +34,8 @@ export default (props:any) => {
   // </svg>
 
   useEffect(() => {
+    const meImg = new Image();
+    meImg.src = me;
     getWork().forEach((work:any) => {
         const img = new Image();
         img.src = work.feature;
