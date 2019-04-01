@@ -6,6 +6,8 @@ import './flex-box.css';
 import './global.css';
 import { About, Work, Contact, Blog, Clients } from './pages';
 import { Navbar } from './components';
+import { IGridItem } from './components/GridDisplay';
+import getWork from './data/work';
 
 export default (props:any) => {
 
@@ -31,6 +33,13 @@ export default (props:any) => {
   // <svg viewBox={`0 0 ${ window.innerWidth } ${ window.innerHeight }`} style={ svgStyle }>
   //   <circle r={ 10 } ref={ circle } />
   // </svg>
+
+  useEffect(() => {
+    getWork().forEach((work:any) => {
+        const img = new Image();
+        img.src = work.feature;
+    });
+  }, [])
 
   return (
     <>

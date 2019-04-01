@@ -12,11 +12,11 @@ export default (props:any) => (
         marginRight: "-30px",
         border: '1px solid #e1e1e1',
         borderTop: 'none',
-        color: '#333',
-        background: '#fff'
+        color: '#fff',
+        background: 'linear-gradient(to right, #b21f1f, #1a2a6c)'
       }}>
       <Col sm={ 1 } xs={ 8 }>
-          <div style={{ display: 'flex', flexDirection: 'column', margin: 0, background: '#cacaca', padding: '0 10px', flex:1, justifyContent: 'flex-end' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', margin: 0, background: '#fcd100', flex:1, justifyContent: 'flex-end' }}>
             <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
           </div>
       </Col>
