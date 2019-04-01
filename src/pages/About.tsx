@@ -13,7 +13,7 @@ export default (props:any) => (
         border: '1px solid #e1e1e1',
         borderTop: 'none',
         color: '#fff',
-        background: 'linear-gradient(to right, #b21f1f, #1a2a6c)'
+        background: 'linear-gradient(to right, #000428, #004e92)'
       }}>
       <Col sm={ 1 } xs={ 8 }>
           <div style={{ display: 'flex', flexDirection: 'column', margin: 0, background: '#fcd100', flex:1, justifyContent: 'flex-end' }}>
