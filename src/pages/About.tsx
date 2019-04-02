@@ -7,7 +7,8 @@ import me from '../data/images/me.svg';
 
 export default (props:any) => (
   <Page>
-    <Row style={{
+    <Row
+      style={{
         marginLeft: '-30px',
         marginRight: "-30px",
         border: '1px solid #e1e1e1',
@@ -21,9 +22,9 @@ export default (props:any) => (
           </div>
       </Col>
       <Col sm={ 7 } xs={ 8 }>
-            <h1 style={{ marginTop: '1rem', marginLeft: '1rem' }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
-            <h3 style={{ marginTop: 0, marginLeft: '1rem' }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
-            <h4 style={{ marginTop: 0, marginLeft: '1rem' }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
+            <h1 style={{ padding: '1rem', background: '#033771', marginBottom: 0 }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
+            <h3 style={{ padding: '.5rem', paddingLeft: '1rem', background: '#033d79', marginBottom: 0 }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
+            <h4 style={{ padding: '.5rem', paddingLeft: '1rem', background: '#033d79' }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
             <TechLogosRow />
       </Col>
     </Row>
