@@ -2,6 +2,7 @@ import React from 'react';
 import { Row, Col, ScreenClass, ScreenBadge } from 'react-awesome-styled-grid';
 import { Page, TechLogosRow } from '../components';
 import me from '../data/images/me.svg';
+import bknd from '../data/images/bknd.png';
 
 
 
@@ -13,18 +14,21 @@ export default (props:any) => (
         marginRight: "-30px",
         border: '1px solid #e1e1e1',
         borderTop: 'none',
-        color: '#fff',
-        background: 'linear-gradient(to right, #000428, #004e92)'
+        //color: '#fff',
+        background: 'linear-gradient(to right, #fff, #dee5e8)',
+        //background: `url(${ bknd }), linear-gradient(to right, #000428, #004e92)`,
+        //backgroundPosition: 'right top',
+        //backgroundRepeat: 'no-repeat'
       }}>
       <Col sm={ 1 } xs={ 8 }>
-          <div style={{ display: 'flex', flexDirection: 'column', margin: 0, background: '#fcd100', flex:1, justifyContent: 'flex-end' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', margin: 0, background: '#dee5e8', flex:1, justifyContent: 'flex-end' }}>
             <img src={ me } style={{ width: '100%', maxWidth: '200px', margin: '0 auto' }} />
           </div>
       </Col>
       <Col sm={ 7 } xs={ 8 }>
-            <h1 style={{ padding: '1rem', background: '#033771', marginBottom: 0 }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
-            <h3 style={{ padding: '.5rem', paddingLeft: '1rem', background: '#033d79', marginBottom: 0 }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
-            <h4 style={{ padding: '.5rem', paddingLeft: '1rem', background: '#033d79' }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
+            <h1 style={{ padding: '1rem', background: '#edf1f2', marginBottom: 0 }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
+            <h3 style={{ padding: '.5rem', paddingLeft: '1rem', background: '#edf1f2', marginBottom: 0 }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
+            <h4 style={{ padding: '.5rem', paddingLeft: '1rem', background: '#edf1f2' }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
             <TechLogosRow />
       </Col>
     </Row>
