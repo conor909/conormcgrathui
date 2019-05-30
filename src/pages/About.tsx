@@ -14,11 +14,11 @@ export default (props:any) => (
         marginRight: "-30px",
         border: '1px solid #e1e1e1',
         borderTop: 'none',
-        //color: '#fff',
-        //background: 'linear-gradient(to right, #fff, #f6f6f6)',
-        background: `url(${ bknd }), linear-gradient(to right, #fff, #f6f6f6)`,
-        backgroundPosition: 'right top',
-        backgroundRepeat: 'no-repeat'
+        color: '#1d1d1d',
+        background: 'linear-gradient(to right, #fff, #f6f6f6)',
+        //background: `url(${ bknd }), linear-gradient(to right, #fff, #f6f6f6)`,
+        //backgroundPosition: 'right top',
+        //backgroundRepeat: 'no-repeat'
       }}>
       <Col sm={ 1 } xs={ 8 }>
           <div style={{ display: 'flex', flexDirection: 'column', margin: 0, background: '#dee5e8', flex:1, justifyContent: 'flex-end' }}>
