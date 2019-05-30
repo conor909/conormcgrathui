@@ -28,7 +28,7 @@ function WorkSubNav (props:any) {
   
   return (
     <Wrapper as={ SubNavWrapper } ref={ subNavRef }>
-      <Container fluid={ true }>
+      <Container>
         <Row>
           <Col offset={{ lg: 9 }}>
             <NavItem
@@ -60,6 +60,8 @@ function WorkSubNav (props:any) {
 const SubNavWrapper = styled.nav`
   background: #efefef !important;
   z-index: 1 !important;
+  display: flex;
+  align-items: center;
 `;
 
 export default WorkSubNav;

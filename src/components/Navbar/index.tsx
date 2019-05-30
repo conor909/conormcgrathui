@@ -63,11 +63,11 @@ const Title = styled.div`
   cursor: pointer;
 `;
 
-const Nav = styled.div`
+export const Nav = styled.div`
   display: flex;
   flex: 1;
-  flex-direction: row;
   align-items: center;
+  flex-direction: row;
   justify-content: flex-end;
 `;
 
