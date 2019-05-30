@@ -27,11 +27,11 @@ export default (props:any) => (
       </Col>
       <Col sm={ 7 } xs={ 8 }>
             <div>
-              <h1 style={{ padding: '1rem', background: 'linear-gradient(to right, #fff, #f6f6f6)', marginBottom: 0, display: 'inline-block' }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
+              <h1 style={{ padding: '1rem', background: 'linear-gradient(to right, #f6f6f6, #fff)', marginBottom: 0, display: 'inline-block' }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1> 
               <br/>
-              <h3 style={{ padding: '.5rem', paddingLeft: '1rem', background: 'linear-gradient(to right, #fff, #f6f6f6)', marginBottom: 0, display: 'inline-block' }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
+              <h3 style={{ padding: '.5rem', paddingLeft: '1rem', background: 'linear-gradient(to right, #f6f6f6, #fff)', marginBottom: 0, display: 'inline-block' }}>I'm Conor, a contract JavaScript developer with a focus on high performance apps for startups, fintech and data analytics companies.</h3>
               <br/>
-              <h4 style={{ padding: '.5rem', paddingLeft: '1rem', background: 'linear-gradient(to right, #fff, #f6f6f6)', display: 'inline-block' }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
+              <h4 style={{ padding: '.5rem', paddingLeft: '1rem', background: 'linear-gradient(to right, #f6f6f6, #fff)', display: 'inline-block' }}>I have 10 years experience in web and mobile app development, UI / UX design, data visualisation, wireframes and prototypes.</h4>
             </div>
             <TechLogosRow />
       </Col>
