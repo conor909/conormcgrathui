@@ -12,7 +12,7 @@ class EmbeddedGist extends Component {
         src: ""
         };
   }
-    
+
   // The Gist JSON data includes a stylesheet to add to the page
   // to make it look correct. `addStylesheet` ensures we only add
   // the stylesheet one time.
@@ -23,11 +23,11 @@ class EmbeddedGist extends Component {
       link.type = "text/css";
       link.rel = "stylesheet";
       link.href = href;
-  
+
       document.head.appendChild(link);
     }
   }
-  
+
   componentDidMount() {
     // Create a JSONP callback that will set our state
     // with the data that comes back from the Gist site

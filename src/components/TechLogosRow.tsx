@@ -7,6 +7,7 @@ import nodeLogo from '../data/images/tech-logos/node.svg';
 import aiLogo from '../data/images/tech-logos/ai.svg';
 import psLogo from '../data/images/tech-logos/ps.svg';
 import tsLogo from '../data/images/tech-logos/ts.svg';
+import gqlLogo from '../data/images/tech-logos/graph-ql.svg';
 
 export default () => (
   <Row style={{ justifyContent: 'space-between', flexWrap: 'nowrap', padding: '1rem' }}>
@@ -21,6 +22,9 @@ export default () => (
     </Col>
     <Col xl={ 1 } lg={ 1 } sm={ 1 } xs={ 1 } reverse={true}>
       <img src={ reduxLogo } className='tech-logo' />
+    </Col>
+    <Col xl={ 1 } lg={ 1 } sm={ 1 } xs={ 1 } reverse={true}>
+      <img src={ gqlLogo } className='tech-logo' />
     </Col>
     <Col xl={ 1 } lg={ 1 } sm={ 1 } xs={ 1 } reverse={true}>
       <img src={ nodeLogo } className='tech-logo' />

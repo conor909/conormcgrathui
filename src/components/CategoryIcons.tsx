@@ -6,6 +6,7 @@ import nodeLogo from '../data/images/tech-logos/node.svg';
 import aiLogo from '../data/images/tech-logos/ai.svg';
 import psLogo from '../data/images/tech-logos/ps.svg';
 import tsLogo from '../data/images/tech-logos/ts.svg';
+import gqlLogo from '../data/images/tech-logos/graph-ql.svg';
 
 export default function CategoryIcons(props:{ tools:Array<string> }) {
   return props.tools.map((tool:string) => {
@@ -13,9 +14,9 @@ export default function CategoryIcons(props:{ tools:Array<string> }) {
       case 'design':
         return [<img src={ aiLogo } />, <img src={ psLogo } />]
       case 'development':
-        return [<img src={ jsLogo } />, <img src={ reactLogo } />, <img src={ reduxLogo } />, <img src={ nodeLogo } />, <img src={ tsLogo } />]
+        return [<img src={ jsLogo } />, <img src={ reactLogo } />, <img src={ reduxLogo } />, <img src={ nodeLogo } />, <img src={ tsLogo } />, <img src={ gqlLogo } />]
       case 'development':
-        return [<img src={ jsLogo } />, <img src={ reactLogo } />, <img src={ reduxLogo } />, <img src={ nodeLogo } />, <img src={ tsLogo } />]
+        return [<img src={ jsLogo } />, <img src={ reactLogo } />, <img src={ reduxLogo } />, <img src={ nodeLogo } />, <img src={ tsLogo } />, <img src={ gqlLogo } />]
       default:
         return null;
     }
