@@ -10,12 +10,18 @@ export default withRouter((props:any):any => {
 
   const [ isMobileMenuOpen, setIsMobileMenuOpen ] = useState<boolean>(false);
   const isShowingWorkRoute = matchPath(props.location.pathname, { path: '/work/:category', exact: false });
+
+  function goHome() {
+    props.history.push('/')
+    setIsMobileMenuOpen(false)
+  }
+
   return(
     <>
       <Wrapper>
         <Container fluid={ true }>
           <Row>
-            <Title onClick={ () => props.history.push('/' )}>
+            <Title onClick={ goHome }>
               conor mcgrath ui | ux
             </Title>
             <Nav>

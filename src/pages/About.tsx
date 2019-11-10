@@ -14,7 +14,7 @@ export default (props: any) => (
         marginRight: "-30px",
         border: '1px solid #e1e1e1',
         borderTop: 'none',
-        color: '#1d1d1d',
+        color: '#4a6f7d',
         background: 'linear-gradient(to right, #fff, #f6f6f6)',
         //background: `url(${ bknd }), linear-gradient(to right, #fff, #f6f6f6)`,
         //backgroundPosition: 'right top',
@@ -27,16 +27,16 @@ export default (props: any) => (
       </Col>
       <Col sm={7} xs={8}>
         <div>
-          <h1 style={{ padding: '1rem', background: 'linear-gradient(to right, #f6f6f6, #fff)', marginBottom: 0, display: 'inline-block' }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1>
-          <br />
-          <TechLogosRow />
-          <h3 style={{ padding: '.5rem', paddingLeft: '1rem', background: 'linear-gradient(to right, #f6f6f6, #fff)', marginBottom: 0, display: 'inline-block' }}>
+          <h1 style={{ padding: '1rem', background: 'linear-gradient(to right, #dde5e8, #fff)', marginBottom: 0, display: 'inline-block' }}>Dia dhuit, Hi, Hola, Olá, Bonjour, नमस्ते, مرحبا, 你好</h1>
+          <h3 style={{ padding: '.5rem', paddingLeft: '1rem', background: 'linear-gradient(to right, #dde5e8, #fff)', marginBottom: 0, display: 'inline-block' }}>
           I'm a contract full stack developer with a focus in React, Redux, React-Native, Node.js and GraphQL. Providing expertise in building apps for startups, global corporations and governments.
           </h3>
           <br />
-          <h4 style={{ padding: '.5rem', paddingLeft: '1rem', background: 'linear-gradient(to right, #f6f6f6, #fff)', display: 'inline-block' }}>
+          <h4 style={{ padding: '.5rem', paddingLeft: '1rem', background: 'linear-gradient(to right, #dde5e8, #fff)', display: 'inline-block' }}>
             I have 10+ years experience in front end architecture, web and mobile app development, UI / UX design, data visualisations, continuous integration, testing, wireframes and prototypes.
           </h4>
+          <br />
+          <TechLogosRow />
         </div>
       </Col>
     </Row>
