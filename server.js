@@ -1,5 +1,5 @@
 const express = require('express');
-const path = require('path'); 
+const path = require('path');
 const bodyParser = require('body-parser');
 const sgMail = require('@sendgrid/mail');
 const app = express();
@@ -8,23 +8,23 @@ const port = process.env.PORT || 5000;
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get('/api/test-get', (req, res) => {
-  res.send({ express: 'Hello From Express' });
-});
+// app.get('/api/test-get', (req, res) => {
+//   res.send({ express: 'Hello From Express' });
+// });
 
-app.post('/api/test-post', (req, res) => {
-  res.send({ body: req.body });
-});
+// app.post('/api/test-post', (req, res) => {
+//   res.send({ body: req.body });
+// });
 
 app.post('/api/send-email', (req, res) => {
-  
+
   // https://app.sendgrid.com/
-  
+
   sgMail.setApiKey(process.env.SENDGRID_API_KEY);
   const msg = {
-    to: 'conor909@gmail.com',
+    to: 'conor@conor-ui.com',
     from: req.body.email,
-    subject: 'Message to conor mcgrath ui ltd.',
+    subject: 'message from conor-ui.com',
     text: req.body.message,
     html: `<p>${ req.body.message }</p>`
   };
