@@ -6,7 +6,7 @@ const app = express();
 const cors = require('cors');
 const port = process.env.PORT || 5000;
 
-let whitelist = ['http://conor-ui.com', 'https://conor-ui.com', 'https://biasharamarketing.co.tz', 'http://biasharamarketing.co.tz']
+let whitelist = ['http://conor-ui.com/*', 'https://conor-ui.com/*', 'https://biasharamarketing.co.tz/*', 'http://biasharamarketing.co.tz/*']
 app.use(cors({
   origin: function(origin, callback){
     // allow requests with no origin
