@@ -47,22 +47,6 @@ app.post('/api/send-email', (req, res) => {
   res.send('sent')
 });
 
-app.post('/api/send-biashara', (req, res) => {
-
-  // https://app.sendgrid.com/
-
-  sgMail.setApiKey(process.env.SENDGRID_API_KEY);
-  const msg = {
-    to: 'sokoletu@biasharamarketing.co.tz',
-    from: req.body.email,
-    subject: 'message from Biashara Marketing contact form',
-    text: req.body.message,
-    html: `<p>${ req.body.message }</p><p>${ req.body.name }</p>`
-  };
-  sgMail.send(msg);
-  res.send('sent')
-});
-
 if (process.env.NODE_ENV === 'production') {
   // Serve any static files
   app.use(express.static(path.join(__dirname, 'build')));
