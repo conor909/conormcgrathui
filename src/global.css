@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
 	font-family: 'bariolregular';
 	src: url('./fonts/Bariol-Regular-Webfont/bariol_regular-webfont.eot');
 	src: url('./fonts/Bariol-Regular-Webfont/bariol_regular-webfont.eot?#iefix') format('embedded-opentype'),
@@ -8,7 +8,7 @@
 				url('./fonts/Bariol-Regular-Webfont/bariol_regular-webfont.svg#bariolregular') format('svg');
 	font-weight: normal;
 	font-style: normal;
-}
+} */
 
 * {
 	font-family: 'bariolregular';
@@ -82,7 +82,7 @@ ol {
 .svg-container {
   width: 10em;
 }
-/* 
+/*
 /* width *
 ::-webkit-scrollbar {
   width: 15px;
