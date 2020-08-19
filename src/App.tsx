@@ -1,8 +1,6 @@
 import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import styled from 'styled-components';
-import './flex-box.css';
-import './global.css';
 import { About, Work, Contact, Blog, Clients } from './pages';
 import { Navbar } from './components';
 import getWork from './data/work';
@@ -16,7 +14,7 @@ export default (props:any) => {
   //   window.addEventListener('click', playCircle);
   //   return () => { window.removeEventListener('click', playCircle) }
   // }, []);
-  
+
   // function playCircle(e:any) {
   //   new TimelineLite()
   //     .fromTo(circle.current, .5, { x: e.clientX, y: e.clientY, scale: 0 }, { x: e.clientX, y: e.clientY, scale: 5, transformOrigin: "center center"  }, 0)
@@ -56,7 +54,7 @@ export default (props:any) => {
               <Route path="/contact" exact component={ Contact } />
               <Route path="/blog" exact component={ Blog } />
             </Switch>
-            
+
           </>
         </Router>
       </AppWrap>

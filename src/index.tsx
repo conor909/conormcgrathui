@@ -1,14 +1,10 @@
 import 'react-app-polyfill/ie11';
-import './fonts/Bariol-Regular-Webfont/bariol_regular-webfont.eot'
-import './fonts/Bariol-Regular-Webfont/bariol_regular-webfont.svg'
-import './fonts/Bariol-Regular-Webfont/bariol_regular-webfont.ttf'
-import './fonts/Bariol-Regular-Webfont/bariol_regular-webfont.woff'
-import './fonts/Bariol-Regular-Webfont/bariol_regular-webfont.woff2'
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import './flex-box.css';
+import './global.css';
 
 ReactDOM.render(<App />, document.getElementById('root'));
 
